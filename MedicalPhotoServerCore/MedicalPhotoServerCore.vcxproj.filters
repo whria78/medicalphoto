@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="asyn_socket">
+      <UniqueIdentifier>{a654c26d-1ea4-4510-8000-125aff594eef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{ae052208-30f7-44f0-b92d-74bb8b44b652}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="data_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="async_connection.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="async_connection_manager.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="async_server.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="basic_server.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="cmycout.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="log_connection.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="log_server.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="server_connection.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="sql_db.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+    <ClCompile Include="sqllog.cpp">
+      <Filter>asyn_socket</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="connection_basic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="async_connection.h">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+    <ClInclude Include="async_connection_manager.hpp">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+    <ClInclude Include="async_server.hpp">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+    <ClInclude Include="basic_server.h">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+    <ClInclude Include="server_connection.h">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+    <ClInclude Include="sqllog.h">
+      <Filter>asyn_socket</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cmycout.h">
+      <Filter>asyn_socket</Filter>
+    </CustomBuild>
+    <CustomBuild Include="log_connection.h">
+      <Filter>asyn_socket</Filter>
+    </CustomBuild>
+    <CustomBuild Include="log_server.h">
+      <Filter>asyn_socket</Filter>
+    </CustomBuild>
+    <CustomBuild Include="sql_db.h">
+      <Filter>asyn_socket</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

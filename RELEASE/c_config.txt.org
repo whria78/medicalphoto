@@ -1,0 +1,39 @@
+// MedicalPhoto Client Config : don't remove here=
+
+// The built-in diagnosis table to load, which is located at "/diagnosis" folder.
+LOAD_DXCODE_LIST=derma.dat,icd10.dat
+
+// 0 : Normal View  ,  1: Simple View
+VIEW_MODE=0
+
+// Change the filename with the informations (ID, diagnosis, name ...) after submitting.
+// 1 : change (default) , 0 : unchange
+SUBMIT_AUTOCHANGE_FILENAME=1
+
+// Date format when creating a new folder
+// 5: 08-Jan-01,  4: 08-01-01,  3: 2008-Jan-01,  2: 2008-01-01,  1: Jan-01, 0: 01-01 
+CREATE_FOLDER_FORMAT=2
+// Display date format
+DISPLAY_FOLDER_FORMAT=2
+
+// whether use a custom template when exporting photos to microsoft powerpoint ,  1 : use customs , 0 : dont use custom templates
+USE_CUSTOM_TEMPLATE=0
+
+// Search Options
+
+SEARCH_ID=1
+SEARCH_NAME=1
+SEARCH_PATH=1
+SEARCH_DIAGNOSIS=1
+SEARCH_COMMENT=1
+SEARCH_ICD10=1
+
+// Assist Application , Assist.exe
+// shortkey : ctrl-shift-p   의사랑&아산병원 EMR 에서 작동
+RUN_ASSIST=0
+
+// Port
+CLIENT_PORT=9999
+
+// Last Host IP Address , 
+LAST_HOST_ADDRESS=localhost

@@ -1,0 +1,952 @@
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 08:49:41
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 08:49:50
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 08:50:08
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 08:50:34
+Saving... ../version.dat : 2016-Sep-04 08:51:29
+... Install Service
+... Server stopped.
+Service MedicalPhoto installedStartService failed, error code = 2Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+### Start Build ### : 2016-Sep-04 08:51:48
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+### Build Item ### : 2016-Sep-04 08:51:48
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/2009
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/2009';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/2009/2009-01
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/2009/2009-01';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/2009/2009-01/09-01-02
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/2009/2009-01/09-01-02';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/2009/2009-01/09-01-02/09-03
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/2009/2009-01/09-01-02/09-03';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02/09-03';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/2009/2009-01/09-01-02/09-03 (1)
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/2009/2009-01/09-01-02/09-03 (1)';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02/09-03 (1)';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/kkk
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/kkk/09-03
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-03';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-03';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/kkk - 복사본
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk - 복사본';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk - 복사본';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/kkk - 복사본/09-03
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk - 복사본/09-03';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk - 복사본/09-03';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본';
+Create Item : D:/2016-01-01/새 폴더 - 복사본
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (1).JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (1).JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (2).JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (2).JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/2016-01-01_테스트.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/2016-01-01_테스트.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본/09-03
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본/09-03';
+Create Item : D:/2016-01-01/새 폴더 - 복사본/09-03
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/09-03','2016-01-01/새 폴더 - 복사본','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 - 복사본
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 - 복사본';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 - 복사본/09-03
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본/09-03';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 - 복사본/09-03';
+[sql] begin transaction
+[sql] commit transaction
+### Check Item ### : 2016-Sep-04 08:51:51
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+[sql] begin transaction
+[sql] commit transaction
+### Build Thumbnails ### : 2016-Sep-04 08:51:51
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+### Check Thumbnails ### : 2016-Sep-04 08:51:52
+### End Build ### : 2016-Sep-04 08:51:52
+Saving... ../version.dat : 2016-Sep-04 08:52:25
+[Startup] Open port 9999
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[Startup] Start watching : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[Startup] Server start
+[Schedule] Backup database to C:/Program Files (x86)/MedicalPhoto/backup : 2016-Sep-04 08:52:25
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+## [Connect] 127.0.0.1 : 2016-Sep-04 08:52:47
+async_connection::handle_waiting_order
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+async_connection::handle_execute_order
+Command (1) by  : 2016-Sep-04 08:52:47
+[127.0.0.1]	[LOGIN]	(  )   : 2016-Sep-04 08:52:47
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (40) by superadmin : 2016-Sep-04 08:52:47
+[127.0.0.1]	[GET_VERSIONFILE]	(  )   : 2016-Sep-04 08:52:47
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (18) by superadmin : 2016-Sep-04 08:52:47
+[127.0.0.1]	[GETVOLLIST]	(  )   : 2016-Sep-04 08:52:47
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (5) by superadmin : 2016-Sep-04 08:52:47
+[sql] SELECT * FROM `userdx`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:47
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01 )   : 2016-Sep-04 08:52:47
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:48
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:49
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본 )   : 2016-Sep-04 08:52:49
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:49
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:50
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:50
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:50
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본/09-03 )   : 2016-Sep-04 08:52:50
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:51
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 08:52:51
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:51
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:51
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:51
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:51
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:51
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 08:52:51
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:52
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 08:52:52
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:52
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:52
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:52
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:52
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:52
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본/09-03 )   : 2016-Sep-04 08:52:52
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:52
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본 )   : 2016-Sep-04 08:52:52
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:53
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:53
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:53
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:53
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본/09-03 )   : 2016-Sep-04 08:52:53
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:54
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 08:52:54
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:54
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01 )   : 2016-Sep-04 08:52:54
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:55
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 08:52:55
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:55
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 08:52:55
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:55
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:55
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:55
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:55
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:56
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본/09-03 )   : 2016-Sep-04 08:52:56
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:57
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01 )   : 2016-Sep-04 08:52:57
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:57
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01/09-01-02 )   : 2016-Sep-04 08:52:57
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01/09-01-02';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:57
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:57
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:52:57
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:59
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01 )   : 2016-Sep-04 08:52:59
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:52:59
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본/09-03 )   : 2016-Sep-04 08:52:59
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:53:00
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 08:53:00
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:53:00
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:53:00
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:53:00
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 08:53:00
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (41) by superadmin : 2016-Sep-04 08:53:01
+[127.0.0.1]	[CREATEFOLDER_AUTO]	( 2016-01-01/kkk )   : 2016-Sep-04 08:53:01
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[Call Watcher] Create :kkk\09-04 : 2016-Sep-04 08:53:02
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04','2016-01-01/kkk','superadmin','superadmin','3','3','0','','','','','','1','0');
+[Watcher] Create :D:/2016-01-01\kkk\09-04 : 2016-Sep-04 08:53:02
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04','2016-01-01/kkk09-04','','','3','3','0','','','','','','1','0');
+[Watcher] Create Error : SQLITE_CONSTRAINT[19]: column netpath is not unique : 2016-Sep-04 08:53:02
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 08:53:03
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04 )   : 2016-Sep-04 08:53:03
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (41) by superadmin : 2016-Sep-04 08:54:29
+[127.0.0.1]	[CREATEFOLDER_AUTO]	( 2016-01-01/kkk/09-04 )   : 2016-Sep-04 08:54:29
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[Call Watcher] Create :kkk\09-04\09-04 : 2016-Sep-04 08:54:29
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04/09-04','2016-01-01/kkk/09-04','superadmin','superadmin','3','3','0','','','','','','1','0');
+[Watcher] Create :D:/2016-01-01\kkk\09-04\09-04 : 2016-Sep-04 08:54:29
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04/09-04','2016-01-01/kkk/09-0409-04','','','3','3','0','','','','','','1','0');
+[Watcher] Create Error : SQLITE_CONSTRAINT[19]: column netpath is not unique : 2016-Sep-04 08:54:29
+async_connection::handle_waiting_order
+Saving... ../version.dat : 2016-Sep-04 09:09:12
+[Startup] Open port 9999
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[Startup] Start watching : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[Startup] Server start
+[Schedule] Backup database to C:/Program Files (x86)/MedicalPhoto/backup : 2016-Sep-04 09:09:13
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+## [Connect] 127.0.0.1 : 2016-Sep-04 09:09:58
+async_connection::handle_waiting_order
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+async_connection::handle_execute_order
+Command (1) by  : 2016-Sep-04 09:09:58
+[127.0.0.1]	[LOGIN]	(  )   : 2016-Sep-04 09:09:58
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (40) by superadmin : 2016-Sep-04 09:09:58
+[127.0.0.1]	[GET_VERSIONFILE]	(  )   : 2016-Sep-04 09:09:58
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (18) by superadmin : 2016-Sep-04 09:09:58
+[127.0.0.1]	[GETVOLLIST]	(  )   : 2016-Sep-04 09:09:58
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (5) by superadmin : 2016-Sep-04 09:09:58
+[sql] SELECT * FROM `userdx`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:09:58
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01 )   : 2016-Sep-04 09:09:58
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:09:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:01
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 09:10:01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:01
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:01
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:01
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:01
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:01
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04 )   : 2016-Sep-04 09:10:01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:02
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04/09-04 )   : 2016-Sep-04 09:10:02
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (41) by superadmin : 2016-Sep-04 09:10:05
+[127.0.0.1]	[CREATEFOLDER_AUTO]	( 2016-01-01/kkk/09-04/09-04 )   : 2016-Sep-04 09:10:05
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04';
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04/09-04/09-04','2016-01-01/kkk/09-04/09-04','superadmin','superadmin','3','3','0','','','','','','1','0');
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (41) by superadmin : 2016-Sep-04 09:10:46
+[127.0.0.1]	[CREATEFOLDER_AUTO]	( 2016-01-01/kkk/09-04/09-04/09-04 )   : 2016-Sep-04 09:10:46
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04/09-04';
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/kkk/09-04/09-04/09-04/09-04','2016-01-01/kkk/09-04/09-04/09-04','superadmin','superadmin','3','3','0','','','','','','1','0');
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:55
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 09:10:55
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:56
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01 )   : 2016-Sep-04 09:10:56
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:58
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 09:10:58
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:10:58
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01 )   : 2016-Sep-04 09:10:58
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:58
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:10:59
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (41) by superadmin : 2016-Sep-04 09:11:00
+[127.0.0.1]	[CREATEFOLDER_AUTO]	( 2016-01-01 )   : 2016-Sep-04 09:11:00
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/09-04';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01';
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/09-04';
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/09-04','2016-01-01','superadmin','superadmin','3','3','0','','','','','','1','0');
+async_connection::handle_waiting_order
+## [Disconnect] 127.0.0.1 :  : 2016-Sep-04 09:11:23
+## [Connect] 127.0.0.1 : 2016-Sep-04 09:19:14
+async_connection::handle_waiting_order
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+## [Connect] 127.0.0.1 : 2016-Sep-04 09:21:16
+async_connection::handle_waiting_order
+Try to open the Database [ E:\SVN\branches\newconsole\database.dat ]
+[sql] select * from `version`;
+async_connection::handle_execute_order
+Command (1) by  : 2016-Sep-04 09:21:16
+[127.0.0.1]	[LOGIN]	(  )   : 2016-Sep-04 09:21:16
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (40) by superadmin : 2016-Sep-04 09:21:16
+[127.0.0.1]	[GET_VERSIONFILE]	(  )   : 2016-Sep-04 09:21:16
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (18) by superadmin : 2016-Sep-04 09:21:16
+[127.0.0.1]	[GETVOLLIST]	(  )   : 2016-Sep-04 09:21:16
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (5) by superadmin : 2016-Sep-04 09:21:16
+[sql] SELECT * FROM `userdx`;
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:16
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01 )   : 2016-Sep-04 09:21:16
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:17
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:23
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/새 폴더 - 복사본 )   : 2016-Sep-04 09:21:23
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:23
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:23
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:23
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (13) by superadmin : 2016-Sep-04 09:21:28
+[127.0.0.1]	[RENAMEFOLDER]	( 2016-01-01/새 폴더 - 복사본  /  2016-01-01/dsds )   : 2016-Sep-04 09:21:28
+[sql] SELECT netpath FROM fileinfo WHERE netpath='2016-01-01/dsds';
+[Call Watcher] Rename :새 폴더 - 복사본 -> dsds : 2016-Sep-04 09:21:28
+[Watcher] Rename :D:/2016-01-01\새 폴더 - 복사본 -> D:/2016-01-01\dsds : 2016-Sep-04 09:21:28
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본';
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/새 폴더 - 복사본';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds',netdir='2016-01-01',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='',diagnosis='',icd10='',patientid='',patientname='',isdir='1',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본' AND netdir='2016-01-01' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='1' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds',netdir='2016-01-01',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='',diagnosis='',icd10='',patientid='',patientname='',isdir='1',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본' AND netdir='2016-01-01' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='1' AND attribute='0';
+[sql] SELECT * FROM fileinfo WHERE netdir LIKE '2016-01-01/새 폴더 - 복사본%';
+[Watcher] Rename Error : SQL Error(Update) : 2016-01-01/ : 2016-Sep-04 09:21:28
+[sql] begin transaction
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds - 복사본/2016-01-01_테스트 (1).JPG',netdir='2016-01-01/dsds - 복사본',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:22',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본/2016-01-01_테스트 (1).JPG' AND netdir='2016-01-01/새 폴더 - 복사본 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:22' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds - 복사본/2016-01-01_테스트 (2).JPG',netdir='2016-01-01/dsds - 복사본',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:20',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본/2016-01-01_테스트 (2).JPG' AND netdir='2016-01-01/새 폴더 - 복사본 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:20' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds - 복사본/2016-01-01_테스트.JPG',netdir='2016-01-01/dsds - 복사본',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:34',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본/2016-01-01_테스트.JPG' AND netdir='2016-01-01/새 폴더 - 복사본 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:34' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds - 복사본/09-03',netdir='2016-01-01/dsds - 복사본09-03',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='',diagnosis='',icd10='',patientid='',patientname='',isdir='1',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본 - 복사본/09-03' AND netdir='2016-01-01/새 폴더 - 복사본 - 복사본09-03' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='1' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds/2016-01-01_테스트 (1).JPG',netdir='2016-01-01/dsds',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:22',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (1).JPG' AND netdir='2016-01-01/새 폴더 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:22' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds/2016-01-01_테스트 (2).JPG',netdir='2016-01-01/dsds',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:20',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본/2016-01-01_테스트 (2).JPG' AND netdir='2016-01-01/새 폴더 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:20' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds/2016-01-01_테스트.JPG',netdir='2016-01-01/dsds',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='2016-01-01 07:43:34',diagnosis='',icd10='',patientid='',patientname='',isdir='0',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본/2016-01-01_테스트.JPG' AND netdir='2016-01-01/새 폴더 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='2016-01-01 07:43:34' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='0' AND attribute='0';
+[sql] UPDATE fileinfo SET netpath='2016-01-01/dsds/09-03',netdir='2016-01-01/dsds',userid='',groupid='',userpriv='3',grouppriv='3',otherpriv='0',date='',diagnosis='',icd10='',patientid='',patientname='',isdir='1',attribute='0' WHERE netpath='2016-01-01/새 폴더 - 복사본/09-03' AND netdir='2016-01-01/새 폴더 - 복사본' AND userid='' AND groupid='' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='1' AND attribute='0';
+[sql] commit transaction
+[sql] SELECT * FROM comment WHERE netpath='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+[sql] commit transaction
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:34
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/dsds/09-03 )   : 2016-Sep-04 09:21:34
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/dsds/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:34
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/dsds )   : 2016-Sep-04 09:21:34
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/dsds';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:35
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01 )   : 2016-Sep-04 09:21:35
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:35
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:36
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/dsds )   : 2016-Sep-04 09:21:36
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/dsds';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:36
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:36
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:36
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:37
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/dsds/09-03 )   : 2016-Sep-04 09:21:37
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/dsds/09-03';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:38
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/dsds )   : 2016-Sep-04 09:21:38
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/dsds';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:38
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:39
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk )   : 2016-Sep-04 09:21:39
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (16) by superadmin : 2016-Sep-04 09:21:39
+async_connection::handle_filetransfer
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:40
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04 )   : 2016-Sep-04 09:21:40
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:41
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04/09-04 )   : 2016-Sep-04 09:21:41
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (12) by superadmin : 2016-Sep-04 09:21:46
+[127.0.0.1]	[DELETEFOLDER]	( 2016-01-01/kkk/09-04/09-04 )   : 2016-Sep-04 09:21:46
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+[sql] SELECT * FROM fileinfo WHERE netdir LIKE '2016-01-01/kkk/09-04/09-04%';
+[sql] DELETE FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04' AND netdir='2016-01-01/kkk/09-04' AND userid='superadmin' AND groupid='superadmin' AND userpriv='3' AND grouppriv='3' AND otherpriv='0' AND date='' AND diagnosis='' AND icd10='' AND patientid='' AND patientname='' AND isdir='1' AND attribute='0';
+[Call Watcher] Delete :kkk\09-04\09-04\09-04\09-04 : 2016-Sep-04 09:21:47
+[sql] begin transaction
+[sql] DELETE FROM fileinfo WHERE netpath LIKE '2016-01-01/kkk/09-04/09-04%';
+[sql] DELETE FROM comment WHERE netpath LIKE '2016-01-01/kkk/09-04/09-04%';
+[sql] commit transaction
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04/09-04';
+async_connection::handle_waiting_order
+async_connection::handle_execute_order
+Command (19) by superadmin : 2016-Sep-04 09:21:47
+[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/kkk/09-04 )   : 2016-Sep-04 09:21:47
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/kkk/09-04';
+async_connection::handle_waiting_order
+[Call Watcher] Change :kkk\09-04\09-04\09-04 : 2016-Sep-04 09:21:47
+[Call Watcher] Delete :kkk\09-04\09-04\09-04 : 2016-Sep-04 09:21:47
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04/09-04';
+[Call Watcher] Change :kkk\09-04\09-04 : 2016-Sep-04 09:21:47
+[Call Watcher] Delete :kkk\09-04\09-04 : 2016-Sep-04 09:21:47
+[sql] SELECT * FROM fileinfo WHERE netpath='2016-01-01/kkk/09-04/09-04';
+## [Disconnect] 127.0.0.1 :  : 2016-Sep-04 09:21:58
+Saving... ../version.dat : 2016-Sep-06 20:40:21
+Saving... ../version.dat : 2016-Sep-06 21:48:16
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-06 21:51:01
+... Install Service
+Saving... ../version.dat : 2016-Sep-06 21:57:11
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-06 21:57:39
+... Install Service
+Saving... ../version.dat : 2016-Sep-06 21:58:23
+Saving... ../version.dat : 2016-Sep-06 22:02:57
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-06 22:05:38
+Saving... ../version.dat : 2016-Sep-06 22:08:13
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+... Install Service
+Saving... ../version.dat : 2016-Sep-06 22:10:56
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+... Install Service
+Saving... ../version.dat : 2016-Sep-06 22:15:58
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+... Install Service
+... Fail to Install Service
+Saving... ../version.dat : 2016-Sep-06 22:19:08
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+... Install Service
+Saving... ../version.dat : 2016-Sep-06 22:22:12
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+... Install Service
+... Fail to Install Service
+Saving... ../version.dat : 2016-Sep-08 23:52:54
+Saving... ../version.dat : 2016-Sep-08 23:53:10
+Saving... ../version.dat : 2016-Sep-08 23:54:30
+Saving... ../version.dat : 2016-Sep-08 23:56:49
+Saving... ../version.dat : 2016-Sep-09 00:05:16
+Saving... ../version.dat : 2016-Sep-09 21:08:12
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-09 21:08:23
+... Install Service
+Saving... ../version.dat : 2016-Sep-09 21:08:34
+Saving... ../version.dat : 2016-Sep-09 21:10:06
+[Startup] Open port 9999
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[Startup] Start watching : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[Startup] Server start
+[Schedule] Backup database to C:/Program Files (x86)/MedicalPhoto/backup : 2016-Sep-09 21:10:07
+Try to open the Database [ E:/SVN/branches/newconsole/database.dat ]
+[sql] select * from `version`;
+Saving... ../version.dat : 2016-Sep-09 21:10:16
+[Startup] Open port 9999
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[Startup] Start watching : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[Startup] Server start
+[Schedule] Backup database to C:/Program Files (x86)/MedicalPhoto/backup : 2016-Sep-09 21:10:16
+Try to open the Database [ E:/SVN/branches/newconsole/database.dat ]
+[sql] select * from `version`;
+Saving... ../version.dat : 2016-Sep-09 21:12:19
+[Startup] Open port 9999
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[Startup] Start watching : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[Startup] Server start
+[Schedule] Backup database to C:/Program Files (x86)/MedicalPhoto/backup : 2016-Sep-09 21:12:19
+Try to open the Database [ E:/SVN/branches/newconsole/database.dat ]
+[sql] select * from `version`;
+Saving... ../version.dat : 2016-Sep-09 21:20:29
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-09 21:20:40
+... Install Service
+Saving... ../version.dat : 2016-Sep-09 22:02:33
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-09 22:02:42
+... Install Service
+Saving... ../version.dat : 2016-Sep-09 22:07:00
+Saving... ../version.dat : 2016-Sep-10 07:16:46
+... Remove Old Service
+### Stop the Service
+### Remove the service previously installed
+Saving... ../version.dat : 2016-Sep-10 07:16:53
+... Install Service
+Saving... ../version.dat : 2016-Sep-10 07:18:46
+Saving... ../version.dat : 2016-Sep-27 19:45:27
+Saving... ../version.dat : 2016-Sep-27 19:50:34
+Saving... ../version.dat : 2016-Sep-27 19:54:50
+Saving... ../version.dat : 2016-Sep-27 19:57:37

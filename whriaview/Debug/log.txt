@@ -1,0 +1,40 @@
+c_config.txt is not exist. Load default
+../version.dat is not exist. Load default
+Saving... E:\SVN\branches\whriaview\Debug\c_config.txt : 2013-Mar-31 07:21:48
+async_write22 serialization::archive 4 0 0 1 10 superadmin 0 
+async_read_header     51d
+async_read_header     51d
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 0  18 E:\photos\gomphoto 27 E:\photos\photos_data\thumb 49 C:\Program Files (x86)\MedicalPhoto\data\favorate 1 1 12 database.dat 3 200 3 300 1 0 0  0  0  10 superadmin 4 9999 0  1 8 1 1 1 1 18 Your Hospital Name 11 .jpg, .jpeg 42 C:\Program Files (x86)\MedicalPhoto\backup 4 5000 6 100000 1 0 1 _ 1 1 2 14 2 -1 1 0 2 -2 1 0 2 -2 1 0 1 0 12 medicalphoto 12 medicalphoto 2 21 1 0 40 C:\Program Files (x86)\MedicalPhoto\data 44 C:\Program Files (x86)\MedicalPhoto\data\tmp 12 MedicalPhoto 2 10 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 0 8 1.0.8.74 13 ./version.dat 8 1.0.8.56 16 MedicalPhoto.exe 7 1.0.8.1 22 MedicalPhotoServer.exe 8 1.0.8.16 11 console.exe 7 1.0.8.1 43 ./diagnosis/icd10.dat,./diagnosis/derma.dat 7 1.0.8.1 46 ./template/Full.ppt,./template/Medium_Info.ppt 7 1.0.8.1 23 MedicalPhotoService.exe 7 1.0.8.4 10 Config.exe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 0  18 E:\photos\gomphoto 27 E:\photos\photos_data\thumb 49 C:\Program Files (x86)\MedicalPhoto\data\favorate 1 1 12 database.dat 3 200 3 300 1 0 0  0  0  10 superadmin 4 9999 0  1 8 1 1 1 1 18 Your Hospital Name 11 .jpg, .jpeg 42 C:\Program Files (x86)\MedicalPhoto\backup 4 5000 6 100000 1 0 1 _ 1 1 2 14 2 -1 1 0 2 -2 1 0 2 -2 1 0 1 0 12 medicalphoto 12 medicalphoto 2 21 1 0 40 C:\Program Files (x86)\MedicalPhoto\data 44 C:\Program Files (x86)\MedicalPhoto\data\tmp 12 MedicalPhoto 2 10 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 0 8 1.0.8.74 13 ./version.dat 8 1.0.8.56 16 MedicalPhoto.exe 7 1.0.8.1 22 MedicalPhotoServer.exe 8 1.0.8.16 11 console.exe 7 1.0.8.1 43 ./diagnosis/icd10.dat,./diagnosis/derma.dat 7 1.0.8.1 46 ./template/Full.ppt,./template/Medium_Info.ppt 7 1.0.8.1 23 MedicalPhotoService.exe 7 1.0.8.4 10 Config.exe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+
+../version.dat is not exist. Load default
+async_write22 serialization::archive 4 0 0 40 0 0
+async_read_header     280
+async_read_header     280
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 8 1.0.8.74 13 ./version.dat 8 1.0.8.56 16 MedicalPhoto.exe 7 1.0.8.1 22 MedicalPhotoServer.exe 8 1.0.8.16 11 console.exe 7 1.0.8.1 43 ./diagnosis/icd10.dat,./diagnosis/derma.dat 7 1.0.8.1 46 ./template/Full.ppt,./template/Medium_Info.ppt 7 1.0.8.1 23 MedicalPhotoService.exe 7 1.0.8.4 10 Config.exe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 8 1.0.8.74 13 ./version.dat 8 1.0.8.56 16 MedicalPhoto.exe 7 1.0.8.1 22 MedicalPhotoServer.exe 8 1.0.8.16 11 console.exe 7 1.0.8.1 43 ./diagnosis/icd10.dat,./diagnosis/derma.dat 7 1.0.8.1 46 ./template/Full.ppt,./template/Medium_Info.ppt 7 1.0.8.1 23 MedicalPhotoService.exe 7 1.0.8.4 10 Config.exe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+
+async_write22 serialization::archive 4 0 0 18 0 0
+async_read_header      68
+async_read_header      68
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 1 0 8 gomphoto
+
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 1 0 8 gomphoto
+
+async_write22 serialization::archive 4 0 0 5 0  0
+async_read_header      5d
+async_read_header      5d
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 0 0
+
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 0 0
+
+async_write22 serialization::archive 4 0 0 19 8 gomphoto 0
+async_read_header     4bb
+async_read_header     4bb
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 14 0 0 0 13 gomphoto/2000 8 gomphoto 0 0 0  0  0 0 3 3 0 15 not-a-date-time 0 0 0  0  0  0  1 1 0 13 gomphoto/2002 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2003 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2004 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2005 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2006 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2007 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2008 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2009 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2010 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2011 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2012 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2013 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 36 gomphoto/?†Ïßú?ïÎ≥¥?ÜÎäî?åÏùº??8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0
+
+async_read_data22 serialization::archive 4 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 0 0 14 0 0 0 13 gomphoto/2000 8 gomphoto 0 0 0  0  0 0 3 3 0 15 not-a-date-time 0 0 0  0  0  0  1 1 0 13 gomphoto/2002 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2003 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2004 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2005 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2006 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2007 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2008 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2009 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2010 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2011 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2012 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 13 gomphoto/2013 8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0 36 gomphoto/?†Ïßú?ïÎ≥¥?ÜÎäî?åÏùº??8 gomphoto 0  0  3 3 0 15 not-a-date-time 0  0  0  0  1 1 0
+
+Saving... E:\SVN\branches\whriaview\Debug\c_config.txt\c_config.txt : 2013-Mar-31 07:21:53

@@ -1,0 +1,72 @@
+// MedicalPhoto Config : don't remove this line
+// Http://medicalphoto.org
+// Powered by Han Seung Seog
+// Copyright 2008
+
+
+// Password
+ADMIN_PASS=
+
+// Main Photographic Path
+DATA_PATH=
+
+// Thumbnail Storage Path
+THUMB_PATH=
+
+// Thumbnail Size
+THUMB_HEIGHT=200
+THUMB_WIDTH=300
+
+// DirectoryWatch Function
+UPLOAD_WATCH_PATH=
+
+// Minimize a server dialog after initiating server.
+MINIMIZE=1
+
+// Your Hospital Name
+HOSPITAL_NAME=Your Hospital Name
+// Your Hospital ID Length --> For Inteligent select (Ctrl-C)
+HOSPITAL_ID_LENGTH=8
+
+// Maximum number of search result
+MAX_SEARCH_RESULT_NUMBER=5000
+MAX_REPORT_RESULT_NUMBER=100000
+
+// BackUp , 14 days
+SQLBACKUP_DURATION=14
+
+// Screen Lock time (min)
+IDLE_HIDE_SCREEN=5
+
+// Port Number
+PORT=9999
+// Idle connection interval to wakeup the server continuously
+IDLE_CONNECTION_INTERVAL=10
+
+// Data DB Name
+DATA_FILENAME=database.dat
+// Supported File Extensions , MedicalPhoto supports a jpg image
+FILE_EXTENSIONS=.jpg, .jpeg
+
+// Autosave the state of image when it is rotated by a client
+SAVE_ROTATEIMAGE=1
+
+
+SMART_RETRIEVE_IDNAME_SEPARATOR=_
+
+// You dont need to use scheduling feature below in general, if you dont have a problem related to photo files and database mismatch
+// MedicalPhotoServer -> Option -> Check Data Integrity usually can solve the problem related
+
+// Watching DATA_PATH collects file changes by explore or other tools
+DIRECTORY_WATCH_ON=1
+
+//
+UPLOAD_WATCH_PATH=
+
+// Build Info of Photos           cf) -2:not use , -1:Everyday , 0:Sunday 1:Monday ....
+SCHEDULE_BUILD_DATE=-2
+// Schedule Time 1 --> 1:AM
+SCHEDULE_BUILD_TIME=0
+// Data Ingegrity Check    cf) -2:not use , -1:Everyday , 0:Sunday 1:Monday ....
+SCHEDULE_CHECK_DATE=-2
+SCHEDULE_CHECK_TIME=0

@@ -1,0 +1,11 @@
+Loading... s_config.txt : 2008-Apr-14 23:11:21
+s_config.txt is not exist. Load default
+Loading... ./version.dat : 2008-Apr-14 23:11:21
+./version.dat is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default
+s_config.txt is not exist. Load default

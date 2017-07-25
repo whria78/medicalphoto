@@ -1,0 +1,480 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_FAILUPDATE   "Fail to update"
+    IDS_STRING_SELECTPHOTO  "SELECT Photography Folder"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_INVALIDFOLDER "Invalid Folder"
+    IDS_STRING_ASKREBUILD   "Data file already exists. Do you want to REBUILD it?"
+    IDS_STRING_DOREBUILD    "Building Data. Please wait. This can take some time up to an hour."
+    IDS_STRING_BUILDSQLERR  "BuildSQL Error"
+    IDS_STRING_SERVICEERR   "Fail to setup up MedicalPhoto service"
+    IDS_STRING_ASKTHUMB     "Do you want to build thumbnails now ? , It takes up to an hour depending the number of photographies."
+    IDS_STRING_BUILDTMBERR  "Build Thumbnail Error"
+    IDS_STRING_ASKEXIT      "Are you sure to stop and exit"
+    IDS_STRING_DATAFOLDERERR "The path of data folder must not contain that of photographic folder."
+    IDS_STRING_YOURIP       "The IP address of this server  : localip "
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#include ""res\\Configure.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Configure.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONFIGURE_DIALOG DIALOGEX 0, 0, 312, 206
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Configure"
+CLASS "MedicalPhotoConfig"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Finish",IDOK,205,183,50,16,NOT WS_VISIBLE
+    PUSHBUTTON      "&Previous",IDC_BUTTON_PREV,155,183,50,16,NOT WS_VISIBLE
+    PUSHBUTTON      "&Cancel",IDCANCEL,255,183,50,16
+    PUSHBUTTON      "&Next",IDC_BUTTON_NEXT,205,183,50,16
+END
+
+IDD_DIALOG_APPTYPE DIALOGEX 0, 0, 305, 242
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Highlight Features"
+FONT 14, "Arial", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "E&xit",IDC_BUTTON_EXIT,243,223,50,14
+    PUSHBUTTON      "Fast Search",IDC_BUTTON_STANDALONE,7,7,53,50,NOT WS_TABSTOP
+    PUSHBUTTON      "Unicode",IDC_BUTTON_NETWORKED,7,147,53,45,NOT WS_TABSTOP
+    CTEXT           "Fast Built-in SQL Search Engine\n",IDC_STATIC,63,7,230,50,SS_CENTERIMAGE
+    CTEXT           "TWO or MORE computers can access concurrently\n- SERVER computer stores and manages photos\n- MULTIPLE CLIENTS connect to the server and view photos",IDC_STATIC,63,66,230,28
+    PUSHBUTTON      "Networked",IDC_BUTTON_NETWORKED2,7,57,53,45,NOT WS_TABSTOP
+    PUSHBUTTON      "Multi-Monitor",IDC_BUTTON_NETWORKED3,7,102,53,45,NOT WS_TABSTOP
+    CTEXT           "Unicode(UTF16LE) Support\n\n- Support UNIVERSAL characters including Eastern letters",IDC_STATIC,63,159,230,28
+    CTEXT           "Support upto FIVE monitors\n\n- Easy to compare pictures with multiple displays",IDC_STATIC,63,112,230,28
+    PUSHBUTTON      "Simple",IDC_BUTTON_NETWORKED4,7,192,53,45,NOT WS_TABSTOP
+    CTEXT           "SIMPLE VIEW Mode\n\n- Easy to use",IDC_STATIC,112,203,125,30
+END
+
+IDD_DIALOG_OTHERS DIALOGEX 0, 0, 310, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_THUMB_H,100,25,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_THUMB_W,100,50,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HOSPITALNAME,100,110,185,14,ES_AUTOHSCROLL
+    CONTROL         "MedicalPhotoServer 프로그램을 시작 후 트레이로 이동",IDC_CHECK_MINIMIZE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,137,278,10
+    CONTROL         "NTService 로 시작",IDC_CHECK_NTSERVICE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,24,150,150,10
+    CTEXT           "병원 이름",IDC_STATIC,26,111,59,13,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "높이",IDC_STATIC,25,25,60,14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "넓이",IDC_STATIC,25,50,60,14,SS_CENTERIMAGE | SS_SUNKEN
+    GROUPBOX        "썸네일 크기 설정",IDC_STATIC,7,5,295,75
+    GROUPBOX        "기타 설정",IDC_STATIC,7,85,295,85
+    LTEXT           "pixels",IDC_STATIC,182,28,39,8
+    LTEXT           "pixels",IDC_STATIC,181,53,39,8
+END
+
+IDD_DIALOG_PATHS DIALOGEX 0, 0, 310, 91
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "...",IDC_BUTTON_PICTUREFOLDER,19,17,25,14
+    EDITTEXT        IDC_EDIT_PICTUREPATH,45,18,255,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_DATAFOLDER,19,59,25,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_DATAPATH,45,59,255,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_F_FOLDER,35,74,271,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_T_FOLDER,18,74,271,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_TMP_FOLDER,42,76,264,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    GROUPBOX        "사진의 데이터(썸네일 등)가 저장될 폴더를 지정해주세요.",IDC_STATIC,7,44,299,40,NOT WS_VISIBLE
+    GROUPBOX        "사진이 저장될 (또는 기존의 사진이 있는) 폴더를 지정해주세요.",IDC_STATIC,7,5,299,36
+END
+
+IDD_DIALOG_DATAMANAGER DIALOGEX 0, 0, 310, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Build Data and Thumbnails"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Cancel",IDC_BUTTON_CANCELBUILD,252,179,50,14
+    CONTROL         "",IDC_LIST_STATUS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER,7,7,295,158
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,166,295,12
+END
+
+IDD_DIALOG_DATAINTEGRITY DIALOGEX 0, 0, 310, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_SCHEDULE1,85,121,90,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SCHEDULE2,190,120,50,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECKDATA1,85,144,90,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECKDATA2,190,144,50,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "프로그램 시작할 때 데이터를 수집",IDC_CHECK_BUILDATSTART,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,15,161,287,10
+    CTEXT           "Build Data",IDC_STATIC,15,121,60,13,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Check Data",IDC_STATIC,15,145,60,13,SS_CENTERIMAGE | SS_SUNKEN
+    EDITTEXT        IDC_EDIT_B_FOLDER,45,23,250,14,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "...",IDC_BUTTON_B_SELECT,15,23,25,14,WS_DISABLED
+    COMBOBOX        IDC_COMBO_B_DATE,85,48,95,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_B_TIME,190,48,50,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "백업 주기",IDC_STATIC,15,48,60,13,SS_CENTERIMAGE | SS_SUNKEN | WS_DISABLED
+    GROUPBOX        "내부 데이터 체크 (고급옵션)",IDC_STATIC,7,83,295,88
+    GROUPBOX        "백업설정",IDC_STATIC,7,7,295,68
+    LTEXT           "Medicalphoto 는 자동으로 폴더내의 사진이 변경된 경우 이를 감지해서 반영합니다. 만약 실패한 경우 아래 주기에 맞추어서 다시 사진 정보를 수집합니다.",IDC_STATIC,16,99,275,18
+END
+
+IDD_DIALOG_SELECTTYPE DIALOGEX 0, 0, 330, 107
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Stand-Alone",IDC_BUTTON_SINGLE,7,7,53,50
+    PUSHBUTTON      "&Networked",IDC_BUTTON_MULTI,7,56,53,45
+    CTEXT           "ONE computer\n- Store, manage and view in ONE computer",IDC_STATIC,64,25,258,27
+    CTEXT           "TWO or MORE computers \n- SERVER computer stores and manages photos\n- MULTIPLE CLIENTS connect to the server and view photos",IDC_STATIC,64,65,258,28
+END
+
+IDD_DIALOG_UPDATE DIALOGEX 0, 0, 264, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Update"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,207,25,50,14
+    CONTROL         "",IDC_PROGRESS_UPDATE,"msctls_progress32",WS_BORDER,7,7,250,14
+    LTEXT           "Official Homepage : http://medicalphoto.org",IDC_STATIC,10,28,183,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CONFIGURE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 305
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_DIALOG_APPTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        VERTGUIDE, 63
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_DIALOG_OTHERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_DIALOG_PATHS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        VERTGUIDE, 45
+    END
+
+    IDD_DIALOG_DATAMANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DIALOG_DATAINTEGRITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_DIALOG_SELECTTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_DIALOG_UPDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_FAILUPDATE   "업데이트 에러"
+    IDS_STRING_SELECTPHOTO  "원본 사진이 있는 폴더를 지정해주세요."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRING_INVALIDFOLDER "지정한 폴더가 올바르지 않습니다."
+    IDS_STRING_ASKREBUILD   "이전에 설치된 Medicalphoto 데이터파일이 있습니다. 기존의 것을 지우고 다시 만들겠습니까?"
+    IDS_STRING_DOREBUILD    "폴더 데이터를 수집하고 있습니다. 사진 폴더의 크기에 따라 수십분이 소요될 수도 있습니다. 기다려 주세요."
+    IDS_STRING_BUILDSQLERR  "SQL 데이터 수집중에 에러가 발생했습니다."
+    IDS_STRING_SERVICEERR   "MedicalPhoto 를 Windows Service 에 등록하는 과정에서 에러가 발생했습니다."
+    IDS_STRING_ASKTHUMB     "지금 thumbnail 을 만들까요? 수십분에서 몇시간까지 소요될 수 있습니다."
+    IDS_STRING_BUILDTMBERR  "썸네이 제작중에 에러가 발생했습니다."
+    IDS_STRING_ASKEXIT      "설치 과정을 중단하고 나가겠습니까?"
+    IDS_STRING_DATAFOLDERERR "데이터 폴더와 원본 사진 폴더는 겹쳐서는 안됩니다."
+    IDS_STRING_YOURIP       "현재 Medicalphoto 서버 컴퓨터의 IP 는 "" localip "" 입니다. 다른 컴퓨터(클라이언트)에서 접속하기 위해 기억해 두세요."
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Neutral) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_DATAMANAGER DIALOGEX 0, 0, 310, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Build Data and Thumbnails"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Cancel",IDC_BUTTON_CANCELBUILD,252,179,50,14
+    CONTROL         "",IDC_LIST_STATUS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER,7,7,295,158
+    CONTROL         "",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,7,166,295,12
+END
+
+IDD_DIALOG_PATHS DIALOGEX 0, 0, 310, 91
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "...",IDC_BUTTON_PICTUREFOLDER,19,17,25,14
+    EDITTEXT        IDC_EDIT_PICTUREPATH,45,18,255,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_DATAFOLDER,19,59,25,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_DATAPATH,45,59,255,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_F_FOLDER,35,74,271,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_T_FOLDER,18,74,271,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    LTEXT           "...",IDC_STATIC_TMP_FOLDER,42,76,264,15,SS_CENTERIMAGE | NOT WS_VISIBLE
+    GROUPBOX        "Select MedicalPhoto data folder",IDC_STATIC,7,44,299,40,NOT WS_VISIBLE
+    GROUPBOX        "Select the folder photographies will be stored in.",IDC_STATIC,7,5,299,36
+END
+
+IDD_DIALOG_OTHERS DIALOGEX 0, 0, 310, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_THUMB_H,100,25,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_THUMB_W,100,50,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HOSPITALNAME,100,110,185,14,ES_AUTOHSCROLL
+    CONTROL         "Minimize MedicalPhotoServer at start",IDC_CHECK_MINIMIZE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,137,278,10
+    CONTROL         "Startup as NTService",IDC_CHECK_NTSERVICE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,24,150,150,10
+    CTEXT           "Hospital Name",IDC_STATIC,26,111,59,13,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Height",IDC_STATIC,25,25,60,14,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Width",IDC_STATIC,25,50,60,14,SS_CENTERIMAGE | SS_SUNKEN
+    GROUPBOX        "THUMBNAIL SIZE",IDC_STATIC,7,5,295,75
+    GROUPBOX        "OTHERS",IDC_STATIC,7,85,295,85
+    LTEXT           "pixels",IDC_STATIC,182,28,39,8
+    LTEXT           "pixels",IDC_STATIC,181,53,39,8
+END
+
+IDD_DIALOG_DATAINTEGRITY DIALOGEX 0, 0, 310, 180
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_SCHEDULE1,85,121,90,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SCHEDULE2,190,120,50,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECKDATA1,85,144,90,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHECKDATA2,190,144,50,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Build Data at startup",IDC_CHECK_BUILDATSTART,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,15,161,287,10
+    CTEXT           "Build Data",IDC_STATIC,15,121,60,13,SS_CENTERIMAGE | SS_SUNKEN
+    CTEXT           "Check Data",IDC_STATIC,15,145,60,13,SS_CENTERIMAGE | SS_SUNKEN
+    EDITTEXT        IDC_EDIT_B_FOLDER,45,23,250,14,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "...",IDC_BUTTON_B_SELECT,15,23,25,14,WS_DISABLED
+    COMBOBOX        IDC_COMBO_B_DATE,85,48,95,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_B_TIME,190,48,50,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Backup interval",IDC_STATIC,15,48,60,13,SS_CENTERIMAGE | SS_SUNKEN | WS_DISABLED
+    GROUPBOX        "DATA INTEGRITY",IDC_STATIC,7,83,295,88
+    GROUPBOX        "DATA BACKUP",IDC_STATIC,7,7,295,68
+    LTEXT           "Medicalphoto detects every changes and builds  infos of all modified photos. but if it fails, ""Build Data"" option will check and build all changes periodically",IDC_STATIC,16,99,245,18
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_DATAMANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DIALOG_PATHS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        VERTGUIDE, 45
+    END
+
+    IDD_DIALOG_OTHERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        VERTGUIDE, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_DIALOG_DATAINTEGRITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Neutral) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#pragma code_page(949)
+#include "res\Configure.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

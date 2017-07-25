@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{a0df2e3f-f618-43bd-bed5-ef27958028ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{37c65fb4-65dd-4052-9fe9-8357a24e157a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="etc">
+      <UniqueIdentifier>{8281162f-c68a-4503-ba1b-de30bd35cb94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="etc\Resource Files">
+      <UniqueIdentifier>{aa1bc33f-8271-4bf8-ac18-f5fc5944bfdd}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoUpdater.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="TrayDialog.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="XBrowseForFolder.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="connection_manager.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManagerDlg.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="MedicalPhotoServerDlg.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="Option.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="MedicalPhotoServer.cpp">
+      <Filter>etc</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>etc</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewLogo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AutoUpdater.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="TrayDialog.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="XBrowseForFolder.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="connection_manager.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManagerDlg.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="MedicalPhotoServerDlg.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="Option.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="MedicalPhotoServer.h">
+      <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>etc</Filter>
+    </ClInclude>
+    <ClInclude Include="Modaless.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>main</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MedicalPhotoServer.rc">
+      <Filter>etc</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap_logo copy.bmp">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap_logo.bmp">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_sub.ico">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\MedicalPhotoServer.ico">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+    <Image Include="res\on.bmp">
+      <Filter>etc\Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MedicalPhotoServer.rc2">
+      <Filter>etc\Resource Files</Filter>
+    </None>
+    <None Include="res\rt_manif.bin">
+      <Filter>etc\Resource Files</Filter>
+    </None>
+    <None Include="res\inetdownload.avi" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ViewLogo.h" />
+  </ItemGroup>
+</Project>

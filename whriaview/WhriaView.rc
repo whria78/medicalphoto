@@ -1,0 +1,1024 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean (Korea) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\WhriaView.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\WhriaView.ico"
+
+IDI_ICON_HISTORY        ICON                    "res\\ico00011.ico"
+
+IDI_ICON_MAINDX         ICON                    "res\\icon_mai.ico"
+
+IDI_ICON_PATHODX        ICON                    "res\\ico00010.ico"
+
+IDI_ICON_PRIV0          ICON                    "res\\ico00009.ico"
+
+IDI_ICON_PRIV1          ICON                    "res\\icon_pri.ico"
+
+IDI_ICON_PRIV2          ICON                    "res\\ico00001.ico"
+
+IDI_ICON_PRIV3          ICON                    "res\\ico00002.ico"
+
+IDI_ICON_PRIV4          ICON                    "res\\ico00004.ico"
+
+IDI_ICON_PRIV5          ICON                    "res\\ico00003.ico"
+
+IDI_ICON_PRIV6          ICON                    "res\\ico00005.ico"
+
+IDI_ICON_PRIV7          ICON                    "res\\ico00006.ico"
+
+IDI_ICON_PRIV8          ICON                    "res\\ico00007.ico"
+
+IDI_ICON_PRIV9          ICON                    "res\\ico00008.ico"
+
+IDI_ICON_SUBDX          ICON                    "res\\icon_sub.ico"
+
+IDI_ICON_RED            ICON                    "res\\icon1.ico"
+
+IDI_ICON_OPEN           ICON                    "res\\FOLDER_OPEN.ico"
+
+IDI_ICON_CLOSED         ICON                    "res\\FOLDER_CLOSE.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WHRIAVIEW_DIALOG DIALOGEX 0, 0, 632, 552
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MedicalPhoto"
+MENU IDR_MENU_MAIN
+CLASS "WhriaView"
+FONT 9, "MS Sans Serif", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_INPUT,2,5,83,12,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DX,145,5,225,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DLG_ID,145,20,150,12,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME,145,35,150,12,ES_CENTER | ES_AUTOHSCROLL
+    PUSHBUTTON      "S&ubmit",IDC_BUTTON_SUBMITTAG,300,40,70,22,WS_DISABLED
+    CONTROL         "Tree2",IDC_TREE_REMOTE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL,2,50,83,249
+    PUSHBUTTON      "&Stop",IDC_BUTTON_STOP,2,21,83,25,NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DATE,145,50,150,12,ES_CENTER | ES_AUTOHSCROLL | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_ICD,340,20,30,12,ES_CENTER | ES_AUTOHSCROLL | NOT WS_TABSTOP
+    CTEXT           "Diagnosis",IDC_STATIC_DX,90,5,50,12
+    CTEXT           "ID",IDC_STATIC_ID,90,20,50,12
+    CTEXT           "Name",IDC_STATIC_NAME,90,35,50,12
+    CTEXT           "Date",IDC_STATIC_DATE,90,50,50,12
+    CONTROL         "",IDC_LIST_COMMENT,"SysListView32",LVS_REPORT | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER,375,5,255,55
+    CONTROL         "",IDC_LIST_PHOTO,"SysListView32",LVS_AUTOARRANGE | LVS_NOSCROLL | WS_BORDER,90,86,540,465,WS_EX_ACCEPTFILES
+    CONTROL         "",IDC_PROGRESS_MAIN,"msctls_progress32",WS_BORDER,90,65,540,20
+    CONTROL         IDB_BITMAP_F12,IDC_STATIC_F12,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE,36,5,17,10,WS_EX_TRANSPARENT
+    LISTBOX         IDC_LIST_CHECKLIST,2,412,84,138,LBS_SORT | LBS_OWNERDRAWVARIABLE | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_IMAGEDISPLAY DIALOGEX 0, 0, 187, 94
+STYLE DS_SETFONT | WS_POPUP
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    CONTROL         IDB_BITMAP_L1,IDC_STATIC_LEFT,"Static",SS_BITMAP | SS_NOTIFY,50,67,17,17
+    CONTROL         IDB_BITMAP_R1,IDC_STATIC_RIGHT,"Static",SS_BITMAP | SS_NOTIFY,93,66,17,17
+    CONTROL         IDB_BITMAP_Z1,IDC_STATIC_ZOOM,"Static",SS_BITMAP | SS_NOTIFY,72,66,17,17
+    CONTROL         IDB_BITMAP_P1,IDC_STATIC_PREV,"Static",SS_BITMAP | SS_NOTIFY,90,4,17,17
+    CONTROL         IDB_BITMAP_N1,IDC_STATIC_NEXT,"Static",SS_BITMAP | SS_NOTIFY,112,5,17,17
+    CONTROL         IDB_BITMAP_RO1,IDC_STATIC_ROTATE,"Static",SS_BITMAP | SS_NOTIFY,115,66,17,18
+    CONTROL         IDB_BITMAP_ROT1,IDC_STATIC_ROTATE2,"Static",SS_BITMAP | SS_NOTIFY,140,65,17,18
+    CONTROL         IDB_BITMAP_C1,IDC_STATIC_CLOSED,"Static",SS_BITMAP | SS_NOTIFY,141,5,11,11
+END
+
+IDD_DIALOG_PICTURELIST DIALOGEX 0, 0, 452, 331
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CHILD
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST_PICTURELIST,"SysListView32",LVS_AUTOARRANGE | LVS_NOSCROLL | WS_BORDER | WS_TABSTOP,0,15,452,316,WS_EX_ACCEPTFILES
+    CONTROL         "Progress1",IDC_PROGRESS_STATUS,"msctls_progress32",WS_BORDER,0,0,452,13
+END
+
+IDD_DIALOG_CLIENTCONFIG DIALOGEX 0, 0, 128, 49
+STYLE DS_SETFONT | WS_POPUP | WS_BORDER | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_IP,60,5,61,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "서버접속",IDOK,7,20,114,12
+    PUSHBUTTON      "종료",IDC_BUTTON_EXIT,7,33,114,11
+    CTEXT           "IP Address",IDC_STATIC,7,5,48,12,0,WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_DXSELECTLIST DIALOGEX 0, 0, 441, 325
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Diagnosis"
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST_DX,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,427,311
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 202, 85
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About MedicalPhoto"
+FONT 9, "굴림", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,153,64,42,14,WS_GROUP
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,30,66,68,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,10,11,20,20
+    LTEXT           "http://medicalphoto.org",IDC_STATIC_CREDIT,30,53,84,12
+    LTEXT           "All powered by",IDC_STATIC_CREDIT2,45,24,51,12
+    LTEXT           "아이피부과 한승석",IDC_STATIC_CREDIT3,30,41,165,12
+    LTEXT           "1.0.0.255",IDC_STATIC_VERSION,111,9,79,8,SS_CENTERIMAGE
+    LTEXT           "MedicalPhoto Ver.",IDC_STATIC,45,9,60,8
+    LTEXT           "M.D., Ph.D. Han Seung Seog",IDC_STATIC_HAN,96,24,95,8
+END
+
+IDD_DIALOG_OPTION DIALOGEX 0, 0, 280, 300
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preference"
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "E&xit",IDCANCEL,209,273,50,14
+    CONTROL         "",IDC_TAB_OPTION,"SysTabControl32",0x0,7,7,265,266
+END
+
+IDD_DIALOG_CUSTOMDX DIALOGEX 0, 0, 259, 258
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "User Diagnosis"
+FONT 10, "MS Sans Serif", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&Save",IDOK,153,236,50,14
+    CONTROL         "",IDC_LIST_CUSTOMDX,"SysListView32",LVS_REPORT | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER,7,7,246,228
+    PUSHBUTTON      "E&xit",IDC_BUTTON_EXIT,203,236,50,14
+END
+
+IDD_DIALOG_OPTION1 DIALOGEX 0, 0, 260, 250
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_IP,133,20,100,15,ES_AUTOHSCROLL
+    CONTROL         "&Filename",IDC_CHECK_SEARCH_FILENAME,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,83,80,12,WS_EX_RIGHT
+    CONTROL         "&ID",IDC_CHECK_SEARCH_ID,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,95,80,12,WS_EX_RIGHT
+    CONTROL         "Patient &Name",IDC_CHECK_SEARCH_NAME,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,106,80,12,WS_EX_RIGHT
+    CONTROL         "ICD",IDC_CHECK_SEARCH_ICD,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,83,80,12,WS_EX_RIGHT
+    CONTROL         "Diagnosis",IDC_CHECK_SEARCH_DX,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,95,80,12,WS_EX_RIGHT
+    CONTROL         "&Comment",IDC_CHECK_SEARCH_C,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,106,80,12,WS_EX_RIGHT
+    LISTBOX         IDC_LIST_DXFILE,38,151,70,65,LBS_NOINTEGRALHEIGHT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">>",IDC_BUTTON1,122,165,20,14,WS_DISABLED | NOT WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_BUTTON2,122,185,20,14,WS_DISABLED | NOT WS_TABSTOP
+    LISTBOX         IDC_LIST_DXACTIVEFILE,157,151,70,64,LBS_NOINTEGRALHEIGHT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Save",IDC_BUTTON_SAVE,201,237,50,14
+    EDITTEXT        IDC_EDIT_PASS,133,8,100,15,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "검색 옵션",IDC_STATIC,25,72,215,52
+    CTEXT           "IP Address",IDC_STATIC,43,20,70,15,SS_CENTERIMAGE
+    CTEXT           "Password",IDC_STATIC,43,8,70,15,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED | WS_BORDER
+    GROUPBOX        "서버 정보",IDC_STATIC,25,8,215,34
+    GROUPBOX        "진단명 데이터베이스",IDC_STATIC,25,129,215,102
+    GROUPBOX        "",IDC_STATIC,25,45,215,24
+    CONTROL         """Submit"" 버튼 눌렀을때 파일명을 변환합니다.",IDC_CHECK_SUBMITCHANGE,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,42,56,188,10
+    CTEXT           "사용중",IDC_STATIC,180,141,22,8
+    CTEXT           "사용하지않음",IDC_STATIC,59,141,42,8
+END
+
+IDD_DIALOG_OPTION2 DIALOGEX 0, 0, 260, 250
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST_USERLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,244,195
+    EDITTEXT        IDC_EDIT_NEWUSER,7,209,244,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Save",IDC_BUTTON_SAVE,201,237,50,14
+END
+
+IDD_DIALOG_INPUT DIALOGEX 0, 0, 293, 26
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_INPUTBOX,7,7,170,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&OK",IDOK,184,7,50,12
+    PUSHBUTTON      "&Cancel",IDCANCEL,236,7,50,12
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 551, 30
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Cancel",IDCANCEL,494,7,50,16
+    CONTROL         "",IDC_PROGRESS_PROGRESSBAR,"msctls_progress32",WS_BORDER,7,7,486,16
+END
+
+IDD_DIALOG_SELECT_TYPE DIALOGEX 0, 0, 330, 129
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Stand-Alone",IDC_BUTTON_SINGLE,7,7,53,50
+    PUSHBUTTON      "&Networked",IDC_BUTTON_MULTI,7,57,53,45
+    PUSHBUTTON      "E&xit",IDC_BUTTON_EXIT,7,102,316,20
+    CTEXT           "ONE computer\n- Store, manage and view in ONE computer",IDC_STATIC,65,23,258,27
+    CTEXT           "TWO or MORE computers \n- SERVER computer stores and manages photos\n- MULTIPLE CLIENTS connect to the server and view photos",IDC_STATIC,65,65,258,28
+END
+
+IDD_DIALOG_DATAMANAGER DIALOGEX 0, 0, 303, 270
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Collect and Build"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "&Cancel",IDCANCEL,246,249,50,14
+    CONTROL         "",IDC_LIST_STATUS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,289,235
+END
+
+IDD_DIALOG_VIEWLOGO DIALOGEX 0, 0, 145, 196
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_THICKFRAME
+EXSTYLE WS_EX_STATICEDGE
+FONT 10, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CONTROL         IDB_BITMAP2,IDC_STATIC_LOGO,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,145,135
+    GROUPBOX        "",IDC_STATIC,7,139,132,48
+    LTEXT           "",IDC_STATIC_TIP,12,147,121,36,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "E&xit",IDC_BUTTON_VIEWLOGO_EXIT,105,175,33,12
+END
+
+IDD_DIALOG_SELECTCHECK DIALOGEX 0, 0, 360, 224
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "파일삭제"
+FONT 10, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,303,203,50,14
+    DEFPUSHBUTTON   "OK",IDOK,252,203,50,14
+    CTEXT           "파일들을 삭제하시겠습니까? 삭제하면 되돌릴 수 없습니다.",IDC_STATIC_CAPTION_DELETE,7,204,238,13,SS_CENTERIMAGE | SS_SUNKEN
+    CONTROL         "",IDC_LIST_SELECTLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,346,195
+END
+
+IDD_DIALOG_DATEPICKER DIALOGEX 0, 0, 156, 70
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Report"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_DATETIMEPICKER_FROM,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,49,7,100,15
+    CONTROL         "",IDC_DATETIMEPICKER_TO,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,49,27,100,15
+    DEFPUSHBUTTON   "OK",IDOK,45,49,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,99,49,50,14
+    LTEXT           "From",IDC_STATIC,11,7,23,16
+    LTEXT           "To",IDC_STATIC,11,26,23,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_WHRIAVIEW_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 629
+        VERTGUIDE, 84
+        VERTGUIDE, 86
+        VERTGUIDE, 90
+        VERTGUIDE, 92
+        VERTGUIDE, 140
+        VERTGUIDE, 290
+        VERTGUIDE, 300
+        VERTGUIDE, 370
+        VERTGUIDE, 529
+        VERTGUIDE, 550
+        VERTGUIDE, 584
+        VERTGUIDE, 628
+        TOPMARGIN, 5
+        HORZGUIDE, 10
+        HORZGUIDE, 25
+        HORZGUIDE, 40
+        HORZGUIDE, 55
+        HORZGUIDE, 70
+        HORZGUIDE, 248
+    END
+
+    IDD_DIALOG_IMAGEDISPLAY, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG_PICTURELIST, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG_CLIENTCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        VERTGUIDE, 55
+        VERTGUIDE, 60
+        VERTGUIDE, 121
+        VERTGUIDE, 125
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 44
+        HORZGUIDE, 17
+        HORZGUIDE, 20
+        HORZGUIDE, 37
+        HORZGUIDE, 40
+    END
+
+    IDD_DIALOG_DXSELECTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 434
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 318
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_DIALOG_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 288
+    END
+
+    IDD_DIALOG_CUSTOMDX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_DIALOG_OPTION1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_DIALOG_OPTION2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+    END
+
+    IDD_DIALOG_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 19
+    END
+
+    IDD_DIALOG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 544
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 23
+    END
+
+    IDD_DIALOG_SELECT_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        VERTGUIDE, 60
+        VERTGUIDE, 65
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+        HORZGUIDE, 10
+        HORZGUIDE, 60
+        HORZGUIDE, 105
+    END
+
+    IDD_DIALOG_DATAMANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 296
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 263
+    END
+
+    IDD_DIALOG_VIEWLOGO, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_DIALOG_SELECTCHECK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 353
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+        HORZGUIDE, 132
+    END
+
+    IDD_DIALOG_DATEPICKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_INVALID      BITMAP                  "res\\bitmap1.bmp"
+
+IDB_BITMAP_CHECKMARK    BITMAP                  "res\\bmp00001.bmp"
+
+IDB_BITMAP_UPDATEON     BITMAP                  "res\\on.bmp"
+
+IDB_BITMAP_L1           BITMAP                  "res\\button_left_1.bmp"
+
+IDB_BITMAP_L3           BITMAP                  "res\\button_left_2.bmp"
+
+IDB_BITMAP_L2           BITMAP                  "res\\button_left_3.bmp"
+
+IDB_BITMAP_R1           BITMAP                  "res\\button_right_1.bmp"
+
+IDB_BITMAP_R3           BITMAP                  "res\\button_right_2.bmp"
+
+IDB_BITMAP_R2           BITMAP                  "res\\button_right_3.bmp"
+
+IDB_BITMAP_Z2           BITMAP                  "res\\button_zoom_3.bmp"
+
+IDB_BITMAP_Z1           BITMAP                  "res\\button_zoom_1.bmp"
+
+IDB_BITMAP_Z3           BITMAP                  "res\\button_zoom_2.bmp"
+
+IDB_BITMAP_BLACK        BITMAP                  "res\\bitmap2.bmp"
+
+IDB_BITMAP_LOGO         BITMAP                  "res\\bitmap_logo copy.bmp"
+
+IDB_BITMAP_N1           BITMAP                  "res\\next_right_1.bmp"
+
+IDB_BITMAP_N2           BITMAP                  "res\\next_right_2.bmp"
+
+IDB_BITMAP_N3           BITMAP                  "res\\next_right_3.bmp"
+
+IDB_BITMAP_P1           BITMAP                  "res\\prev_left_1.bmp"
+
+IDB_BITMAP_P2           BITMAP                  "res\\prev_left_2.bmp"
+
+IDB_BITMAP_P3           BITMAP                  "res\\prev_left_3.bmp"
+
+IDB_BITMAP_C            BITMAP                  "E:\\SVN\\branches\\whriaview\\res\\close.bmp"
+
+IDB_BITMAP_RO3          BITMAP                  "res\\rotate3.bmp"
+
+IDB_BITMAP_RO1          BITMAP                  "res\\rotate1.bmp"
+
+IDB_BITMAP_RO2          BITMAP                  "res\\rotate2.bmp"
+
+IDB_BITMAP_ROT3         BITMAP                  "res\\rotate3_.bmp"
+
+IDB_BITMAP_ROT1         BITMAP                  "res\\rotate1_.bmp"
+
+IDB_BITMAP_ROT2         BITMAP                  "res\\rotate2_.bmp"
+
+IDB_BITMAP_F12          BITMAP                  "res\\bitmap6.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POPUP_LIST MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "선택해제 [ESC]",                  ID_POPUP_DISSELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "다운로드 [Ctrl-D]",               ID_POPUP_LIST_COPY
+        MENUITEM "현재위치에 업로드",                   ID_POPUP_LIST_UPLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "이름바꾸기 [Ctrl-R]",              ID_POPUP_LIST_RENAME
+        MENUITEM "삭제",                          ID_POPUP_LIST_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "PowerPoint 로 이동 [Ctrl-P]",    ID_POPUP_TOPOWERPOINT_LIST
+    END
+END
+
+IDR_MENU_POPUP_TREE_UPLOAD MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "다운로드 [Ctrl-D]",               ID_POPUP_TREE_COPY
+        MENUITEM "업로드",                         ID_POPUP_TREE_UPLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "폴더생성 [Ctrl-C]",               ID_POPUP_TREE_CREATE
+        MENUITEM "이름바꾸기 [Ctrl-R]",              ID_POPUP_RENAME
+        MENUITEM "삭제",                          ID_POPUP_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "PowerPoint 로 이동 [Ctrl-P]",    ID_POPUP_TOPOWERPOINT_TREE
+        MENUITEM SEPARATOR
+        MENUITEM "리포트 생성",                      ID_POPUP_TREE_REPORT
+    END
+END
+
+IDR_MENU_MAIN MENU
+BEGIN
+    POPUP "화면모드"
+    BEGIN
+        MENUITEM "사진만 꽉차게 [Ctrl-T]",            ID_VIEW_BASIC
+        MENUITEM "기본 화면 [Ctrl-T]",              ID_VIEW_ADVANCED
+    END
+    POPUP "사진올리기"
+    BEGIN
+        MENUITEM "사진 자동으로 올리기 [Ctrl-U]",        ID_UPLOAD_UPLOADEX
+    END
+    POPUP "도구"
+    BEGIN
+        MENUITEM "진단명 편집",                      ID_DIAGNOSIS_USERDIAGNOSIS
+        MENUITEM "리포트",                         ID_TOOL_REPORT
+        MENUITEM "설정",                          ID_PREFERENCE_PREFERENCE
+    END
+    POPUP "&About"
+    BEGIN
+        MENUITEM "&About",                      ID_ABOUT_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG_IMAGEDISPLAY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_VIEWLOGO AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_WHRIAVIEW_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DIALOG_OPTION1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "MedicalPhoto Information(&A)..."
+    IDS_TIP1                "All Rights Reserved by Han Seung Seog (whria78@gmail.com)"
+    IDS_TIP2                "CTRL 키를 누른 상태로 사진을 선택하면 비슷한 시기에 찍힌 사진이 전부 선택됩니다."
+    IDS_TIP3                "윈도우 탐색기로 사진 저장되는 위치에 새로운 폴더를 만들 수 있습니다."
+    IDS_TIP4                "파워포인트로 보내기 메뉴를 이용하면 쉽게 프리젠테이션할 수 있습니다."
+    IDS_TIP5                "Search 박스에서 검색할 때 대문자로 AND 나 OR 키워드를 사용가능합니다."
+    IDS_TIP6                "진단명 박스에 ICD-10 진단명 뿐 아니라 자신만의 진단명이나 프로시저 이름도 입력 가능합니다."
+    IDS_TIP7                "모니터가 2개 이상인 경우 PAGEUP, PAGEDOWN 키를 이용하여 사진의 옆으로 넘길 수 있습니다."
+    IDS_TIP8                "MedicalPhotoServer 에 업데이트가 있는 경우 업데이트 메세지가 나타납니다."
+    IDS_TIP9                "전체화면에서 SPACE 키를 누르면 사진이 확대됩니다."
+    IDS_TIP10               "공식 홈페이지는 http://medicalphoto.org 입니다."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TIP11               "버그나 제안사항이 있는 경우 whria78@gmail.com 으로 메일 바랍니다."
+    IDS_TIP12               "MedicalPhoto 는 한글, 영어를 동시에 지원합니다. 영문 윈도우에서 실행시 영어 인터페이스로 실행됩니다."
+    IDS_TIP13               "서버의 s_config.txt 의 ADMIN_PASS 부분을 수정하여 잠금 암호 설정이 가능합니다."
+    IDS_TIP14               "Tip1"
+    IDS_TIP15               "Tip1"
+    IDS_TIP16               "Tip1"
+    IDS_TIP17               "Tip1"
+    IDS_TIP18               "Tip1"
+    IDS_TIP19               "Tip1"
+    IDS_TIP20               "Tip1"
+    IDS_EXIT                "프로그램을 종료하시겠습니까?"
+    IDS_SERVERNONRESPONSE   "MedicalPhoto 서버가 응답하지 않습니다."
+    IDS_NOREMOVEROOT        "가장 상위 폴더는 지울 수 없습니다."
+    IDS_CONFIRM_DELETE      "파일을 지우시겠습니까?   :  "
+    IDS_DOWN_SELECT_FOLDER  "[DOWNLOAD] 파일이 복사될 폴더를 지정해주세요"
+    IDS_TOOLTIP1            "찾고 싶은 키워드를  ""smith""[NAME] AND tinea[DX]  와 같은 형식으로 입력하세요.\n"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TOOLTIP2            "진단명의 일부를 입력하고 [Enter] 키를 누르면 진단명을 찾을 수 있습니다.\n"
+    IDS_TOOLTIP3            "코멘트 박스 내용은 수정시에 자동으로 저장됩니다. 코멘트 박스의 체크박스는 선택된 모든 사진에 같은 코멘트가 해당될 때 체크됩니다.\n"
+    IDS_TOOLTIP4            "Submit 버튼을 누르면 입력한 환자 정보가 저장됩니다. 환자 정보를 반영해서 파일명도 자동으로 수정합니다. \n"
+    IDS_TOOLTIP5            "EXIF metadata 는 사진 찍은 날짜 정보입니다. 수정할 수 없습니다. \n"
+    IDS_TOOLTIP6            "윈도우 탐색기를 이용해서 사진이 저장된 폴더를 직접 접근하여 새로운 이름의 폴더를 만들거나 폴더명을 변경할 수 있습니다. \n"
+    IDS_TOOLTIP7            "CTRL 키를 누르고 사진을 선택하면 비슷한 시기에 찍은 사진이 한꺼번에 선택됩니다.\n"
+    IDS_FILE_NOTEXIST       "파일이 존재하지 않습니다."
+    IDS_SHORT_KEYWORD       "입력한 키워드가 너무 짧은 문장입니다."
+    IDS_RECEIVE_LIST        "사진 목록을 전송중입니다."
+    IDS_UPLOAD_FOLDER       "사진을 업로드할 폴더를 선택해주세요"
+    IDS_NO_PHOTO_REPORT     "리포트할 사진이 없습니다"
+    IDS_SELECT_FOLDER2      "[REPORT] 리포트 파일이 생성될 폴더를 지정해주세요"
+    IDS_SELECT_FOLDER3      "사진을 업로드할 폴더를 지정해주세요"
+    IDS_RENAME_FILE         "파일명변환  :   "
+    IDS_START_BUILD_PPT     "파워포인트 파일 생성중입니다 ..."
+    IDS_FAIL_LOAD_PPT       "파워포인트 실행에 실패하였습니다. 파워포인트로 보내기 기능은 Microsoft Powerpoint 가 설치되어 있어야 실행할 수 있습니다."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SELECT_FOLDER4      "[EXPORT PPT] 파워포인트 파일을 저장할 폴더를 지정해주세요"
+    IDS_EMPTY_FOLDER        "폴더에 파일이 없습니다"
+    IDS_MANY_FILE           "현재 선택한 파일이 %d 개입니다. 정말 모두 파워포인트로 내보내시겠습니까?"
+    IDS_FAIL_CREATE_FOLDER  "폴더 생성에 실패하였습니다.  :  "
+    IDS_DRAG_FILE_NOT_FOLDER 
+                            "사진파일을 Drag & Drop 할 수는 있지만 폴더를 Drag & Drop 할 수는 없습니다."
+    IDS_TOO_MANY_PHOTOS     "사진의 개수가 너무 많아 ( > %d ) 모두 출력할 수 없습니다. 개수제한을 늘리려면 config 파일을 수정하세요"
+    IDS_ERROR_GET_INFO      "체크한 사진의 정보를 얻는데 실패했습니다. 오류를 수정하려면 백업이후에 MedicalPhotoServer 에서 데이터베이스 체크 작업을 하세요."
+END
+
+#endif    // Korean (Korea) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 202, 85
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About MedicalPhoto"
+FONT 9, "??", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,153,64,42,14,WS_GROUP
+    LTEXT           "Copyright (C) 2008",IDC_STATIC,30,66,68,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,10,11,20,20
+    LTEXT           "http://medicalphoto.org",IDC_STATIC_CREDIT,30,53,84,12
+    LTEXT           "All powered by",IDC_STATIC_CREDIT2,45,24,51,12
+    LTEXT           "Department of Dermatology, Asan Medical Center",IDC_STATIC_CREDIT3,30,41,165,12
+    LTEXT           "1.0.0.255",IDC_STATIC_VERSION,111,9,79,8,SS_CENTERIMAGE
+    LTEXT           "MedicalPhoto Ver.",IDC_STATIC,45,9,60,8
+    LTEXT           "M.D., Ph.D. Han Seung Seog",IDC_STATIC_HAN,96,24,95,8
+END
+
+IDD_DIALOG_OPTION1 DIALOGEX 0, 0, 260, 250
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_IP,133,20,100,15,ES_AUTOHSCROLL
+    CONTROL         "&Filename",IDC_CHECK_SEARCH_FILENAME,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,83,80,12,WS_EX_RIGHT
+    CONTROL         "&ID",IDC_CHECK_SEARCH_ID,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,95,80,12,WS_EX_RIGHT
+    CONTROL         "Patient &Name",IDC_CHECK_SEARCH_NAME,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,50,106,80,12,WS_EX_RIGHT
+    CONTROL         "ICD",IDC_CHECK_SEARCH_ICD,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,83,80,12,WS_EX_RIGHT
+    CONTROL         "Diagnosis",IDC_CHECK_SEARCH_DX,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,95,80,12,WS_EX_RIGHT
+    CONTROL         "&Comment",IDC_CHECK_SEARCH_C,"Button",BS_AUTOCHECKBOX | BS_VCENTER | BS_FLAT | WS_DISABLED,140,106,80,12,WS_EX_RIGHT
+    LISTBOX         IDC_LIST_DXFILE,38,151,70,65,LBS_NOINTEGRALHEIGHT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">>",IDC_BUTTON1,122,165,20,14,WS_DISABLED | NOT WS_TABSTOP
+    PUSHBUTTON      "<<",IDC_BUTTON2,122,185,20,14,WS_DISABLED | NOT WS_TABSTOP
+    LISTBOX         IDC_LIST_DXACTIVEFILE,157,151,70,64,LBS_NOINTEGRALHEIGHT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Save",IDC_BUTTON_SAVE,201,237,50,14
+    EDITTEXT        IDC_EDIT_PASS,133,8,100,15,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "Search Option",IDC_STATIC,25,72,215,52
+    CTEXT           "IP Address",IDC_STATIC,43,20,70,15,SS_CENTERIMAGE
+    CTEXT           "Password",IDC_STATIC,43,8,70,15,SS_CENTERIMAGE | NOT WS_VISIBLE | WS_DISABLED | WS_BORDER
+    GROUPBOX        "Server Information",IDC_STATIC,25,8,215,34
+    GROUPBOX        "Diagnosis Database",IDC_STATIC,25,129,215,102
+    GROUPBOX        "Automation",IDC_STATIC,25,45,215,24
+    CONTROL         "Change filename when ""Submit"" button is clicked",IDC_CHECK_SUBMITCHANGE,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,42,56,188,10
+    CTEXT           "Loaded",IDC_STATIC,180,141,25,8
+    CTEXT           "Unloaded",IDC_STATIC,59,141,32,8
+END
+
+IDD_DIALOG_SELECTCHECK DIALOGEX 0, 0, 360, 224
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Delete Files"
+FONT 10, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,303,203,50,14
+    DEFPUSHBUTTON   "OK",IDOK,252,203,50,14
+    CTEXT           "Are you sure to Delele All  ?",IDC_STATIC_CAPTION_DELETE,7,204,238,13,SS_CENTERIMAGE | SS_SUNKEN
+    CONTROL         "",IDC_LIST_SELECTLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,346,195
+END
+
+IDD_DIALOG_CLIENTCONFIG DIALOGEX 0, 0, 128, 49
+STYLE DS_SETFONT | WS_POPUP | WS_BORDER | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_IP,60,5,61,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Connect",IDOK,7,20,114,12
+    PUSHBUTTON      "E&xit",IDC_BUTTON_EXIT,7,33,114,11
+    CTEXT           "IP Address",IDC_STATIC,7,5,48,12,0,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_DIALOG_OPTION1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_DIALOG_SELECTCHECK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 353
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 217
+        HORZGUIDE, 132
+    END
+
+    IDD_DIALOG_CLIENTCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        VERTGUIDE, 55
+        VERTGUIDE, 60
+        VERTGUIDE, 121
+        VERTGUIDE, 125
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 44
+        HORZGUIDE, 17
+        HORZGUIDE, 20
+        HORZGUIDE, 37
+        HORZGUIDE, 40
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU
+BEGIN
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Simple [Ctrl-T]",            ID_VIEW_BASIC
+        MENUITEM "&Normal [Ctrl-T]",            ID_VIEW_ADVANCED
+    END
+    POPUP "&Upload"
+    BEGIN
+        MENUITEM "Upload Photography [Ctrl-U]", ID_UPLOAD_UPLOADEX
+    END
+    POPUP "&Tool"
+    BEGIN
+        MENUITEM "User &Diagnosis",             ID_DIAGNOSIS_USERDIAGNOSIS
+        MENUITEM "&Report",                     ID_TOOL_REPORT
+        MENUITEM "&Preference",                 ID_PREFERENCE_PREFERENCE
+    END
+    POPUP "&About"
+    BEGIN
+        MENUITEM "&About",                      ID_ABOUT_ABOUT
+    END
+END
+
+IDR_MENU_POPUP_LIST MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "Disselect All [ESC]",         ID_POPUP_DISSELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Download [Ctrl-D]",          ID_POPUP_LIST_COPY
+        MENUITEM "&Upload",                     ID_POPUP_LIST_UPLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "&Rename [Ctrl-R]",            ID_POPUP_LIST_RENAME
+        MENUITEM "Delete",                      ID_POPUP_LIST_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "To &PowerPoint [Ctrl-P]",     ID_POPUP_TOPOWERPOINT_LIST
+    END
+END
+
+IDR_MENU_POPUP_TREE_UPLOAD MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "&Download [Ctrl-D]",          ID_POPUP_TREE_COPY
+        MENUITEM "&Upload",                     ID_POPUP_TREE_UPLOAD
+        MENUITEM SEPARATOR
+        MENUITEM "&Create [Ctrl-C]",            ID_POPUP_TREE_CREATE
+        MENUITEM "&Rename [Ctrl-R]",            ID_POPUP_RENAME
+        MENUITEM "Delete",                      ID_POPUP_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "To &PowerPoint [Ctrl-P]",     ID_POPUP_TOPOWERPOINT_TREE
+        MENUITEM SEPARATOR
+        MENUITEM "Report",                      ID_POPUP_TREE_REPORT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG_OPTION1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "MedicalPhoto Information(&A)..."
+    IDS_TIP1                "All Rights Reserved by Han Seung Seog (whria78@gmail.com)"
+    IDS_TIP2                "Select thumbnail while pressing CTRL key. Then All photos taken on the same time are selected."
+    IDS_TIP3                "You can create a new folder to the location where you want to save your photos in Windows Explorer."
+    IDS_TIP4                "Use the send menu to PowerPoint, the presentation will be done easily."
+    IDS_TIP5                "When searching in the Search box, you can use the AND and OR keywords in uppercase."
+    IDS_TIP6                "You can enter not only the ICD-10 diagnosis, but also the name of your procedure and your diagnostic name."
+    IDS_TIP7                "You can use PAGEUP, the PAGEDOWN key if you have two or more monitors, which passes photo to the next."
+    IDS_TIP8                "If there is an update to MedicalPhotoServer, update message will be displayed."
+    IDS_TIP9                "Press the SPACE key in full screen to see larger photo."
+    IDS_TIP10               "Official website is http://medicalphoto.org."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TIP11               "Please email whria78@gmail.com If you have any suggestion or bug."
+    IDS_TIP12               "MedicalPhoto supports both Korean and English."
+    IDS_TIP13               "Password lock can be set at ""ADMIN_PASS="" in s_config.txt (server side)"
+    IDS_TIP14               "Tip1"
+    IDS_TIP15               "Tip1"
+    IDS_TIP16               "Tip1"
+    IDS_TIP17               "Tip1"
+    IDS_TIP18               "Tip1"
+    IDS_TIP19               "Tip1"
+    IDS_TIP20               "Tip1"
+    IDS_EXIT                "Are you sure to exit ?"
+    IDS_SERVERNONRESPONSE   "MedicalPhotoServer does not response"
+    IDS_NOREMOVEROOT        "You can not remove the root folder"
+    IDS_CONFIRM_DELETE      "Are you sure to delete ?   :  "
+    IDS_DOWN_SELECT_FOLDER  "[DOWNLOAD] Please specify the folder where the files will be copied"
+    IDS_TOOLTIP1            "Input keywords like ""smith""[NAME] AND tinea[DX]\n"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TOOLTIP2            "[Diagnosis Keyword] + [Enter] will reteive the list of related diagnosises\n"
+    IDS_TOOLTIP3            "Comment box can store a list of comments. Comments will be saved and loaded as soon as you click photographies. The check box means [all selected]. If all the selected images have the same comment, then check box  will be checked\n"
+    IDS_TOOLTIP4            "To submit a diagnosis, patient ID, name and ICD code, click the button. It will rename the filename of all the selected image in respect of file informations. If you dont want to rename, go to [Preference] and uncheck [Automation]\n"
+    IDS_TOOLTIP5            "EXIF metadata information of the date taken, It can not be edited\n"
+    IDS_TOOLTIP6            "You can directly access folder tree by Windows explorer to create or rename\n"
+    IDS_TOOLTIP7            "Select thumbnail while pressing CTRL key. Then All photos taken on the same time are selected."
+    IDS_FILE_NOTEXIST       "File not exists"
+    IDS_SHORT_KEYWORD       "Too short keywords"
+    IDS_RECEIVE_LIST        "Receiving : List of Photos"
+    IDS_UPLOAD_FOLDER       "Please select the folder you want to upload your pictures"
+    IDS_NO_PHOTO_REPORT     "No Photo to be reported"
+    IDS_SELECT_FOLDER2      "[REPORT] Please specify the folder where the report file will be created"
+    IDS_SELECT_FOLDER3      "Please specify the folder where the photos will be uploaded"
+    IDS_RENAME_FILE         "Rename  :   "
+    IDS_START_BUILD_PPT     "Now creating Microsoft powerpoint file ..."
+    IDS_FAIL_LOAD_PPT       "Failed to run the PowerPoint. Microsoft Powerpoint should be installed to execute the function."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SELECT_FOLDER4      "[EXPORT PPT] Please specify the folder where you want to save the PowerPoint file"
+    IDS_EMPTY_FOLDER        "There are no files in the folder"
+    IDS_MANY_FILE           "The number of photos you selected is currently %d. Do you really export all to Microsoft Powerpoint?"
+    IDS_FAIL_CREATE_FOLDER  "Fail to create a folder  :  "
+    IDS_DRAG_FILE_NOT_FOLDER 
+                            "Although it is possible to Drag & Drop photo files, It will not be able to Drag & Drop a folder."
+    IDS_TOO_MANY_PHOTOS     "It will not be able to output all too many of the photo ( > %d ). To increase the limit on the number, please change the config file"
+    IDS_ERROR_GET_INFO      "It failed to get the information of the photo that you have checked. To fix the error, please check your database in MedicalPhotoServer after the backup."
+END
+
+#endif    // English resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\WhriaView.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

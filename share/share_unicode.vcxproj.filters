@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{3d1fb7ac-ac4c-4afe-8445-a0f626814122}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BlowFish.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="cmycout.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="codechange.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="datatype.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="DxDB.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="etc.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="EXIF.CPP">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="imageprocess.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="netpath.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="netwatcher.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="sql_db.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8_codecvt_facet.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="watcher.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Blowfish.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="cmycout.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="codechange.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="datatype.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="datatype_basic.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="DxDB.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="etc.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="EXIF.H">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="imageprocess.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="netpath.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="netwatcher.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="sql_db.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_list.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="unicode.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8_codecvt_facet.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="watcher.h">
+      <Filter>main</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

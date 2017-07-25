@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{5691481c-3f0c-4281-a37e-9f6374eeec27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="etc">
+      <UniqueIdentifier>{ca0898ab-0961-445e-bbb2-6a146a3e016c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LogCommand.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="NTService.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LogCommand.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="NTService.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>etc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ico00001.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00005.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00006.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00007.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00008.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00009.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\ico00010.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\icon_pri.ico">
+      <Filter>etc</Filter>
+    </Image>
+    <Image Include="res\icon_sub.ico">
+      <Filter>etc</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="share_MFC.rc" />
+  </ItemGroup>
+</Project>

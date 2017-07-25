@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{f2d85a43-52d1-4d20-a410-e4abbae12f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\FolderBrowser">
+      <UniqueIdentifier>{edc95133-86e3-4065-90d8-cb70d965a914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Excel">
+      <UniqueIdentifier>{6bc65d87-b283-4c1c-b570-ebd3928db000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\ToolTipList">
+      <UniqueIdentifier>{2c8b6b4e-2089-4031-be40-c3019313ec1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\TextProgress">
+      <UniqueIdentifier>{8d4047df-ece8-46ad-99ba-6dcee1b090e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\MultiMonitor">
+      <UniqueIdentifier>{e59c65da-cfbd-4dd2-917f-f1ad3cea32fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\EditableListCtrl">
+      <UniqueIdentifier>{a3ca3a49-e4a4-40e2-88ab-06fd05d04738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Tooltip">
+      <UniqueIdentifier>{2b303c81-211b-46bb-9211-091d0de15bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\AutoCompleteEdit">
+      <UniqueIdentifier>{57bb6735-dd48-4323-b5bc-99f1620c7a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\ColorListBox">
+      <UniqueIdentifier>{f7341203-7484-4fbb-9b86-960a4a12eee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\MSPPT">
+      <UniqueIdentifier>{124863cb-025d-4be6-b2a0-9e4ca3a4b083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\Messagebox">
+      <UniqueIdentifier>{e92f97e8-d378-4cda-b16a-894977da5522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\ColorEdit">
+      <UniqueIdentifier>{7df7b4c9-93a7-4f3a-89d0-0dd5c7ea3b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{79db61a3-8fab-4384-a461-65cb81cfe7fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c7cd44fb-a054-4a77-bda5-579795c69669}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="DialogEx">
+      <UniqueIdentifier>{a0df2f9b-90b0-4214-b704-2b8840fbff14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BmpButton.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="DragDialog.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="DropFiles.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="HyperlinkStatic.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="RDragDropFiles.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="XBrowseForFolder.cpp">
+      <Filter>Lib\FolderBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicExcel.cpp">
+      <Filter>Lib\Excel</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolTipListCtrl.cpp">
+      <Filter>Lib\ToolTipList</Filter>
+    </ClCompile>
+    <ClCompile Include="TextProgressCtrl.cpp">
+      <Filter>Lib\TextProgress</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitorDC.cpp">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="Monitors.cpp">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="Multimon.cpp">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiMonitor.cpp">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditCell.cpp">
+      <Filter>Lib\EditableListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="ListCtrl.cpp">
+      <Filter>Lib\EditableListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CeXDib.cpp">
+      <Filter>Lib\Tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="PPDrawManager.cpp">
+      <Filter>Lib\Tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="PPHtmlDrawer.cpp">
+      <Filter>Lib\Tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="PPTooltip.cpp">
+      <Filter>Lib\Tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="XSuperTooltip.cpp">
+      <Filter>Lib\Tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="ACEdit.cpp">
+      <Filter>Lib\AutoCompleteEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="ACListWnd.cpp">
+      <Filter>Lib\AutoCompleteEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorListBox.cpp">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClCompile>
+    <ClCompile Include="ExListBox.cpp">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClCompile>
+    <ClCompile Include="HScrollListBox.cpp">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClCompile>
+    <ClCompile Include="msppt9.cpp">
+      <Filter>Lib\MSPPT</Filter>
+    </ClCompile>
+    <ClCompile Include="XMessageBox.cpp">
+      <Filter>Lib\Messagebox</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorEdit.cpp">
+      <Filter>Lib\ColorEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomDiagnosisList.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="IMAGEDISPLAY.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="InputServerAddress.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Preference.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressDialog.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectDiagnosisList.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WhriaView.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="WhriaViewDlg.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlsEx.cpp">
+      <Filter>DialogEx</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogEx.cpp">
+      <Filter>DialogEx</Filter>
+    </ClCompile>
+    <ClCompile Include="AppTypeSelect.cpp" />
+    <ClCompile Include="DatePicker.cpp" />
+    <ClCompile Include="DialogInput.cpp" />
+    <ClCompile Include="MyTabCtrl.cpp" />
+    <ClCompile Include="OptionPage1.cpp" />
+    <ClCompile Include="OptionPage2.cpp" />
+    <ClCompile Include="SelectCheck.cpp" />
+    <ClCompile Include="ViewLogo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BmpButton.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="DragDialog.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="DropFiles.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="HyperlinkStatic.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="RDragDropFiles.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="XBrowseForFolder.h">
+      <Filter>Lib\FolderBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicExcel.hpp">
+      <Filter>Lib\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolTipListCtrl.h">
+      <Filter>Lib\ToolTipList</Filter>
+    </ClInclude>
+    <ClInclude Include="TextProgressCtrl.h">
+      <Filter>Lib\TextProgress</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorDC.h">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitors.h">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiMonitor.h">
+      <Filter>Lib\MultiMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditCell.h">
+      <Filter>Lib\EditableListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="ListCtrl.h">
+      <Filter>Lib\EditableListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="CeXDib.h">
+      <Filter>Lib\Tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="PPDrawManager.h">
+      <Filter>Lib\Tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="PPHtmlDrawer.h">
+      <Filter>Lib\Tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="PPTooltip.h">
+      <Filter>Lib\Tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="XSuperTooltip.h">
+      <Filter>Lib\Tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="ACEdit.h">
+      <Filter>Lib\AutoCompleteEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="ACListWnd.h">
+      <Filter>Lib\AutoCompleteEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorListBox.h">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClInclude>
+    <ClInclude Include="ExListBox.h">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClInclude>
+    <ClInclude Include="HScrollListBox.h">
+      <Filter>Lib\ColorListBox</Filter>
+    </ClInclude>
+    <ClInclude Include="msppt9.h">
+      <Filter>Lib\MSPPT</Filter>
+    </ClInclude>
+    <ClInclude Include="XMessageBox.h">
+      <Filter>Lib\Messagebox</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomDiagnosisList.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="IMAGEDISPLAY.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="InputServerAddress.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Preference.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressDialog.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectDiagnosisList.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WhriaView.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="WhriaViewDlg.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlsEx.h">
+      <Filter>DialogEx</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogEx.h">
+      <Filter>DialogEx</Filter>
+    </ClInclude>
+    <ClInclude Include="AppTypeSelect.h" />
+    <ClInclude Include="DatePicker.h" />
+    <ClInclude Include="DialogInput.h" />
+    <ClInclude Include="MyTabCtrl.h" />
+    <ClInclude Include="OptionPage1.h" />
+    <ClInclude Include="OptionPage2.h" />
+    <ClInclude Include="SelectCheck.h" />
+    <ClInclude Include="versionNo.h" />
+    <ClInclude Include="ViewLogo.h" />
+    <ClInclude Include="CMemDC.h">
+      <Filter>Lib\TextProgress</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap_logo copy.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_zoom_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_zoom_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_zoom_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\closed.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\closedSel.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\FOLDER_CLOSE.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\FOLDER_OPEN.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00005.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00006.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00007.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00008.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00009.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00010.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00011.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_mai.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_pri.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_sub.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\next_right_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\next_right_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\next_right_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\open.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\openSel.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\optionmarks.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\prev_left_1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\prev_left_2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\prev_left_3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate1_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate2_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rotate3_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\whriaview copy.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\WhriaView.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\whria2\Desktop\close.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\close.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\rt_manif.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\WhriaView.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WhriaView.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Color.h">
+      <Filter>Lib\ColorEdit</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ColorEdit.h">
+      <Filter>Lib\ColorEdit</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

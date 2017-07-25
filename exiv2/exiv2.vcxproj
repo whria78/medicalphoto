@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D1798374-C663-4EBB-B135-FD4C95C5D5C5}</ProjectGuid>
+    <RootNamespace>exiv2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="actions.hpp" />
+    <ClInclude Include="basicio.hpp" />
+    <ClInclude Include="bmpimage.hpp" />
+    <ClInclude Include="canonmn.hpp" />
+    <ClInclude Include="convert.hpp" />
+    <ClInclude Include="cr2image.hpp" />
+    <ClInclude Include="crwimage.hpp" />
+    <ClInclude Include="datasets.hpp" />
+    <ClInclude Include="error.hpp" />
+    <ClInclude Include="exif.hpp" />
+    <ClInclude Include="exiv2.hpp" />
+    <ClInclude Include="exv_msvc.h" />
+    <ClInclude Include="fujimn.hpp" />
+    <ClInclude Include="futils.hpp" />
+    <ClInclude Include="getopt_win32.h" />
+    <ClInclude Include="gifimage.hpp" />
+    <ClInclude Include="i18n.h" />
+    <ClInclude Include="ifd.hpp" />
+    <ClInclude Include="image.hpp" />
+    <ClInclude Include="iptc.hpp" />
+    <ClInclude Include="jp2image.hpp" />
+    <ClInclude Include="jpgimage.hpp" />
+    <ClInclude Include="makernote.hpp" />
+    <ClInclude Include="makernote2.hpp" />
+    <CustomBuild Include="metacopy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="metadatum.hpp" />
+    <ClInclude Include="minoltamn.hpp" />
+    <ClInclude Include="mn.hpp" />
+    <ClInclude Include="mrwimage.hpp" />
+    <ClInclude Include="nikonmn.hpp" />
+    <ClInclude Include="olympusmn.hpp" />
+    <ClInclude Include="orfimage.hpp" />
+    <ClInclude Include="panasonicmn.hpp" />
+    <ClInclude Include="pentaxmn.hpp" />
+    <ClInclude Include="pngchunk.hpp" />
+    <ClInclude Include="pngimage.hpp" />
+    <ClInclude Include="private.h" />
+    <ClInclude Include="properties.hpp" />
+    <ClInclude Include="psdimage.hpp" />
+    <ClInclude Include="rafimage.hpp" />
+    <ClInclude Include="rcsid.hpp" />
+    <ClInclude Include="sigmamn.hpp" />
+    <ClInclude Include="sonymn.hpp" />
+    <ClInclude Include="tags.hpp" />
+    <ClInclude Include="tgaimage.hpp" />
+    <ClInclude Include="tiffcomposite.hpp" />
+    <ClInclude Include="tifffwd.hpp" />
+    <ClInclude Include="tiffimage.hpp" />
+    <ClInclude Include="tiffparser.hpp" />
+    <ClInclude Include="tiffvisitor.hpp" />
+    <ClInclude Include="timegm.h" />
+    <ClInclude Include="types.hpp" />
+    <ClInclude Include="tzfile.h" />
+    <ClInclude Include="utils.hpp" />
+    <ClInclude Include="value.hpp" />
+    <ClInclude Include="version.hpp" />
+    <ClInclude Include="xmp.hpp" />
+    <ClInclude Include="xmpsidecar.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="actions.cpp" />
+    <ClCompile Include="basicio.cpp" />
+    <ClCompile Include="bmpimage.cpp" />
+    <ClCompile Include="canonmn.cpp" />
+    <ClCompile Include="convert.cpp" />
+    <ClCompile Include="cr2image.cpp" />
+    <ClCompile Include="crwimage.cpp" />
+    <ClCompile Include="datasets.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="exif.cpp" />
+    <ClCompile Include="exiv2.cpp" />
+    <ClCompile Include="fujimn.cpp" />
+    <ClCompile Include="futils.cpp" />
+    <ClCompile Include="getopt_win32.c" />
+    <ClCompile Include="gifimage.cpp" />
+    <ClCompile Include="ifd.cpp" />
+    <ClCompile Include="image.cpp" />
+    <ClCompile Include="iptc.cpp" />
+    <ClCompile Include="jp2image.cpp" />
+    <ClCompile Include="jpgimage.cpp" />
+    <ClCompile Include="localtime.c" />
+    <ClCompile Include="makernote.cpp" />
+    <ClCompile Include="makernote2.cpp" />
+    <ClCompile Include="metacopy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="metadatum.cpp" />
+    <ClCompile Include="minoltamn.cpp" />
+    <ClCompile Include="mrwimage.cpp" />
+    <ClCompile Include="nikonmn.cpp" />
+    <ClCompile Include="olympusmn.cpp" />
+    <ClCompile Include="orfimage.cpp" />
+    <ClCompile Include="panasonicmn.cpp" />
+    <ClCompile Include="path-test.cpp" />
+    <ClCompile Include="pentaxmn.cpp" />
+    <ClCompile Include="pngchunk.cpp" />
+    <ClCompile Include="pngimage.cpp" />
+    <ClCompile Include="properties.cpp" />
+    <ClCompile Include="psdimage.cpp" />
+    <ClCompile Include="rafimage.cpp" />
+    <ClCompile Include="sigmamn.cpp" />
+    <ClCompile Include="sonymn.cpp" />
+    <ClCompile Include="taglist.cpp" />
+    <ClCompile Include="tags.cpp" />
+    <ClCompile Include="tgaimage.cpp" />
+    <ClCompile Include="tiffcomposite.cpp" />
+    <ClCompile Include="tiffimage.cpp" />
+    <ClCompile Include="tiffparser.cpp" />
+    <ClCompile Include="tiffvisitor.cpp" />
+    <ClCompile Include="types.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="value.cpp" />
+    <ClCompile Include="version.cpp" />
+    <ClCompile Include="xmp.cpp" />
+    <ClCompile Include="xmpsidecar.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xmpsdk\xmpsdk.vcxproj">
+      <Project>{440119e0-66ad-4cc2-b89f-67f77bc6eac6}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

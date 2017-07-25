@@ -1,0 +1,1714 @@
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-30 22:46:11
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-30 22:51:19
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-31 17:58:36
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-31 17:58:43
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-31 17:58:56
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Mar-31 18:18:18
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2012-Apr-01 08:38:15
+Saving... e:\SVN\branches\Configure\s_config.txt : 2012-Apr-01 08:39:00
+Try to open the Database [ D:\down\down.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2012-Apr-01 08:39:03
+Try to open the Database [ D:\down\down.dat ]
+[sql] select * from `version`;
+## Volume : D:\down
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2012-Apr-01 08:39:03
+Check Folder : D:/down
+[sql] SELECT * FROM fileinfo WHERE netdir='down';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2012-Apr-01 08:39:04
+Saving... ../version.dat : 2012-Apr-01 13:22:13
+Saving... e:\SVN\branches\Configure\s_config.txt : 2012-Apr-01 13:22:20
+Try to open the Database [ D:\down\down.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2012-Apr-01 13:22:23
+Try to open the Database [ D:\down\down.dat ]
+[sql] select * from `version`;
+## Volume : D:\down
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2012-Apr-01 13:22:24
+Check Folder : D:/down
+[sql] SELECT * FROM fileinfo WHERE netdir='down';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/favorate
+Create Item : D:\down\favorate
+[sql] INSERT INTO fileinfo VALUES ('down/favorate','down','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/favorate';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/thumb
+Create Item : D:\down\thumb
+[sql] INSERT INTO fileinfo VALUES ('down/thumb','down','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/thumb';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/thumb/12-01-25
+Create Item : D:\down\thumb\12-01-25
+[sql] INSERT INTO fileinfo VALUES ('down/thumb/12-01-25','down/thumb','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/thumb/12-01-25';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/thumb/2012-01
+Create Item : D:\down\thumb\2012-01
+[sql] INSERT INTO fileinfo VALUES ('down/thumb/2012-01','down/thumb','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/thumb/2012-01';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/thumb/2012-01/12-01-01
+Create Item : D:\down\thumb\2012-01\12-01-01
+[sql] INSERT INTO fileinfo VALUES ('down/thumb/2012-01/12-01-01','down/thumb/2012-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/thumb/2012-01/12-01-01';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/thumb/2012-01/12-01-25
+Create Item : D:\down\thumb\2012-01\12-01-25
+[sql] INSERT INTO fileinfo VALUES ('down/thumb/2012-01/12-01-25','down/thumb/2012-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/thumb/2012-01/12-01-25';
+[sql] begin transaction
+[sql] commit transaction
+Check Folder : D:/down/tmp
+Create Item : D:\down\tmp
+[sql] INSERT INTO fileinfo VALUES ('down/tmp','down','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='down/tmp';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2012-Apr-01 13:22:26
+Saving... ../version.dat : 2012-Apr-01 13:25:44
+Saving... e:\SVN\branches\Configure\s_config.txt : 2012-Apr-01 13:25:47
+Try to open the Database [ D:\down\down.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2012-Apr-01 14:39:01
+Saving... ../version.dat : 2016-Aug-21 20:43:58
+Saving... ../version.dat : 2016-Aug-21 20:44:20
+Saving... ../version.dat : 2016-Aug-21 20:45:47
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-21 20:45:57
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-21 20:45:59
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-21 20:45:59
+[Build DB] Error  : ? : 2016-Aug-21 20:45:59
+Saving... ../version.dat : 2016-Aug-21 20:46:17
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-21 20:46:26
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-21 20:46:28
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-21 20:46:28
+[Build DB] Error  : ? : 2016-Aug-21 20:46:28
+Saving... ../version.dat : 2016-Aug-21 20:48:53
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-21 20:48:59
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-21 20:49:00
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-21 20:49:01
+[Build DB] Error  : ? : 2016-Aug-21 20:49:01
+Saving... ../version.dat : 2016-Aug-23 21:00:29
+Saving... ../version.dat : 2016-Aug-23 21:00:50
+Saving... ../version.dat : 2016-Aug-23 21:01:00
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-23 21:01:06
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:01:08
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:01:08
+[Build DB] Error  : ? : 2016-Aug-23 21:01:08
+Saving... ../version.dat : 2016-Aug-23 21:01:14
+Saving... ../version.dat : 2016-Aug-23 21:06:47
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-23 21:07:56
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:07:58
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:07:58
+[Build DB] Error  : ? : 2016-Aug-23 21:07:58
+Saving... ../version.dat : 2016-Aug-23 21:13:45
+Saving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-23 21:13:50
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:13:51
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:13:52
+[Build DB] Error  : ? : 2016-Aug-23 21:13:52
+Saving... ../version.dat : 2016-Aug-23 21:25:00
+Saving... ../version.dat : 2016-Aug-23 21:33:09
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:33:13
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:33:14
+[Build DB] Error  : Invalid Volume : D:\2016-01-01 : 2016-Aug-23 21:33:14
+Saving... ../version.dat : 2016-Aug-23 21:41:03
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:41:08
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+Saving... ../version.dat : 2016-Aug-23 21:42:34
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:42:36
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:43:37
+Saving... ../version.dat : 2016-Aug-23 21:44:35
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:44:37
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:45:08
+[Build DB] Error  : Invalid Volume : D:\2016-01-01 : 2016-Aug-23 21:45:20
+Saving... ../version.dat : 2016-Aug-23 21:46:03
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:46:04
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:46:05
+Saving... ../version.dat : 2016-Aug-23 21:47:32
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:47:34
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:47:34
+Saving... ../version.dat : 2016-Aug-23 21:48:12
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:48:13
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:48:13
+Saving... ../version.dat : 2016-Aug-23 21:48:52
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:48:53
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:48:53
+Saving... ../version.dat : 2016-Aug-23 21:50:27
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 21:50:28
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 21:50:29
+Saving... ../version.dat : 2016-Aug-23 22:13:41
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:13:42
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:13:42
+Saving... ../version.dat : 2016-Aug-23 22:16:46
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:16:48
+Try to open the Database [ D:\2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:\2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:16:48
+Saving... ../version.dat : 2016-Aug-23 22:28:01
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:28:02
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:28:03
+Saving... ../version.dat : 2016-Aug-23 22:28:41
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:28:42
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:28:43
+Saving... ../version.dat : 2016-Aug-23 22:29:42
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:29:44
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:29:44
+Saving... ../version.dat : 2016-Aug-23 22:33:10
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:33:11
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:33:11
+[Build DB] Error  : Invalid Volume : D:/2016-01-01 : 2016-Aug-23 22:36:36
+Saving... ../version.dat : 2016-Aug-23 22:36:46
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:36:47
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:36:48
+Saving... ../version.dat : 2016-Aug-23 22:47:07
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:47:08
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:47:08
+Saving... ../version.dat : 2016-Aug-23 22:47:22
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-23 22:47:24
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-23 22:47:24
+Saving... ../version.dat : 2016-Aug-24 20:43:27
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 20:43:29
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 20:43:29
+[Build DB] Error  : Invalid Volume : D:/2016-01-01 : 2016-Aug-24 20:43:29
+Saving... ../version.dat : 2016-Aug-24 20:43:44
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 20:43:45
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 20:43:46
+[Build DB] Error  : Invalid Volume : D:/2016-01-01 : 2016-Aug-24 20:43:46
+Saving... ../version.dat : 2016-Aug-24 20:44:25
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 20:44:27
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 20:44:27
+Saving... ../version.dat : 2016-Aug-24 20:45:45
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 20:45:47
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 20:45:47
+Saving... ../version.dat : 2016-Aug-24 20:47:07
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 20:47:08
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 20:47:09
+Saving... ../version.dat : 2016-Aug-24 21:02:42
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 21:03:03
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 21:03:04
+Saving... ../version.dat : 2016-Aug-24 21:05:16
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 21:05:17
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 21:05:19
+Saving... ../version.dat : 2016-Aug-24 21:12:22
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-24 21:12:24
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-24 21:12:24
+Saving... ../version.dat : 2016-Aug-26 20:10:55
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:11:04
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:11:05
+Saving... ../version.dat : 2016-Aug-26 20:12:18
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:12:20
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:12:20
+Saving... ../version.dat : 2016-Aug-26 20:19:05
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:19:22
+Saving... ../version.dat : 2016-Aug-26 20:20:21
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:20:30
+Saving... ../version.dat : 2016-Aug-26 20:22:03
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:22:07
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+Saving... ../version.dat : 2016-Aug-26 20:24:10
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 20:26:02
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:26:04
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:26:04
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[Build DB] Error  : Invalid Volume : 2016-01-01\2016-01-01.dat : 2016-Aug-26 20:26:04
+Saving... ../version.dat : 2016-Aug-26 20:26:17
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:26:19
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:26:19
+Saving... ../version.dat : 2016-Aug-26 20:29:25
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:29:26
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:29:27
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[Build DB] Error  : Invalid Volume : 2016-01-01\2016-01-01.dat : 2016-Aug-26 20:31:18
+Saving... ../version.dat : 2016-Aug-26 20:31:39
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:31:41
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:31:41
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+Saving... ../version.dat : 2016-Aug-26 20:33:42
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:33:43
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:33:43
+Check Folder : D:/2016-01-01
+Saving... ../version.dat : 2016-Aug-26 20:42:59
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 20:43:01
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 20:43:01
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] begin transaction
+Create Item : D:/2016-01-01/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0831_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0832_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0833_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01\새 폴더
+Create Item : D:/2016-01-01/새 폴더
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더','2016-01-01새 폴더','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01\새 폴더 - 복사본
+Create Item : D:/2016-01-01/새 폴더 - 복사본
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본','2016-01-01새 폴더 - 복사본','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01\새 폴더 - 복사본 (2)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)','2016-01-01새 폴더 - 복사본 (2)','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (2)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01\새 폴더 - 복사본 (3)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)','2016-01-01새 폴더 - 복사본 (3)','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (3)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+### End Build DB ### : 2016-Aug-26 20:44:17
+Saving... ../version.dat : 2016-Aug-26 21:02:39
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:02:39
+Saving... ../version.dat : 2016-Aug-26 21:03:43
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:03:43
+Saving... ../version.dat : 2016-Aug-26 21:04:08
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:04:08
+Saving... ../version.dat : 2016-Aug-26 21:04:52
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:04:55
+Saving... ../version.dat : 2016-Aug-26 21:05:18
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:05:29
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:05:38
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:05:58
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:06:45
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:08:34
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:09:22
+Saving... ../version.dat : 2016-Aug-26 21:10:31
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:10:31
+Saving... ../version.dat : 2016-Aug-26 21:11:09
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:11:09
+Saving... ../version.dat : 2016-Aug-26 21:12:15
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:12:15
+Saving... ../version.dat : 2016-Aug-26 21:13:18
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:17:28
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+Saving... ../version.dat : 2016-Aug-26 21:20:22
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 21:20:52
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[Build DB] Error  : SQLITE_CANTOPEN[14]: unable to open database file : 2016-Aug-26 21:20:52
+Saving... ../version.dat : 2016-Aug-26 21:21:03
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 21:21:05
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[Build DB] Error  : SQLITE_CANTOPEN[14]: unable to open database file : 2016-Aug-26 21:21:05
+Saving... ../version.dat : 2016-Aug-26 21:21:27
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 21:21:28
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[Build DB] Error  : SQLITE_CANTOPEN[14]: unable to open database file : 2016-Aug-26 21:21:28
+Service MedicalPhoto installedStartService failed, error code = 2Service MedicalPhoto removedSaving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-26 21:21:37
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 21:21:39
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 21:21:39
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] begin transaction
+Create Item : D:/2016-01-01/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0831_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0832_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0833_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더
+Create Item : D:/2016-01-01/새 폴더
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본
+Create Item : D:/2016-01-01/새 폴더 - 복사본
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 (2)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (2)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 (3)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (3)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+### End Build DB ### : 2016-Aug-26 21:21:41
+Saving... ../version.dat : 2016-Aug-26 21:24:40
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Service MedicalPhoto installedStartService failed, error code = 2Service MedicalPhoto removedSaving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-26 21:26:01
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:26:12
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Aug-26 21:26:14
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+## Volume : D:/2016-01-01
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Aug-26 21:26:14
+Check Folder : D:/2016-01-01
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01';
+[sql] begin transaction
+Create Item : D:/2016-01-01/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0831_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0832_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/DSC_0833_1 2016-01-01.JPG','2016-01-01','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더
+Create Item : D:/2016-01-01/새 폴더
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본
+Create Item : D:/2016-01-01/새 폴더 - 복사본
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 (2)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (2)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (2)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (2)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+Check Folder : D:/2016-01-01/새 폴더 - 복사본 (3)
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)','2016-01-01','','','3','3','0','','','','','','1','0');
+[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/새 폴더 - 복사본 (3)';
+[sql] begin transaction
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0831_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:20','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0832_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:22','','','','','0','0');
+Create Item : D:/2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG
+[sql] INSERT INTO fileinfo VALUES ('2016-01-01/새 폴더 - 복사본 (3)/DSC_0833_1 2016-01-01.JPG','2016-01-01/새 폴더 - 복사본 (3)','','','3','3','0','2016-01-01 07:43:34','','','','','0','0');
+[sql] commit transaction
+### End Build DB ### : 2016-Aug-26 21:26:17
+Service MedicalPhoto installedStartService failed, error code = 2Service MedicalPhoto removedSaving... D:\SVN\branches\Configure\s_config.txt : 2016-Aug-26 21:26:40
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:27:05
+Try to open the Database [ D:\2016-01-01\D:\2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Aug-26 21:27:05
+Saving... ../version.dat : 2016-Aug-26 21:37:59
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Aug-26 21:41:44
+Try to open the Database [ D:/2016-01-01\2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-04 08:18:45
+Saving... ../version.dat : 2016-Sep-04 22:46:44
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:47:18
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-04 22:51:57
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:52:02
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-04 22:52:37
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:52:39
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-04 22:52:58
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:53:01
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 22:54:47
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:54:54
+Try to open the Database [ D:/2016-01-01/D:/2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+SQLITE_MISUSE[21]:  : 2016-Sep-04 22:55:04
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 22:55:22
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 22:55:29
+Try to open the Database [ D:/2016-01-01/D:/2016-01-01.dat ]
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-04 23:01:19
+s_config.txt is not exist. Load default
+Saving... ../version.dat : 2016-Sep-04 23:01:28
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-04 23:01:35
+Try to open the Database [ D:/2016-01-01/2016-01-01.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+Saving... ../version.dat : 2016-Sep-06 21:01:21
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-06 21:01:31
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] create table `version`(version INTEGER );
+[sql] insert into `version` values(2)
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-06 21:01:33
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-06 21:01:34
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-06 21:01:34
+Saving... ../version.dat : 2016-Sep-06 21:03:57
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-06 21:04:06
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-06 21:04:07
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-06 21:04:08
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-06 21:04:08
+Saving... ../version.dat : 2016-Sep-06 21:04:45
+Saving... ../version.dat : 2016-Sep-06 21:13:08
+Saving... ../version.dat : 2016-Sep-06 21:14:15
+Saving... ../version.dat : 2016-Sep-06 21:16:08
+Saving... ../version.dat : 2016-Sep-11 09:14:24
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-11 09:14:28
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-11 09:14:30
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-11 09:14:31
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-11 09:14:31
+Saving... ../version.dat : 2016-Sep-11 09:14:54
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-11 09:14:57
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-11 09:14:58
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-11 09:15:00
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-11 09:15:00
+Saving... ../version.dat : 2016-Sep-11 09:15:20
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-11 09:15:22
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-11 09:15:24
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-11 09:15:24
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-11 09:15:24
+Saving... ../version.dat : 2016-Sep-11 09:17:05
+Saving... E:/SVN/branches/Configure/s_config.txt : 2016-Sep-11 09:17:07
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+[sql] SELECT netpath FROM fileinfo;
+### Start Build DB ### : 2016-Sep-11 09:17:08
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+[sql] SELECT netpath FROM fileinfo;
+[sql] SELECT netpath FROM comment;
+### Reset ###
+Reset SQL Volume Information
+[sql] begin transaction
+[sql] Drop Table if exists fileinfo;
+[sql] Drop Table if exists comment;
+[sql] Drop Table if exists `customfield`;
+[sql] commit transaction
+Build SQL Volume Information
+[sql] begin transaction
+[sql] create table `comment`(netpath TEXT,date TEXT,detail TEXT,userid TEXT,groupid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER);create index index_comment ON `comment`(netpath,detail,userid,groupid,userpriv,grouppriv,otherpriv);
+[sql] create table `fileinfo`(netpath TEXT UNIQUE,netdir TEXT,groupid TEXT,userid TEXT,userpriv INTERGER,grouppriv INTERGER,otherpriv INTERGER,date TEXT,diagnosis TEXT,icd10 TEXT,patientid TEXT,patientname TEXT,isdir TEXT,attribute INTERGER);create index index_fileinfo ON `fileinfo`(netpath,netdir,groupid,userid,userpriv,grouppriv,otherpriv,diagnosis,icd10,patientid,patientname,isdir,attribute);
+[sql] create table `customfield`(index_ INTERGER UNIQUE,fieldname TEXT,description TEXT,fieldtype INTERGER);
+[sql] commit transaction
+### Build Item ### : 2016-Sep-11 09:17:09
+Check Folder : D:/새 폴더
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+[sql] begin transaction
+[sql] commit transaction
+### End Build DB ### : 2016-Sep-11 09:17:09
+### Start Build Thumbnail ### : 2016-Sep-11 09:17:24
+Try to open the Database [ D:/새 폴더/새 폴더.dat ]
+[sql] select * from `version`;
+## Volume : D:/새 폴더
+### Build Thumbnails ### : 2016-Sep-11 09:17:24
+[sql] SELECT * FROM fileinfo WHERE netdir='새 폴더';
+### Check Thumbnails ### : 2016-Sep-11 09:17:24
+### End Build Thumbnail ### : 2016-Sep-11 09:17:24

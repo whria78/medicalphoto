@@ -1,4 +1,7 @@
-# medicalphoto
+# MedicalPhoto 1.1.x
+
+## Old repo
+http://medicalphoto.sf.net
 
 ## Requirements
 VC2015

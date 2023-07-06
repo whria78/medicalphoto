@@ -3,6 +3,9 @@
 ## Old repo
 http://medicalphoto.sf.net
 
+## Official Homepage
+https://medicalphoto.skindx.net
+
 ## Requirements
 
 VC2015

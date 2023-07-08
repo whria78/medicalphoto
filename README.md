@@ -4,7 +4,7 @@
 http://medicalphoto.sf.net
 
 ## Official Homepage
-https://medicalphoto.skindx.net
+https://medicalphoto.modelderm.com
 
 ## Requirements
 

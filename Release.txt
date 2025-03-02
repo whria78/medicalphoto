@@ -1,4 +1,7 @@
 =-=- MedicalPhoto Release Note -=-=
+Release 1.1.0.400 / 2025.3.2
+- Fix English descriptions
+ 
 Release 1.1.0.279 / 2016.9.9
 - Support Windows 10
 

@@ -181,10 +181,7 @@ The server consists of:
 ---
 
 ## 9. Copyright
-**GPL license and Free for all purpose**
-**All Rights Reserved** by Seung Seog Han (whria78@gmail.com)  
-**Department of Dermatology, Seoul, Korea**  
-[http://whria.net](http://whria.net)
+GPL license and Free for all purpose
 
 ## Old repo
 http://medicalphoto.sf.net

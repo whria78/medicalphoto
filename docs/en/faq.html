@@ -133,7 +133,7 @@ class="backh"><span class="backh2"><span class="backh3">Download</span></span></
 class="backh"><span class="backh2"><span class="backh3">Development</span></span></span></h3>
  
 <ul class="menu">
-<li class="item-513"><a href="https://github.com/whria78/medicalphoto" target="_blank" >SVN (Github)</a></li><li class=""><a href="https://sourceforge.net/projects/medieye" target="_blank" >SVN (Sourceforge), Old repo</a></li>
+<li class="item-513"><a href="https://github.com/whria78/medicalphoto" target="_blank" >SVN (Github)</a></li>
 
 </ul>
 </div>
@@ -152,11 +152,105 @@ class="backh"><span class="backh2"><span class="backh3">Development</span></span
 
 <div class="item-page">
 
-<h2>
-<a href="faq.html">
-FAQ</a>
-</h2>
-<h3> English FAQ is not available yet.</h3>
+<h2><a href="faq.html">FAQ</a></h2>
+
+    <h3>1. I have existing patient photo records. Can I use past photos in MedicalPhoto?</h3>
+    <h3>2. I have already installed MedicalPhoto. Can I transfer my existing photos? Or, can I create folders with names other than dates?</h3>
+    <h3>3. My hospital has multiple locations. Can I manage photos from different locations together?</h3>
+    <h3>4. Is there a way to quickly select multiple patient photos at once while organizing them?</h3>
+    <h3>5. I want to transfer photos to Microsoft PowerPoint.</h3>
+    <h3>6. What happens to my stored photos if MedicalPhoto stops working in the future?</h3>
+    <h3>7. I want to delete multiple photos at once.</h3>
+    <h3>8. How can I back up MedicalPhoto data?</h3>
+    <h3>9. I need technical support regarding installation and management of MedicalPhoto.</h3>
+
+    <h2>1. I have existing patient photo records. Can I use past photos in MedicalPhoto?</h2>
+    <p>Suppose your existing photos are organized as follows:</p>
+    <p><code>d:/old_photo</code> → <code>d:/old_photo/Smith/2011-1-1/IMG_1234.jpg</code></p>
+
+    <p>Follow these steps to install MedicalPhoto while keeping past photos:</p>
+    <ul>
+        <li>Create a folder named <code>d:/clinical_photos</code>.</li>
+        <li>Move <code>d:/old_photo</code> to <code>d:/clinical_photos/old_photo</code>.</li>
+        <li>Install MedicalPhoto.</li>
+        <li>Set the installation folder as <code>d:/clinical_photos</code>.</li>
+        <li>Search for <code>Smith</code> in MedicalPhoto, and it will find past photos, as folder names are included in the search.</li>
+    </ul>
+
+    <p>The files will be stored as follows:</p>
+    <pre>
+clinical_photos
+├── old_photo
+│   ├── Smith
+│   │   ├── 2012
+│   │   ├── 2011
+    </pre>
+
+    <p><a href="http://www.youtube.com/v/EEm6bmePYVQ&amp;fmt=22&amp;hd=1&amp;cc_load_policy=1" target="_blank">Watch the YouTube tutorial</a></p>
+
+    <h2>2. I have already installed MedicalPhoto. Can I transfer my existing photos? Or, can I create folders with names other than dates?</h2>
+    <p>If you want to organize files as follows:</p>
+
+    <pre>
+clinical_photos
+├── new_photo
+│   ├── 2012
+│   ├── 2011
+    </pre>
+
+    <p>Follow these steps:</p>
+    <ul>
+        <li>Open the MedicalPhoto storage folder in File Explorer (e.g., <code>d:/clinical_photos</code>).</li>
+        <li>Move your existing photo folder (e.g., <code>d:/new_photo</code>) to <code>d:/clinical_photos/new_photo</code>.</li>
+        <li>MedicalPhotoServer will automatically detect folder changes and update the database.</li>
+        <li>Search for <code>new_photo</code> in MedicalPhoto, and the images will appear.</li>
+    </ul>
+
+    <p><a href="http://www.youtube.com/v/dg1Ai9DPXRM&amp;fmt=22&amp;hd=1&amp;cc_load_policy=1" target="_blank">Watch the YouTube tutorial</a></p>
+
+    <h2>3. My hospital has multiple locations. Can I manage photos from different locations together?</h2>
+    <p>If you configure your server's router to forward <strong>TCP port 9999</strong> to the server computer, external access will be possible.</p>
+    <p><strong>However, sharing photos over the internet is not recommended due to security concerns.</strong></p>
+
+    <h2>4. Is there a way to quickly select multiple patient photos at once while organizing them?</h2>
+    <p>Hold down the <code>CTRL</code> key while selecting photos in MedicalPhoto:</p>
+    <ul>
+        <li>Similar filenames or metadata-based photos will be selected first.</li>
+        <li>Photos taken within approximately <strong>10 seconds</strong> of the selected photo will also be chosen.</li>
+    </ul>
+
+    <h2>5. I want to transfer photos to Microsoft PowerPoint.</h2>
+    <p>MedicalPhoto allows you to right-click selected images and send them directly to PowerPoint.</p>
+    <p>The images will be automatically arranged based on a <strong>predefined template</strong>, which you can modify in PowerPoint.</p>
+    <p><strong>Note:</strong> This feature requires Microsoft PowerPoint to be installed.</p>
+
+    <h2>6. What happens to my stored photos if MedicalPhoto stops working in the future?</h2>
+    <p>Even if MedicalPhoto stops working, your photos remain stored in the hard drive as follows:</p>
+
+    <p>For example, if MedicalPhoto displays a file as:</p>
+    <p><code>clinical_photos/2012/aaa</code></p>
+    <p>It is actually stored as:</p>
+    <p><code>d:/clinical_photos/2012/aaa.jpg</code></p>
+
+    <p>To find the storage location:</p>
+    <p><strong>Start → Programs → MedicalPhoto → s_config.txt</strong></p>
+
+    <h2>7. I want to delete multiple photos at once.</h2>
+    <p>To delete multiple photos quickly:</p>
+    <ul>
+        <li>Open the folder where MedicalPhoto stores images (e.g., <code>d:/clinical_photos</code>).</li>
+        <li>Delete the unwanted files directly in Windows File Explorer.</li>
+        <li>MedicalPhoto will automatically detect the deleted files and update the database.</li>
+    </ul>
+
+    <h2>8. How can I back up MedicalPhoto data?</h2>
+    <p>If <code>d:/clinical_photos</code> is the storage folder, the database file is:</p>
+    <p><code>d:/clinical_photos/clinical_photo.dat</code></p>
+    <p><strong>To back up data:</strong> Save this file along with your photos. To restore, copy it back to the same location.</p>
+
+    <h2>9. I need technical support regarding installation and management of MedicalPhoto.</h2>
+    <p>For technical support, please contact: 📧 <a href="mailto:whri78@gmail.com">whri78@gmail.com</a> 😊</p>
+
 
 <p>Please email to <span id="cloak89383">spambots으로부터 이메일 주소가 보호되었습니다. 보시려면 JavaScript를 활성화하세요.</span><script type='text/javascript'>
  //<!--

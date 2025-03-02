@@ -7,9 +7,6 @@
 ## Introduction
 MedicalPhoto is a non-commercial medical image management program developed primarily for dermatologists, but it can also be used by plastic surgeons and dentists. Originally designed for dermatology at Asan Medical Center in 2003, MedicalPhoto helps manage the 200–300 clinical photos captured daily. With its built-in database, users can locate images in under a second. The program supports ICD-10 diagnosis, user-defined diagnoses, multiple monitors, and a server-client structure for multi-computer access.
 
-**Official Homepage:** [http://medicalphoto.org](http://medicalphoto.org)  
-**Download:** [http://release.medicalphoto.org](http://release.medicalphoto.org)  
-
 ## Features
 - Simple and easy to use
 - Network support (server-client structure)

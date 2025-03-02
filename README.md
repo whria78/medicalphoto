@@ -1,7 +1,7 @@
 # MedicalPhoto Installation Manual
 
 **Author:** Seung Seog Han  
-**Version:** 1.1  
+**Version:** 1.1.0.400  
 **Date:** 01 March 2025  
 
 ## Introduction
@@ -179,6 +179,7 @@ The server consists of:
 ---
 
 ## 9. Copyright
+**GPL license and Free for all purpose**
 **All Rights Reserved** by Seung Seog Han (whria78@gmail.com)  
 **Department of Dermatology, Seoul, Korea**  
 [http://whria.net](http://whria.net)

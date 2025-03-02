@@ -1,0 +1,288 @@
+=-=- MedicalPhoto Release Note -=-=
+Release 1.1.0.355 / 2025.3.2
+- Fix English descriptions
+ 
+Release 1.1.0.279 / 2016.9.9
+- Support Windows 10
+
+Release 1.1.0.5 / 2016.9.2
+- MSVC 2015
+- s_confix.txt - ADMIN_PASS
+
+Release 1.0.8.122 / 2013.4.9
+- Add DirectoryWatch Function; UPLOAD_WATCH_PATH in s_config.txt 
+
+Release 1.0.8.112 / 2013.4
+- Fix minor bugs
+- Support Korean [Manual, Installation, User interface]
+
+Release 1.0.8.74 / 2012.4
+- Fix minor bugs 
+- Update SQLite
+
+Release 1.0.7.383 / 2008.7
+- Final 1.0.7
+
+Release 1.0.7.377
+- Autodetection the local IP address of the server
+
+Release 1.0.7.372
+- Support an advanced query. "AND" and "OR" can be used. The field can be selected as like [NAME],[ID],[DX] and [ICD].
+ex) 
+"jack smith"[NAME] OR tinea[DX]
+- add more indexes to SQLite
+
+Release 1.0.7.259
+- Add the User Diagnosis Update function
+- Fix freeaddrinfo error of MedicalPhotoServer and Console on Win2000
+- Fix database backup schedule time was not correct
+
+Release 1.0.7.189
+- Change the privilege column of Database
+
+Release 1.0.7.146
+- Support multiple volumes. Because FTP server does not support multiple volumes, FTP server is automatically disabled.
+- Add a SMART_RETREIVE function which retreives the ID and the patient name from the filename. To get the exact result, 1) the length of ID should be greater than four 2) ID is composed of nummeric 3) ID and patient name are separated by "_" or " " as defined at s_config.txt
+
+Release 1.0.7.99
+- Change the EXIF reader to Exiv2. It's much smarter than before.
+
+Release 1.0.7.81
+- Change the date format of DB. Now there is a need to upgrade to use a old DB.
+- A periodical refreshment prevents the connection lag after a long idle time.
+- Add a report tool. It generates a Microsoft Excel report file.
+
+Release 1.0.6.677
+- Final 1.0.6
+- Reduce flickering when a thumbnail image is selected or disselected.
+
+Release 1.0.6.634
+- Upgrade the Sqlite engine (now 1.387 2008/08/05)
+- Fix that a medicalphotoserver manager has checked a wrong update address.
+
+Release 1.0.6.622
+- Add a connection maintenance feature to fix the lag after a long idle time 
+- Display a date information during a maximize view.
+- Fix that scrolling sometimes made a picturelist broken
+
+Release 1.0.6.584
+- Final 1.0.6 / released at download.com
+- Update a readme.pdf
+- add server options, DIRECTORY_WATCH_ON and SAVE_ROTATEIMAGE
+
+Release 1.0.6.526 
+- Fix Rotating of image lose an exif info
+- Unsupport a tiff image and decrease the application size
+
+Release 1.0.6.521
+- Fix Rotating of image sometimes lose patient infos
+- Add an autocompletion feature to a diagnosis box
+- Add a tooltip && a scroll bar to a left-bottom box
+- Hide photos on idle state
+- Minor fix of a folder watching feature
+- Fix a thumbnail does not include all area
+
+Release 1.0.6.244
+- Fast double-clicking of photo does not perform the click function
+- Reduce a flickering when selecting a photo
+- The list of Selected photos are displayed in a left-bottom box
+
+Release 1.0.6.201
+- Fix a wrong image was displayed when a previous photo was not exist. 
+- Fix a crash when a photo was not exist
+
+Release 1.0.5.322
+- Final 1.0.5
+
+Release 1.0.5.282
+- Add shortkey; Ctrl-P (export to a ppt), Ctrl-R (rename)
+
+Release 1.0.5.254
+- Add shortkeys; Ctrl-C (focus to a comment box), Ctrl-T (toggle a view mode)
+- Fix a filename was not changed in some conditions.
+- Fix several small bugs
+
+Release 1.0.5.198
+- Add shortkeys; Ctrl-E (focus to a diagnosis form), Ctrl-U (UploadEx), 
+- Fix a startup banner hides a login form
+- Improve rotate function
+- Fix the failure to open files when uploading >500 files
+
+Release 1.0.5.56
+- Add a Ftp Server Funtion
+- Add UploadEx Function which creates a date folder and uploads photos
+
+Release 1.0.5.23(2008.5.22)
+- Add a SQLBackUp feature
+- Increase the limit of multi-monitor number from 5 to unlimited.
+- Fix a max_picture_list was lower than 1024
+
+Release 1.0.4.96(2008.5.20)
+
+- change the installer to ci4 because installjammer has a critical bug that non-Eng windows can not get a program shortcut
+
+Release 1.0.4.94 (2008.5.19)
+
+Today, I had a enough time to edit the source. :)  
+here is a new release. several bugs are fixed.
+
+- Reducing the client memory usage dramatically by improving a cache system and an image processing routine  :)
+- Fix that the client installer did not create short-cuts
+- Move a custom(or user) diagnosis editor to the main menu
+- Enable an auto-searching-host feature though it is slow
+- Add Tooltips, which will help to know the function of controls
+- Improvement of browsing a folder. it is much smoother than before
+ 
+Version 1.0.4.37 (2008.5.12)
+- fix client-login bug
+
+Version 1.0.4.20 (2008.5.12)
+- cache system to improve a client performance
+- improve memory usage
+
+Version 1.0.4.7 (2008.5.11)
+- Next, Prev, Rotate button
+- autoupdate via web (Configurator detects and updates)
+ 
+Version 1.0.3.final (2008.5.3)
+- Improve listing speed and fix displaying a wrong font.
+- MedicalPhotoServer Monitor launch console.exe at start-up
+- The logger of console.exe uses save-buffer, which improve a performance.
+
+Version 1.0.3.1389 (2008.5.2)
+- Fix bug that a diagnosis having ',' made a crash.
+- Fix bug that stopping a server while browsing folder made freezing a client.
+
+Version 1.0.3.1313 (2008.5.1)
+- MedicalServer displays the logs of console concurrently
+- MedicalServer displays the information of user logged in
+
+Version 1.0.3.1256 (2008.4.29)
+- Fix bug related to deleting custom diagnosis
+- The comment checkbox is not be off if the comment is for all selected.
+
+Version 1.0.3.1217 (2008.4.28)
+- Add checkbox to comments. it will be checked if a user want to apply the same comment to the photographies selected.
+- Improvement of delete function
+- Fix that the ratio of picture was distorted when exporting to ppt. 
+- Fix duplication of custom diagnosis
+- Add progressbar to a configuration building process
+
+Version 1.0.3.1043 (2008.4.26)
+- Autocollect file information if there is adding or removing of files.
+- data folder should not be included picture folder.
+- change installer and merge setup.exe and client_setup.exe into one installer
+
+Version 1.0.3.250 (2008.4.25)
+- Fix comment bug
+- Fix diagnosis selection bug
+- Fix input box arrow freezing
+
+Version 1.0.3 (2008.4.15)
+- Build http://medicalphoto.org
+- Build readme.pdf
+- Change to NTservice
+- Config Wizard
+- Improved PPT Export
+
+Version 1.0.3 (2008.4.4)
+- Fix crash in some case of multi-monitor environment
+- Support multiple disks or folders
+
+Version 1.0.2.0 (2008.3.30)
+- Add Function : Create / Delete / Rename Folder
+- Add Zoom & PageUp & Down Icon
+- Add minor options (startup check, schedule check, Dx list, Find option) to Client & Server
+- Fix automatic update system
+- View Mode - Basic & Advanced
+- Support Resizing Thumbnail
+
+Version 1.0.0.0 (2008.3.1)
+- Rename the poject name to "MedicalPhoto"
+
+
+
+
+=-=- MediEye (Old Project) Release Note -=-=
+
+version 2.0.8.3 (2007.6.20)
+
+- 자동 update 시스템 (medieye 서버에서 client 를 받아서 자동으로 업데이트)
+- 그림 더블 클릭시 모니터 해상도에 따라 전체화면 안되던 것 수정
+- 파일 탐색창 크기 확대
+- 화면 확대 & 스크롤시 아래쪽 그림이 짤려서 보이는 문제 해결
+- 접속 불가시 오류 & 지연 수정
+
+- drag & drop 기능 삭제
+- reload thumnail & reload list 버튼 삭제
+- network setup 에 안쓰는 버튼 삭제
+
+version 2.0.8.2
+1. 화면 확대 가능
+2. 12 개월 내의 파일에 대해서 빠른 index 제공
+3. 스크롤 위치 문제
+4. 전체 파일 선택 단축키 - "a" / 파일 카피 단축키 - "c"
+
+version 2.080 / 1.021 (2007.2.10)
+1. 메모리 누수 문제 상당부분 해결 + Medieye Server 의 메모리 사용 50% 감소
+2. WhriaView 에서 트리나 이미지를 right click 하면 사진 파일 한꺼번에 카피 가능
+3. WhriaView 에서 트리나 이미지를 right click 하면 사진 파일 정보를 Excel 파일로 저장
+4. Ctrl 누르고 이미지 선택하면 앞의 8 글자가 동일한 파일을 한꺼번에 선택함
+
+version 2.07 / 1.02 (2006.9.16)
+
+1. ICD10 진단 추가 (/diagnosis/ICD10.dat 를 ICD10_small.dat 로 바꾸면 3자리 진단으로 변경됨)
+2. userdx.txt 의 진단에 중복시 우선권 부여
+
+version 2.06 (2006.8.31)
+
+1. 브라우징시 속도 향상
+2. 연속으로 Search 시에 이미지가 보이지 않던 버그 해결
+3. 새로운 Update 가 있을 경우 Update 아이콘이 보이게 만듬
+4. MediEye 서버 중복 실행 방지
+
+version 2.05.1 (2006. 8. 29)
+
+1. 파일명 바꿀때 ID/Name 등의 정보가 제대로 전달되지 않는 버그 수정
+2. 폴더 정보가 없을 때 파일명을 바꾸는 경우 다운되는 문제 수정
+
+version 2.05 (2006. 8. 28)
+
+1. WhriaView 에서 검색 작업 전담하여 MediEye 서버의 부하 개선
+2. MediEye 서버에서 미리보기 생성시 컴퓨터 느려지는 현상 개선
+
+
+version 2.04 (2006. 8. 27)
+
+1. 체크 후 스크롤시 스크롤 되돌아 오는 문제 해결
+2. Date 보기 좋게 변경
+3. MediEye 서버의 백그라운드 작업 Prioty 낮게 변경
+4. MediEye 서버 Update 기능 추가
+
+version 2.03 (2006. 8. 25)
+
+1. 그림 출력,스크롤 속도 대폭 향상
+2. 체크시에 깜빡이는 증상 없앰
+3. Inteli Selection 속도 향상
+4. 체크 박스 큰 네모로 변경
+5. XP 스타일로 디자인 변경
+6. 로딩시 파일 데이터 가져오는 루틴 개선
+7. About 화면 변경
+8. ESC 키를 누르면 모두 Uncheck 되게 변경
+9. Update 기능 추가
+
+
+version 2.02
+
+1. ftpfind 함수 버그로 인해 내부 루틴 변경
+
+
+version 2.01
+
+1. 사진 Tag 읽고 쓰는 것 추가
+2. 브라우징이 가능하게 추가
+
+
+version 2.00
+
+1. 네트워크 드라이브 버젼을 FTP 버젼으로 변경

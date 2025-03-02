@@ -1,5 +1,5 @@
 <*project
-      version = 6 civer = "v4.11.2" winver = "2.8/6.1.7601"> 
+      version = 6 civer = "v4.11.2" winver = "2.8/6.2.9200"> 
    <setmacro> </>
    <beftype> app</>
    <beffile> </>
@@ -213,7 +213,7 @@ E:\SVN\branches\version.dat</>
        <data>setuppath="C:\MedicalPhoto"</>
     </>
     </>
-    <_ id = macros disable>
+    <_ id = macros >
        <cmd>cmdmacros</>
        <desc>set path</>
        <data>setuppath="C:\MedicalPhoto"</>
@@ -285,9 +285,9 @@ E:\SVN\branches\version.dat</>
     <_ id = dlgsets >
        <cmd>cmddlgsets</>
        <desc></>
-       <data>text,0,100,2,Please select the type of installation.
-text,0,100,1,If you are installing for the first time, select [ Server + Client ].
-text,0,100,3,If the server is already installed elsewhere, please select [ Client ].
+       <data>text,0,100,2,Please select the installation type.
+text,0,100,1,If this is your first time installing -- "Server + Client".
+text,0,100,3,If the server is already installed elsewhere -- "Client".
 radio,20,50,server,Server ( + Client )
 radio,20,50,client,Client</>
        <logo>theme</>
@@ -296,15 +296,6 @@ radio,20,50,client,Client</>
        <more></>
     </>
     <_ id = dlgpath >
-       <cmd>cmddlgpath</>
-       <desc></>
-       <logo>Theme</>
-       <custlogo></>
-       <buttons>pnc</>
-       <chbox></>
-       <more></>
-    </>
-    <_ id = dlgpath disable>
        <cmd>cmddlgpath</>
        <desc></>
        <logo>Theme</>

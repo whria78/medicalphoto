@@ -21,8 +21,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tiff", "tiff\Tiff.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\zlib.vcxproj", "{C06F578D-7F63-44BA-9C00-9E25E366F5E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CFtpServer", "CFtpServer\CFtpServer.vcxproj", "{CE4EAE90-10C2-452E-BAB4-30D6077420B4}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mng", "mng\mng.vcxproj", "{26902113-F6FE-4006-A11A-1882C2340B54}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jbig", "jbig\jbig.vcxproj", "{3BB6806E-6EA8-4EB1-A446-3C03A79E1C1E}"
@@ -117,14 +115,6 @@ Global
 		{C06F578D-7F63-44BA-9C00-9E25E366F5E6}.Unicode Debug|Win32.Build.0 = Debug|Win32
 		{C06F578D-7F63-44BA-9C00-9E25E366F5E6}.Unicode Release|Win32.ActiveCfg = Unicode Release|Win32
 		{C06F578D-7F63-44BA-9C00-9E25E366F5E6}.Unicode Release|Win32.Build.0 = Unicode Release|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Debug|Win32.ActiveCfg = Debug|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Debug|Win32.Build.0 = Debug|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Release|Win32.ActiveCfg = Release|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Release|Win32.Build.0 = Release|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Unicode Debug|Win32.ActiveCfg = Debug|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Unicode Debug|Win32.Build.0 = Debug|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Unicode Release|Win32.ActiveCfg = Release|Win32
-		{CE4EAE90-10C2-452E-BAB4-30D6077420B4}.Unicode Release|Win32.Build.0 = Release|Win32
 		{26902113-F6FE-4006-A11A-1882C2340B54}.Debug|Win32.ActiveCfg = Debug|Win32
 		{26902113-F6FE-4006-A11A-1882C2340B54}.Debug|Win32.Build.0 = Debug|Win32
 		{26902113-F6FE-4006-A11A-1882C2340B54}.Release|Win32.ActiveCfg = Release|Win32

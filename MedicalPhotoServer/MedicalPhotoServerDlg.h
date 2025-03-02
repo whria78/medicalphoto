@@ -30,8 +30,8 @@
 
 #include "AutoUpdater.h"
 
-#define SERVERUPDATEADDRESS _T("http://medicalphoto.org/repo/release/")
-#define SERVERUPDATECHECKADDRESS _T("http://medicalphoto.org/repo/update2/")
+//#define SERVERUPDATEADDRESS _T("http://medicalphoto.org/repo/release/")
+//#define SERVERUPDATECHECKADDRESS _T("http://medicalphoto.org/repo/update2/")
 #define SETUPAPPLICATIONNAME _T("setup.exe")
 #define CONFIG_EXE_FILENAME _T("Config.exe")
 

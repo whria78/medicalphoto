@@ -14,7 +14,7 @@
 //#include "AutoUpdater.h"
 #include "UpdateDlg.h"
 
-#define SERVERUPDATEADDRESS _T("http://medicalphoto.org/repo/update2/")
+//#define SERVERUPDATEADDRESS _T("http://medicalphoto")
 #define SETUPAPPLICATIONNAME _T("setup.exe")
 
 // CConfigureDlg dialog

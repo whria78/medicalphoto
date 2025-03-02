@@ -2580,8 +2580,8 @@ BOOL CAboutDlg::OnInitDialog()
 
 	// TODO:  Add extra initialization here
 	
-	m_About.SetHyperlink(_T("Http://medicalphoto.org"));
-	m_About.SetCaption(_T("http://medicalphoto.org"));
+	m_About.SetHyperlink(_T("https://medicalphoto.modelderm.com"));
+	m_About.SetCaption(_T("https://medicalphoto.modelderm.com"));
 
 	m_WhriaNet.SetHyperlink(_T("Http://whria.net"));
 	m_WhriaNet.SetCaption(_T("M.D., Ph.D. Han Seung Seog"));

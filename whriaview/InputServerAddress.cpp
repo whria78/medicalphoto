@@ -169,15 +169,6 @@ BOOL CInputServerAddress::OnInitDialog()
 void CInputServerAddress::OnBnClickedButtonExit()
 {
 	bStop=true;
-	while (bStateSearching==true)
-	{
-		MSG msg;
-		if(::GetMessage(&msg,NULL,NULL,NULL)) 
-		{ 
-			::TranslateMessage(&msg); 
-			  ::DispatchMessage(&msg); 
-		} 
-	}
 
 	CDialog::OnCancel();
 	// TODO: Add your control notification handler code here
@@ -189,98 +180,11 @@ void CInputServerAddress::OnTimer(UINT_PTR nIDEvent)
 	if (nIDEvent==0)
 	{
 		KillTimer(0);
-		boost::thread BuildThread(boost::bind(&CInputServerAddress::IPSearch,this));
+		//boost::thread BuildThread(boost::bind(&CInputServerAddress::IPSearch,this));
 	}
 	CDialog::OnTimer(nIDEvent);
 }
 
-void CInputServerAddress::IPSearch()
-{
-	bStateSearching=true;
-	CString IP=GetLocalIP();
-	CString IP_First=IP.Left(IP.ReverseFind(_T('.')));
-	int iLast=_ttoi(IP.Mid(IP.ReverseFind(_T('.'))+1));
-	
-	int iLast1=iLast;
-	int iLast2=iLast;
-
-	std::string stPort=config_.Get(CLIENT_PORT);
-
-	boost::mutex::scoped_lock lock(search_mutex);
-
-	if (SearchHost(iLast,MCodeChanger::_CCN((LPCTSTR)IP),stPort))
-	{
-		bStateSearching=false;
-		return;
-	}
-
-	hInternet = InternetOpen(_T("AutoConnectionAgent"), INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);	
-	CString URL = _T("http://medicalphoto.org/localip.php");
-	HINTERNET hSession = GetSession(URL);
-	if (!hSession)
-		return;
-	BYTE pBuf[4096];
-	memset(pBuf, NULL, sizeof(pBuf));
-	bool bTransferSuccess = DownloadConfig(hSession, pBuf, 4096);
-	InternetCloseHandle(hSession);
-	if (!bTransferSuccess)
-		return;
-
-	std::string dumy = (char*) pBuf;
-	CString stLocalIP = MCodeChanger::_CCW(dumy).c_str();
-
-	if (stLocalIP.IsEmpty())
-		return;
-
-	if (SearchHost(iLast,MCodeChanger::_CCN((LPCTSTR)stLocalIP),stPort))
-	{
-		bStateSearching=false;
-		return;
-	}
-
-	/*
-	while (bStop==false && bConnected==false 
-		&& (iLast1<255 || iLast2>0))
-	{
-		iLast1++;
-		iLast2--;
-
-		if (iLast1<255)
-		{
-			boost::format fmt("%s.%d");
-			fmt % MCodeChanger::_CCN((LPCTSTR)IP_First)
-				% iLast1;
-//			boost::thread BuildThread(boost::bind(&CInputServerAddress::SearchHost,this,iLast1,fmt.str(),stPort));
-			if (SearchHost(iLast1,fmt.str(),stPort))
-			{
-				bStateSearching=false;
-				return;
-			}
-//			m_IP.SetWindowText(MCodeChanger::_CCW(fmt.str()).c_str());
-		}
-		if (bStop)
-		{
-			bStateSearching=false;
-			return;
-		}
-		if (iLast2>0)
-		{
-			boost::format fmt2("%s.%d");
-			fmt2 % MCodeChanger::_CCN((LPCTSTR)IP_First)
-				% iLast2;
-			
-			if (SearchHost(iLast2,fmt2.str(),stPort))
-			{
-				bStateSearching=false;
-				return;
-			}
-			
-//			boost::thread BuildThread2(boost::bind(&CInputServerAddress::SearchHost,this,iLast2,fmt2.str(),stPort));
-		}
-	}
-	*/
-	bStateSearching=false;
-}
 
 HINTERNET CInputServerAddress::GetSession(CString &URL)
 {

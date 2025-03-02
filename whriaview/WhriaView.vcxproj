@@ -309,7 +309,6 @@
     <ClInclude Include="XSuperTooltip.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="C:\Users\whria2\Desktop\close.bmp" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\bitmap6.bmp" />

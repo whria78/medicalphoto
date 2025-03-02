@@ -21,7 +21,7 @@ BEGIN
         BEGIN
             VALUE "FileVersion", "%s"
             VALUE "ProductVersion", "%s"
-            VALUE "CompanyName", "Http://medicalphoto.org"
+            VALUE "CompanyName", "https://modelderm.com"
             VALUE "FileDescription", "MedicalPhoto Application"
             VALUE "LegalCopyright", "Han Seung Seog.  All rights reserved."
             VALUE "ProductName", "MedicalPhoto"

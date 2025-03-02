@@ -350,14 +350,15 @@ BOOL CMedicalPhotoServerDlg::OnInitDialog()
 	m_Log.InsertItem(0,_T(""),0);
 	m_Log.InsertItem(0,_T("MedicalPhoto version ")+CString(MCodeChanger::_CCL(config_.version_.Get(VERSION_FILE_VERSION)).c_str()),1);
 
+	/*
 	CAutoUpdater updater;
 	CString stResult=updater.IsUpdateExist(SERVERUPDATECHECKADDRESS);
 	if (!stResult.IsEmpty())
 	{
 		m_Log.InsertItem(0,_T("Update is available : version ")+stResult,1);
-		m_Log.InsertItem(0,_T("Download the last release : http://medicalphoto.org"),1);
+		m_Log.InsertItem(0,_T("Download the last release : https://medicalphoto.modelderm.com"),1);
 	}
-
+	*/
 
 	// IP Listing ¾ò±â
 	m_Log.InsertItem(0,_T("Host Addresses : ")+GetLocalIP(),1);

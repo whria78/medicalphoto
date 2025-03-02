@@ -460,9 +460,6 @@
     <Image Include="res\WhriaView.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="C:\Users\whria2\Desktop\close.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\close.bmp">
       <Filter>Resource Files</Filter>
     </Image>

@@ -1,5 +1,5 @@
 // MedicalPhoto Config : don't remove this line
-// Http://medicalphoto.org
+// Http://medicalphoto.modelderm.com
 // Powered by Han Seung Seog
 // Copyright 2008
 

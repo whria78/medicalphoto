@@ -163,6 +163,7 @@ BOOL CConfigureDlg::OnInitDialog()
    }
    
    // AUTOUPDATE
+   /*
 	CAutoUpdater updater;
 	CString stResult=updater.IsUpdateExist(SERVERUPDATEADDRESS);
 	if (!stResult.IsEmpty())
@@ -186,6 +187,7 @@ BOOL CConfigureDlg::OnInitDialog()
 			MessageBox(stText,_T("Updater"), MB_ICONINFORMATION|MB_OK);
 		}
 	}
+	*/
 
 	SelectFolders.Create(IDD_DIALOG_PATHS, this);
 	DataIntegrity.Create(IDD_DIALOG_DATAINTEGRITY, this);

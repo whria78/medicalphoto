@@ -1,7 +1,4 @@
-c_read_header      5cHf0
-async_read_data22 serialization::archive 14 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 20906
-
-async_read_data22 serialization::archive 14 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 20906
+2 serialization::archive 14 0 0 0 4294967295 4294967295 0  0 0 0 0 15 not-a-date-time 20906
 
 async_write22 serialization::archive 14 0 0 16 53 gomphoto/2016/2016-05-05 [13]/DSC_0248 2016-05-05.JPG
 async_read_header      5cHf0
@@ -8969,3 +8966,5 @@ async_read_data22 serialization::archive 14 0 0 0 14798 4294967295 0  0 0 0 0 8 
 Saving... E:/SVN/branches/whriaview/c_config.txt : 2016-Sep-28 21:54:17
 Saving... ../version.dat : 2016-Sep-28 22:08:51
 Saving... E:/SVN/branches/whriaview/c_config.txt : 2016-Sep-28 22:08:59
+Saving... ../version.dat : 2025-Feb-22 23:44:58
+Saving... L:/MedicalPhoto_1.1.0.345_VC2015_B161/branches/whriaview/c_config.txt : 2025-Feb-22 23:45:29

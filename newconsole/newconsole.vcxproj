@@ -122,10 +122,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CFtpServer\CFtpServer.vcxproj">
-      <Project>{ce4eae90-10c2-452e-bab4-30d6077420b4}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\CxImage\cximage.vcxproj">
       <Project>{58159ba8-9c71-4891-9b2b-e37136e9f607}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

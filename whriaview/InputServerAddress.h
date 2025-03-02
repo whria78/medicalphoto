@@ -71,8 +71,6 @@ protected:
 	boost::mutex search_mutex;
 	boost::mutex search_host_mutex[256];
 	bool bStop;
-	bool bStateSearching;
-	void IPSearch();
 
 	// Generated message map functions
 	//{{AFX_MSG(CInputServerAddress)

@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Korean (Korea) resources
+// 한국어(대한민국) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
 LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
@@ -182,7 +182,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,153,64,42,14,WS_GROUP
     LTEXT           "Copyright (C) 2008",IDC_STATIC,30,66,68,8
     ICON            IDR_MAINFRAME,IDC_STATIC,10,11,20,20
-    LTEXT           "http://medicalphoto.org",IDC_STATIC_CREDIT,30,53,84,12
+    LTEXT           "https://medicalphoto.modelderm.com",IDC_STATIC_CREDIT,30,53,84,12
     LTEXT           "All powered by",IDC_STATIC_CREDIT2,45,24,51,12
     LTEXT           "아이피부과 한승석",IDC_STATIC_CREDIT3,30,41,165,12
     LTEXT           "1.0.0.255",IDC_STATIC_VERSION,111,9,79,8,SS_CENTERIMAGE
@@ -528,7 +528,7 @@ IDB_BITMAP_P2           BITMAP                  "res\\prev_left_2.bmp"
 
 IDB_BITMAP_P3           BITMAP                  "res\\prev_left_3.bmp"
 
-IDB_BITMAP_C            BITMAP                  "E:\\SVN\\branches\\whriaview\\res\\close.bmp"
+IDB_BITMAP_C            BITMAP                  "res\\close.bmp"
 
 IDB_BITMAP_RO3          BITMAP                  "res\\rotate3.bmp"
 
@@ -561,8 +561,6 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "이름바꾸기 [Ctrl-R]",              ID_POPUP_LIST_RENAME
         MENUITEM "삭제",                          ID_POPUP_LIST_DELETE
-        MENUITEM SEPARATOR
-        MENUITEM "PowerPoint 로 이동 [Ctrl-P]",    ID_POPUP_TOPOWERPOINT_LIST
     END
 END
 
@@ -576,10 +574,6 @@ BEGIN
         MENUITEM "폴더생성 [Ctrl-C]",               ID_POPUP_TREE_CREATE
         MENUITEM "이름바꾸기 [Ctrl-R]",              ID_POPUP_RENAME
         MENUITEM "삭제",                          ID_POPUP_DELETE
-        MENUITEM SEPARATOR
-        MENUITEM "PowerPoint 로 이동 [Ctrl-P]",    ID_POPUP_TOPOWERPOINT_TREE
-        MENUITEM SEPARATOR
-        MENUITEM "리포트 생성",                      ID_POPUP_TREE_REPORT
     END
 END
 
@@ -597,7 +591,6 @@ BEGIN
     POPUP "도구"
     BEGIN
         MENUITEM "진단명 편집",                      ID_DIAGNOSIS_USERDIAGNOSIS
-        MENUITEM "리포트",                         ID_TOOL_REPORT
         MENUITEM "설정",                          ID_PREFERENCE_PREFERENCE
     END
     POPUP "&About"
@@ -655,7 +648,7 @@ BEGIN
     IDS_TIP7                "모니터가 2개 이상인 경우 PAGEUP, PAGEDOWN 키를 이용하여 사진의 옆으로 넘길 수 있습니다."
     IDS_TIP8                "MedicalPhotoServer 에 업데이트가 있는 경우 업데이트 메세지가 나타납니다."
     IDS_TIP9                "전체화면에서 SPACE 키를 누르면 사진이 확대됩니다."
-    IDS_TIP10               "공식 홈페이지는 http://medicalphoto.org 입니다."
+    IDS_TIP10               "공식 홈페이지는 https://medicalphoto.modelderm.com 입니다."
 END
 
 STRINGTABLE
@@ -710,12 +703,12 @@ BEGIN
     IDS_ERROR_GET_INFO      "체크한 사진의 정보를 얻는데 실패했습니다. 오류를 수정하려면 백업이후에 MedicalPhotoServer 에서 데이터베이스 체크 작업을 하세요."
 END
 
-#endif    // Korean (Korea) resources
+#endif    // 한국어(대한민국) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English resources
+// 영어 resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
@@ -734,7 +727,7 @@ BEGIN
     DEFPUSHBUTTON   "OK",IDOK,153,64,42,14,WS_GROUP
     LTEXT           "Copyright (C) 2008",IDC_STATIC,30,66,68,8
     ICON            IDR_MAINFRAME,IDC_STATIC,10,11,20,20
-    LTEXT           "http://medicalphoto.org",IDC_STATIC_CREDIT,30,53,84,12
+    LTEXT           "https://medicalphoto.modelderm.com",IDC_STATIC_CREDIT,30,53,84,12
     LTEXT           "All powered by",IDC_STATIC_CREDIT2,45,24,51,12
     LTEXT           "Department of Dermatology, Asan Medical Center",IDC_STATIC_CREDIT3,30,41,165,12
     LTEXT           "1.0.0.255",IDC_STATIC_VERSION,111,9,79,8,SS_CENTERIMAGE
@@ -860,12 +853,11 @@ BEGIN
     END
     POPUP "&Upload"
     BEGIN
-        MENUITEM "Upload Photography [Ctrl-U]", ID_UPLOAD_UPLOADEX
+        MENUITEM "Upload Photographs [Ctrl-U]", ID_UPLOAD_UPLOADEX
     END
     POPUP "&Tool"
     BEGIN
         MENUITEM "User &Diagnosis",             ID_DIAGNOSIS_USERDIAGNOSIS
-        MENUITEM "&Report",                     ID_TOOL_REPORT
         MENUITEM "&Preference",                 ID_PREFERENCE_PREFERENCE
     END
     POPUP "&About"
@@ -885,8 +877,6 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "&Rename [Ctrl-R]",            ID_POPUP_LIST_RENAME
         MENUITEM "Delete",                      ID_POPUP_LIST_DELETE
-        MENUITEM SEPARATOR
-        MENUITEM "To &PowerPoint [Ctrl-P]",     ID_POPUP_TOPOWERPOINT_LIST
     END
 END
 
@@ -900,10 +890,6 @@ BEGIN
         MENUITEM "&Create [Ctrl-C]",            ID_POPUP_TREE_CREATE
         MENUITEM "&Rename [Ctrl-R]",            ID_POPUP_RENAME
         MENUITEM "Delete",                      ID_POPUP_DELETE
-        MENUITEM SEPARATOR
-        MENUITEM "To &PowerPoint [Ctrl-P]",     ID_POPUP_TOPOWERPOINT_TREE
-        MENUITEM SEPARATOR
-        MENUITEM "Report",                      ID_POPUP_TREE_REPORT
     END
 END
 
@@ -931,24 +917,24 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_ABOUTBOX            "MedicalPhoto Information(&A)..."
-    IDS_TIP1                "All Rights Reserved by Han Seung Seog (whria78@gmail.com)"
-    IDS_TIP2                "Select thumbnail while pressing CTRL key. Then All photos taken on the same time are selected."
-    IDS_TIP3                "You can create a new folder to the location where you want to save your photos in Windows Explorer."
-    IDS_TIP4                "Use the send menu to PowerPoint, the presentation will be done easily."
-    IDS_TIP5                "When searching in the Search box, you can use the AND and OR keywords in uppercase."
-    IDS_TIP6                "You can enter not only the ICD-10 diagnosis, but also the name of your procedure and your diagnostic name."
-    IDS_TIP7                "You can use PAGEUP, the PAGEDOWN key if you have two or more monitors, which passes photo to the next."
-    IDS_TIP8                "If there is an update to MedicalPhotoServer, update message will be displayed."
-    IDS_TIP9                "Press the SPACE key in full screen to see larger photo."
-    IDS_TIP10               "Official website is http://medicalphoto.org."
+    IDS_ABOUTBOX            "MedicalPhoto Information (&A)..."
+    IDS_TIP1                "All rights reserved by Han Seung Seog (whria78@gmail.com)."
+    IDS_TIP2                "Select a thumbnail while holding the CTRL key. All photos taken at the same time will be selected."
+    IDS_TIP3                "You can create a new folder in Windows Explorer at the location where you want to save your photos."
+    IDS_TIP4                "Use the 'Send to PowerPoint' menu to easily create a presentation."
+    IDS_TIP5                "When searching in the Search box, you can use the keywords AND and OR in uppercase."
+    IDS_TIP6                "You can enter not only the ICD-10 diagnosis but also procedure names and diagnostic terms."
+    IDS_TIP7                "If you have multiple monitors, use the PAGE UP and PAGE DOWN keys to navigate through photos."
+    IDS_TIP8                "If an update for MedicalPhotoServer is available, an update message will be displayed."
+    IDS_TIP9                "Press the SPACE key in full-screen mode to enlarge a photo."
+    IDS_TIP10               "Official website: https://medicalphoto.modelderm.com."
 END
 
 STRINGTABLE
 BEGIN
-    IDS_TIP11               "Please email whria78@gmail.com If you have any suggestion or bug."
+    IDS_TIP11               "If you have any suggestions or find a bug, please email whria78@gmail.com."
     IDS_TIP12               "MedicalPhoto supports both Korean and English."
-    IDS_TIP13               "Password lock can be set at ""ADMIN_PASS="" in s_config.txt (server side)"
+    IDS_TIP13               "You can set a password lock by configuring ""ADMIN_PASS="" in s_config.txt (server side)."
     IDS_TIP14               "Tip1"
     IDS_TIP15               "Tip1"
     IDS_TIP16               "Tip1"
@@ -956,47 +942,47 @@ BEGIN
     IDS_TIP18               "Tip1"
     IDS_TIP19               "Tip1"
     IDS_TIP20               "Tip1"
-    IDS_EXIT                "Are you sure to exit ?"
-    IDS_SERVERNONRESPONSE   "MedicalPhotoServer does not response"
-    IDS_NOREMOVEROOT        "You can not remove the root folder"
-    IDS_CONFIRM_DELETE      "Are you sure to delete ?   :  "
-    IDS_DOWN_SELECT_FOLDER  "[DOWNLOAD] Please specify the folder where the files will be copied"
-    IDS_TOOLTIP1            "Input keywords like ""smith""[NAME] AND tinea[DX]\n"
+    IDS_EXIT                "Are you sure you want to exit?"
+    IDS_SERVERNONRESPONSE   "MedicalPhotoServer is not responding."
+    IDS_NOREMOVEROOT        "You cannot remove the root folder."
+    IDS_CONFIRM_DELETE      "Are you sure you want to delete?   :  "
+    IDS_DOWN_SELECT_FOLDER  "[DOWNLOAD] Please specify the folder where the files will be copied."
+    IDS_TOOLTIP1            "Enter keywords like ""smith""[NAME] AND tinea[DX]\n"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_TOOLTIP2            "[Diagnosis Keyword] + [Enter] will reteive the list of related diagnosises\n"
-    IDS_TOOLTIP3            "Comment box can store a list of comments. Comments will be saved and loaded as soon as you click photographies. The check box means [all selected]. If all the selected images have the same comment, then check box  will be checked\n"
-    IDS_TOOLTIP4            "To submit a diagnosis, patient ID, name and ICD code, click the button. It will rename the filename of all the selected image in respect of file informations. If you dont want to rename, go to [Preference] and uncheck [Automation]\n"
-    IDS_TOOLTIP5            "EXIF metadata information of the date taken, It can not be edited\n"
-    IDS_TOOLTIP6            "You can directly access folder tree by Windows explorer to create or rename\n"
-    IDS_TOOLTIP7            "Select thumbnail while pressing CTRL key. Then All photos taken on the same time are selected."
-    IDS_FILE_NOTEXIST       "File not exists"
-    IDS_SHORT_KEYWORD       "Too short keywords"
-    IDS_RECEIVE_LIST        "Receiving : List of Photos"
-    IDS_UPLOAD_FOLDER       "Please select the folder you want to upload your pictures"
-    IDS_NO_PHOTO_REPORT     "No Photo to be reported"
-    IDS_SELECT_FOLDER2      "[REPORT] Please specify the folder where the report file will be created"
-    IDS_SELECT_FOLDER3      "Please specify the folder where the photos will be uploaded"
-    IDS_RENAME_FILE         "Rename  :   "
-    IDS_START_BUILD_PPT     "Now creating Microsoft powerpoint file ..."
-    IDS_FAIL_LOAD_PPT       "Failed to run the PowerPoint. Microsoft Powerpoint should be installed to execute the function."
+    IDS_TOOLTIP2            "[Diagnosis Keyword] + [Enter] will retrieve a list of related diagnoses.\n"
+    IDS_TOOLTIP3            "The comment box can store a list of comments. Comments will be saved and loaded as soon as you select a photograph. The checkbox represents [all selected]. If all selected images have the same comment, the checkbox will be checked.\n"
+    IDS_TOOLTIP4            "To submit a diagnosis, patient ID, name, and ICD code, click the button. This will rename all selected image files according to the file information. If you do not want to rename them, go to [Preferences] and uncheck [Automation].\n"
+    IDS_TOOLTIP5            "EXIF metadata information of the date taken cannot be edited.\n"
+    IDS_TOOLTIP6            "You can directly access the folder tree in Windows Explorer to create or rename folders.\n"
+    IDS_TOOLTIP7            "Select a thumbnail while holding the CTRL key. All photos taken at the same time will be selected."
+    IDS_FILE_NOTEXIST       "File does not exist."
+    IDS_SHORT_KEYWORD       "Keyword is too short."
+    IDS_RECEIVE_LIST        "Receiving: List of photos."
+    IDS_UPLOAD_FOLDER       "Please select the folder where you want to upload your pictures."
+    IDS_NO_PHOTO_REPORT     "No photos available for reporting."
+    IDS_SELECT_FOLDER2      "[REPORT] Please specify the folder where the report file will be created."
+    IDS_SELECT_FOLDER3      "Please specify the folder where the photos will be uploaded."
+    IDS_RENAME_FILE         "Rename:   "
+    IDS_START_BUILD_PPT     "Creating Microsoft PowerPoint file..."
+    IDS_FAIL_LOAD_PPT       "Failed to open PowerPoint. Microsoft PowerPoint must be installed to use this function."
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SELECT_FOLDER4      "[EXPORT PPT] Please specify the folder where you want to save the PowerPoint file"
-    IDS_EMPTY_FOLDER        "There are no files in the folder"
-    IDS_MANY_FILE           "The number of photos you selected is currently %d. Do you really export all to Microsoft Powerpoint?"
-    IDS_FAIL_CREATE_FOLDER  "Fail to create a folder  :  "
+    IDS_SELECT_FOLDER4      "[EXPORT PPT] Please specify the folder where you want to save the PowerPoint file."
+    IDS_EMPTY_FOLDER        "There are no files in the folder."
+    IDS_MANY_FILE           "The number of selected photos is currently %d. Do you want to export all of them to Microsoft PowerPoint?"
+    IDS_FAIL_CREATE_FOLDER  "Failed to create a folder:  "
     IDS_DRAG_FILE_NOT_FOLDER 
-                            "Although it is possible to Drag & Drop photo files, It will not be able to Drag & Drop a folder."
-    IDS_TOO_MANY_PHOTOS     "It will not be able to output all too many of the photo ( > %d ). To increase the limit on the number, please change the config file"
-    IDS_ERROR_GET_INFO      "It failed to get the information of the photo that you have checked. To fix the error, please check your database in MedicalPhotoServer after the backup."
+                            "You can drag and drop photo files, but dragging and dropping folders is not supported."
+    IDS_TOO_MANY_PHOTOS     "Too many photos to output (> %d). To increase the limit, please modify the configuration file."
+    IDS_ERROR_GET_INFO      "Failed to retrieve information for the selected photo. To fix this error, please check your database in MedicalPhotoServer after making a backup."
 END
 
-#endif    // English resources
+#endif    // 영어 resources
 /////////////////////////////////////////////////////////////////////////////
 
 

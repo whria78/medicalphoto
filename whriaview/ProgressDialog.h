@@ -33,7 +33,7 @@ protected:
 
 	void UploadFolderThread(const tstring& stLocalPath,const std::string& stDestNetPath);
 	void UploadFilesThread(const filepath_list& path_list,const std::string& stCurrentPath);
-	void UploadCommon(const std::vector<_tpath>& local_list,filepath_list& net_list,bool bCheck);
+	filepath_list UploadCommon(const std::vector<_tpath>& local_list,filepath_list& net_list,bool bCheck);
 
 public:
 	void DownloadFolder(const std::string& stNetPathFrom,const tstring& stFolderTo);

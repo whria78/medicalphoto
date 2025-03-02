@@ -1,4 +1,7 @@
 =-=- MedicalPhoto Release Note -=-=
+Release 1.1.0.416 / 2025.3.3
+- Support json for automation
+
 Release 1.1.0.400 / 2025.3.2
 - Fix English descriptions
  

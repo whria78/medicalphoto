@@ -117,6 +117,7 @@
     <ClInclude Include="EXIF.H" />
     <ClInclude Include="file.h" />
     <ClInclude Include="imageprocess.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="netpath.h" />
     <ClInclude Include="netwatcher.h" />
     <ClInclude Include="sql_db.h" />

@@ -116,5 +116,8 @@
     <ClInclude Include="watcher.h">
       <Filter>main</Filter>
     </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

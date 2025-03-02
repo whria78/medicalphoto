@@ -6,6 +6,12 @@
 #include "ProgressDialog.h"
 #include <boost/thread/mutex.hpp>
 
+#include "../share/json.hpp"
+struct JsonInfo {
+	std::string Filename;
+	std::string Name;
+	std::string ID;
+};
 
 // CProgressDialog dialog
 
@@ -600,12 +606,14 @@ void CProgressDialog::UploadFiles(const filepath_list& path_list,const std::stri
 	boost::thread BuildThread(boost::bind(&CProgressDialog::UploadFilesThread,this
 		,path_list,stCurrentPath));
 }
-void CProgressDialog::UploadCommon(const std::vector<_tpath>& local_list,filepath_list& net_list,bool bCheck)
+filepath_list CProgressDialog::UploadCommon(const std::vector<_tpath>& local_list,filepath_list& net_list,bool bCheck)
 {
+	filepath_list filepath_list_moved;
+
 	if (local_list.size()!=net_list.size())
 	{
 		m_Progress.SetWindowText(_T("Internal Error : Size Mismatch"));
-		return;
+		return filepath_list_moved;
 	}
 
 //	try
@@ -625,6 +633,7 @@ void CProgressDialog::UploadCommon(const std::vector<_tpath>& local_list,filepat
 
 		tstring stFrom=local_list[i].c_str();
 		std::string stTo=net_list[i];
+		boost::replace_all(stTo, _T("\\"), _T("/"));
 
 		image.Load(stFrom.c_str(),CXIMAGE_FORMAT_UNKNOWN);
 //		tstring stFileExt=MFile::GetFileExtL(stFrom);
@@ -661,6 +670,8 @@ void CProgressDialog::UploadCommon(const std::vector<_tpath>& local_list,filepat
 
 				stTo=MCodeChanger::_CCU(csDumy);
 			}
+
+			filepath_list_moved.push_back(stTo);
 
 			ImageProcess::MakeThumbnail(image,config_.server_config);
 
@@ -707,6 +718,7 @@ void CProgressDialog::UploadCommon(const std::vector<_tpath>& local_list,filepat
 		MessageBeep(MB_ICONHAND);
 	}
 */
+	return filepath_list_moved;
 }
 
 void CProgressDialog::UploadFolderThread(const tstring& stLocalPath,const std::string& stDestNetPath)
@@ -816,6 +828,9 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 			return;
 		}
 
+
+
+
 		m_Progress.SetWindowText(_T("Upload...... :   Receiving a List of Volume"));
 		volname_list vol_list_;
 		WhriaClient.getvollist(vol_list_);
@@ -918,7 +933,180 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 			return;
 		}
 
-		UploadCommon(_tpath_list_final,path_list_,true);
+
+		filepath_list filepath_list_moved = UploadCommon(_tpath_list_final,path_list_,true);
+
+		fileinfo_list result_temp;
+		WhriaClient.getpathinfo(filepath_list_moved, result_temp);
+		if (result_temp.size() == 0) return;
+
+
+		// JSON LOAD
+		std::vector<JsonInfo> json_data;
+		tstring normalizedPath = stLocalPath;
+		boost::replace_all(normalizedPath, _T("\\"), _T("/"));
+
+		size_t lastSlashPos = normalizedPath.find_last_of(_T('/'));
+		tstring lastFolderName;
+		if (lastSlashPos != tstring::npos)
+		{
+			lastFolderName = normalizedPath.substr(lastSlashPos + 1);
+		}
+		else
+		{
+			lastFolderName = normalizedPath; // 슬래시가 없으면 전체가 폴더 이름
+		}
+
+		tstring jsonFilePath = stLocalPath + _T("/") + lastFolderName + _T(".json");
+		boost::replace_all(jsonFilePath, _T("\\"), _T("/"));
+
+		if (boost::filesystem::exists(jsonFilePath))
+		{
+
+			FILE* fp = _tfopen(jsonFilePath.c_str(), _T("r"));
+			if (fp)
+			{
+				try
+				{
+					// 파일 크기 측정
+					fseek(fp, 0, SEEK_END);
+					long fileSize = ftell(fp);
+					rewind(fp);
+
+					// 버퍼에 JSON 데이터 로드
+					std::vector<char> buffer(fileSize + 1, 0);
+					fread(buffer.data(), 1, fileSize, fp);
+					fclose(fp);
+
+					// JSON 파싱
+					nlohmann::json jsonObject = nlohmann::json::parse(buffer.data());
+
+					// JSON 데이터 추출
+					if (jsonObject.is_array())
+					{
+						for (const auto& item : jsonObject)
+						{
+
+
+							m_Progress.SetRange(0, _tpath_list_final.size());
+							m_Progress.SetPos(0);
+							m_Progress.SetWindowText(_T("Retrieving the Json Information"));
+
+
+							for (unsigned int i = 0; i < _tpath_list_final.size(); i++)
+							{
+								tstring stUploadPath = _tpath_list_final[i].c_str();
+								tstring stJsonPath = MCodeChanger::_CCW(item["Filename"].get<std::string>());
+								boost::replace_all(stUploadPath, _T("\\"), _T("/"));
+								boost::replace_all(stJsonPath, _T("\\"), _T("/"));
+								if (stUploadPath == stJsonPath)
+								{
+									fileinfo old = result_temp[i];
+									fileinfo updated = old;
+									updated.stPatientName = item["Name"].get<std::string>();
+									updated.stPatientID = item["ID"].get<std::string>();
+
+									WhriaClient.setpathinfo(old, updated);
+
+
+
+
+									_tpath oldpath(filepath_list_moved[i]);
+									_tpath olddir = _tpath(oldpath.parent_path());
+
+									tstring oldext = MFile::GetFileExtL(MCodeChanger::_CCL(filepath_list_moved[i].c_str())).c_str();
+									tstring oldname = MFile::GetFileNameL(MCodeChanger::_CCL(filepath_list_moved[i].c_str())).c_str();
+
+									tstring newname;
+									if (strcmp(updated.stPatientID.c_str(), "") != 0)
+									{
+										newname += MCodeChanger::_CCL(updated.stPatientID).c_str(); newname += _T("_");
+									}
+									if (strcmp(updated.stPatientName.c_str(), "") != 0)
+									{
+										newname += MCodeChanger::_CCL(updated.stPatientName).c_str(); newname += _T("_");
+									}
+
+									tstring stDate = Utility::GetDateString(updated.Time.date()
+										, 2);
+									if (!stDate.empty())
+									{
+										newname += stDate.c_str(); newname += _T("_");
+									}
+
+									if (_tcscmp(newname.c_str(), _T("")) == 0)
+										newname = oldname;
+									else
+										boost::algorithm::replace_last(newname, _T("_"), "");
+
+									newname += oldext;
+
+									newname = Utility::GetFilename(newname);
+
+									_tpath newpath;
+									newpath = olddir / newname;
+									newpath = Utility::refinepath(newpath);
+
+									int iRenameCount = 0;
+									if (oldpath != newpath)
+									{
+										tstring csDumy = newpath.c_str();
+										csDumy = Utility::GetNumericName(iRenameCount, newpath.c_str());
+										boost::replace_all(csDumy, _T("\\"), _T("/"));
+
+										iRenameCount++;
+
+										fileinfo_list result;
+										WhriaClient.searchfile_by_path_exact(MCodeChanger::_CCU(csDumy), result);
+
+										while (result.size() != 0)
+										{
+											csDumy = Utility::GetNumericName(iRenameCount, newpath.c_str());
+											iRenameCount++;
+
+											result.clear();
+
+											WhriaClient.searchfile_by_path_exact(MCodeChanger::_CCU(csDumy), result);
+										}
+
+										tstring final_path = csDumy;
+
+										WhriaClient.renamefile(filepath_list_moved[i].c_str(), MCodeChanger::_CCU(final_path));
+									}
+
+
+
+
+
+									CString stMsg;
+									stMsg.Format(_T("Retrieving the Json Information : %d / %d"), i + 1, _tpath_list_final.size());
+									m_Progress.SetWindowText(stMsg);
+
+
+								}
+							}
+
+
+						}
+					}
+				}
+				catch (const std::exception& e)
+				{
+					tstring errorMsg = _T("Error reading JSON file: ") + MCodeChanger::_CCW(e.what());
+					AfxMessageBox(errorMsg.c_str());
+				}
+			}
+			else
+			{
+				AfxMessageBox(_T("Failed to open JSON file."));
+			}
+
+		}
+
+
+
+
+
 
 	}
 	catch (const client_connection::ConnectionEx& err_)

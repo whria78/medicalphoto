@@ -185,6 +185,7 @@ GPL license and Free for all purpose
 
 ## Old repo
 http://medicalphoto.sf.net
+http://medieye.sf.net
 
 ## Requirements
 - **VC2015**

@@ -1,0 +1,69 @@
+/*******************************************************************************************/
+/*
+/*		This template/design is released under the Creative Commons Attribution 3.0 license. 
+/*		This means that it can be used for private and commercial purposes, edited freely 
+/*		or redistributed as long as you keep the link back to AS Designing. 
+/*		For more info please see our terms of use: http://www.astemplates.com/terms.php
+/*
+/*		Designed by 'AS Designing'
+/*		Web: http://www.asdesigning.com
+/*		Email: info@asdesigning.com
+/*
+/**************************************************************************************/
+
+#slideshow
+{
+	float:right;
+	width: 310px;
+	height: 480px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	position: relative;
+	overflow: hidden;
+}
+
+#fading 
+{
+	width: 310px;
+	height: 480px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	position: relative;
+	overflow: hidden;
+	background: transparent;
+}
+
+#fading img 
+{
+}
+
+#fading li
+{
+	list-style: none;
+}
+
+ul.pagination 
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+ul.pagination li 
+{
+	width: 0px;
+	height: 0px;
+}
+
+ul.pagination li a 
+{
+}
+
+ul.pagination li.current a, 
+ul.pagination li a:hover 
+{
+}
+
+ul.pagination li img 
+{
+}

@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";O:8:"stdClass":4:{s:2:"id";s:2:"25";s:6:"option";s:9:"com_users";s:6:"params";s:138:"{"allowUserRegistration":"1","new_usertype":"2","useractivation":"1","frontend_userparams":"1","mailSubjectPrefix":"","mailBodySuffix":""}";s:7:"enabled";s:1:"1";}}

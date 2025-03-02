@@ -1,0 +1,1196 @@
+/*******************************************************************************************/
+/*
+/*		Designed by 'AS Designing'
+/*		Web: http://www.asdesigning.com
+/*		Email: info@asdesigning.com
+/*
+/**************************************************************************************/
+
+/**************************************************************************************/
+/**************************************************************************************/
+/*   Elements
+/**************************************************************************************/
+/**************************************************************************************/
+
+* {padding:0; margin:0; border: 0px;}
+
+html 
+{
+	height: 100%;
+}
+
+body
+{
+	background-color: #FFFFFF;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color:  #595959;
+	text-align: left;
+	vertical-align: top;
+}
+
+table
+{
+	width: 100%;
+}
+
+img
+{
+    border: 0;
+    vertical-align: top;     
+}
+
+p
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+p img
+{
+	margin: 0px 15px 15px 0px;
+	padding: 0px 0px 0px 0px;		
+}
+
+a
+{
+	text-decoration: none;
+	color:  #595959;
+	border-bottom: 1px;
+	border-style: dotted;
+    outline-style: none;
+}
+
+a:hover
+{
+	color: #638D29;
+	border: none;
+}
+
+ul
+{
+	list-style: none
+}
+
+li
+{
+	list-style: none;
+}
+
+form
+{
+	padding: 5px 0px 0px 0px;
+}
+
+fieldset 
+{
+	margin: 5px 0px 5px 0px;
+	padding: 2px 0px 2px 0px;
+}
+
+input,
+select
+{
+	width: 215px;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 3px 2px 3px;
+	font-size: 11px;
+	color: #595959;
+	border: 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	vertical-align: bottom;
+	background-color: transparent;
+}
+
+input
+{
+	height: 15px;	
+}
+
+option
+{
+	line-height: 30px;
+	padding: 1px 1px 2px 3px;
+	margin: 0px 0px 2px 0px;	
+}
+
+textarea
+{
+	width: 450px;
+	margin: 2px 2px 10px 0px;
+	padding: 2px 2px 2px 2px;
+	font-size: 13px;
+	border: 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	color: #595959;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;	
+	vertical-align: bottom;	
+}
+
+caption
+{
+}
+
+label
+{
+	float: left;
+	line-height: 18px;
+	padding: 2px 5px 0px 0px;
+    font-weight: normal;
+}
+
+
+/**************************************************************************************/
+/*   Main Menu
+/**************************************************************************************/
+
+#mainmenu
+{
+	float: right;
+	width: 690px;
+	height: 85px;
+	margin: 10px 0px 0px 0px;
+	text-align: left;
+}
+
+#mainmenu ul
+{
+	float: right;
+	list-style: none;
+	margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#mainmenu li
+{
+	display: inline;
+	float: left;
+	width: 145px;
+	height: 35px;
+}
+
+#mainmenu ul.menu li a
+{
+	display: block;
+	float: left;
+	margin: 0px 0px 0px 0px;	
+	padding: 13px 0px 0px 0px;
+	text-decoration: none;
+	width: 140px;
+	height: 45px;	
+	font-weight: bold;
+	font-size: 13px;
+	color: #595959;	
+	background-image: url(../images/btnof_mainmenu.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: none;
+	text-transform: none;
+	text-align: center;
+}
+
+#mainmenu ul.menu li.current a,
+#mainmenu ul.menu li.active a,
+#mainmenu ul.menu li a:hover
+{
+	display: block;
+	float: left;
+	margin: 0px 0px 0px 0px;	
+	padding: 13px 0px 0px 0px;
+	text-decoration: none;
+	width: 140px;
+	height: 55px;	
+	font-weight: bold;
+	font-size: 13px;
+	color: #FFFFFF;
+	background-image: url(../images/btnon_mainmenu.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: none;
+	text-transform: none;
+	text-align: center;
+}
+
+#mainmenu ul.menu li.current a:hover,
+#mainmenu ul.menu li.active a:hover
+{
+	color: #595959;	
+}
+
+#submenu
+{
+}
+
+#submenu #home a
+{
+}
+
+#submenu #home a:hover
+{		
+}
+
+#submenu #contact a
+{				
+}
+
+#submenu #contact a:hover
+{	
+}
+
+#submenu #sitemap a
+{		
+}
+
+#submenu #sitemap a:hover
+{
+}
+
+/**************************************************************************************/
+/*   Header
+/**************************************************************************************/
+/**************************************************************************************/
+
+#header
+{
+    width: 1000px;
+    min-height: 530px;
+	clear: both;
+	margin-top: 20px;
+	background-image: url(../images/header_bg.png);
+	background-position: left top;
+	background-repeat: repeat-x;
+}
+
+#header input
+{
+}
+
+#headercontent
+{
+}
+
+.headercolleft
+{
+	float: left;
+	width: 310px;
+	background-color: #FFFFFF;
+}
+
+.headercolright
+{
+	float: right;
+	width: 690px;
+	min-height: 480px;
+	text-align: right;
+	background-image: url(../images/header_bgleft.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.headercolright #customtop_container
+{
+	width: 100%;
+	min-height: 240px;
+	margin: 40px 0px 0px 0px;	
+	text-align: justify;	
+}
+
+#customtop_container h1,
+#customtop_container h2,
+#customtop_container h3
+{
+	height: 70px;
+	padding: 0px 0px 0px 65px;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+#customtop_container #topleft h1,
+#customtop_container #topleft h2,
+#customtop_container #topleft h3
+{
+	background-image: url(../images/htop1.png);
+	background-position: left top;
+	background-repeat: no-repeat;		
+}
+
+#customtop_container #topcenter h1,
+#customtop_container #topcenter h2,
+#customtop_container #topcenter h3
+{
+	background-image: url(../images/htop2.png);
+	background-position: left top;
+	background-repeat: no-repeat;		
+}
+
+#customtop_container #topright h1,
+#customtop_container #topright h2,
+#customtop_container #topright h3
+{
+	background-image: url(../images/htop3.png);
+	background-position: left top;
+	background-repeat: no-repeat;		
+}
+
+#customtop_container .readmore a
+{
+	width: 100px;
+	height: 25px;
+	float: right;
+	background-image: url(../images/btnoff_readmore.png);
+	background-repeat: no-repeat;
+	border: none;
+}
+
+#customtop_container .readmore a:hover
+{
+	color: #FFFFFF;
+	background-image: url(../images/btnon_readmore.png);
+	background-repeat: no-repeat;	
+	border: none;	
+}
+
+#customtop_container .button
+{
+	margin: 0px 0px 0px 0px;
+	padding: 3px 0px 0px 1px;	
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+
+
+/**************************************************************************************/
+/*   Content
+/**************************************************************************************/
+/**************************************************************************************/
+
+#content
+{
+	clear: both;
+	width: 1000px;
+	text-align: center;
+	margin: 0px auto 0px auto;
+	border-top: 3px solid #878787;
+	border-bottom: 3px solid #878787;	
+}
+
+/**************************************************************************************/
+/*   Column Left
+/**************************************************************************************/
+
+#colleft
+{
+	float: left;
+	width: 250px;
+	padding: 0px 20px 15px 20px;
+	margin: 20px 0px 20px 0px;
+	text-align: left;
+}
+
+#colleft h1, 
+#colleft h2, 
+#colleft h3
+{
+    text-align: left;
+	margin: 0px 0px 15px 0px;
+	padding: 15px 0px 0px 0px;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: none;	
+}
+
+#colleft h4,
+#colleft .bannerheader
+{
+	height: 25px;
+	margin: 10px 0px 10px 0px;
+	font-weight: bold;
+	font-size: 13px;
+	vertical-align: top;
+}
+
+#colleft p 
+{
+	margin: 0px 0px 5px 0px;
+	font-weight: normal;
+	text-align: justify;
+}
+
+
+#colleft ul 
+{
+    margin: 10px 10px 10px 10px;
+}
+
+#colleft li  
+{
+    padding: 3px;
+	list-style: inside;
+	list-style-image: url(../images/mark.png);
+}
+
+#colleft a,
+#colleft li a
+{
+	text-decoration: none;
+    font-weight: normal;
+	border: none;
+	color: #595959;
+}
+
+#colleft a:hover
+{
+	color: #638D29;
+	border: none;
+    cursor: pointer;
+}
+
+#colleft form
+{
+	padding: 0px 20px 0px 0px;
+}
+
+#colleft .txtblock
+{
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 10px 0px;	
+}
+
+#colleft input
+{
+	width: 220px;
+	margin: 0px 0px 0px 0px;
+}
+	
+#colleft input[type="checkbox"],
+#colleft input[type="radio"]
+{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin: 2px 0px 0px 5px;	
+	border: none;
+}
+
+#colleft .textblock
+{
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-left: 15px;
+}
+
+#colleft button, 
+#colleft .button
+{
+	float: right;
+    width: 100px;
+    height: 25px;
+	margin: 10px 0px 0px 20px;
+	color: #595959;
+	background-image: url(../images/btnoff_readmore.png);
+	background-repeat: no-repeat;
+	border: none;
+	outline-style: none;
+}
+
+#colleft button:hover, 
+#colleft .button:hover
+{
+	cursor: pointer;
+	background-image: url(../images/btnon_readmore.png);
+	background-repeat: no-repeat;
+	border: none;
+	color: #FFFFFF;
+	border: none;
+}
+
+#colleft #search input
+{
+	background-image: url(../images/search.png);
+	background-position: right;
+	background-repeat: no-repeat;
+	border-color: #DDDDDD;
+}
+
+#colleft .colleftcustom
+{
+}
+
+/**************************************************************************************/
+/*   Column Main 
+/**************************************************************************************/
+#colmain
+{
+	float: right;
+	padding: 20px;
+	margin: 0px 0px 35px 0px;
+	text-align: justify;
+}
+
+#colmain h1, 
+#colmain h2, 
+#colmain h3,
+#colmain .customhtml h1,
+#colmain .customhtml h2,
+#colmain .customhtml h3,
+#colmain h1 a,
+#colmain h2 a,
+#colmain h3 a
+{
+	clear: both;
+	width: inherit !important;
+	color: #638D29;
+	font-size: 16px;	
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+	padding: 15px 0px 0px 0px;
+	text-transform: none;
+	border: none;
+}
+
+#colmain h4,
+#colmain h5,
+#colmain h4 a,
+#colmain h5 a
+{
+	clear: both;
+	margin: 15px 0px 10px 0px;
+	padding: 0px 0px 5px 0px;
+	color: #638D29;;
+	font-size: 15px;	
+	font-weight: normal;
+}
+
+#colmain p
+{
+	font-weight: normal;
+	text-align: justify;
+	margin: 20px 0px 0px 0px;
+}
+
+#colmain ul
+{
+	float: left;
+	width: 100%;
+	text-align: left;
+	margin: 10px 10px 10px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#colmain li 
+{
+	padding: 3px;
+	list-style: inside;
+	list-style-image: url(../images/mark.png);
+}
+
+#colmain li a
+{
+	color: #595959;
+	border-bottom: 1px;
+	border-style: dotted;	
+}
+
+#colmain li a:hover
+{
+	color: #638D29;
+	border: none;	
+}
+
+#colmain input,
+#colmain select
+{
+	width: 215px;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 3px 2px 3px;
+	font-size: 12px;
+	color: #595959;
+	border: 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	vertical-align: bottom;
+	background-image: url(../images/input_bg.png);
+	background-repeat: repeat-x;
+}
+
+#colmain textarea
+{
+	background-image: url(../images/input_bg.png);
+	background-repeat: repeat-x;
+}
+
+#colmain select
+{
+	width: 223px;
+}
+
+#colmain input[type="checkbox"],
+#colmain input[type="radio"]
+{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-top: 3px;
+	margin-right: 5px;
+	border: none;
+	background-color: #FFFFFF;
+}
+
+#colmain label
+{
+	float: left;
+	width: 200px;
+}
+
+#colmain .txtblock
+{
+	margin: 0px 0px 30px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#colmain #article img
+{
+	margin: 0px 10px 10px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+#colmain .customhtml
+{
+	clear: both;
+	width: 100%;
+	min-height: 0px;
+	margin: 0px;
+	padding: 0px;	
+	background: none;
+	background-image: none;
+	color: #595959;
+}
+
+#colmain .readmore a
+{
+	width: 200px;
+	height: 25px;
+	float: right;
+	padding: 4px 0px 0px 0px;
+	background-image: url(../images/btnoff_colmain.png);
+	background-repeat: no-repeat;
+	border: none;
+}
+
+#colmain .readmore a:hover
+{
+	color: #FFFFFF;
+	background-image: url(../images/btnon_colmain.png);
+	background-repeat: no-repeat;	
+	border: none;	
+}
+
+#colmain button, 
+#colmain .button
+{
+	clear: both;
+	margin: 25px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+    width: 200px;
+    height: 25px;
+    font-weight: bold;
+	text-align: center;
+	background-image: url(../images/btnoff_colmain.png);
+	background-repeat: no-repeat;
+	border: none;
+	color: #595959;
+}
+
+#colmain .button a
+{
+	position: absolute;
+	padding: 0px 0px 0px 0px;
+}
+
+#colmain button:hover, 
+#colmain .button:hover
+{
+	cursor: pointer;
+	background-image: url(../images/btnon_colmain.png);
+	background-repeat: no-repeat;
+	border: none;
+	color: #FFFFFF;	
+}
+
+#colmain .adsense
+{
+	clear: both;
+	width: 100%;
+	min-height: 60px;
+	margin: 35px 0px 30px 0px;
+	padding: 15px 0px 0px 0px;
+	text-align: left;
+	background-color: transparent;
+	border-top: 1px #ddd dotted;
+	border-bottom: 1px #ddd dotted;
+}
+
+/**************************************************************************************/
+/*   Column Right 
+/**************************************************************************************/
+
+
+/**************************************************************************************/
+/**************************************************************************************/
+/*   Footer
+/**************************************************************************************/
+/**************************************************************************************/
+
+#footer
+{
+	width: 100%;
+	height: inherit;
+}
+
+#footerbg
+{
+}
+
+#footercontent
+{
+	width: 1000px;
+	height: 100%;	
+	margin: 0px auto 0px auto;
+	padding: 20px 0px 20px 0px;
+}
+
+#footer h1, 
+#footer h2, 
+#footer h3
+{
+	width: 100%;
+	height: 20px;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 7px 00px;
+	color: #595959;	
+	font-weight: normal;
+	font-size: 15px;
+	background-image: url(../images/sep_hor.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	text-align: left;
+}
+
+#footer p
+{
+	color: #595959;	
+}
+
+#footer #search input
+{	
+}
+
+#footer a
+{
+	text-decoration: none;
+    font-weight: normal;
+	color: #595959;
+	border: none;
+}
+
+#footer a:hover
+{
+	color: #638D29;
+	border: none;
+    cursor: pointer;
+}
+
+#footer ul 
+{
+	list-style: none;
+	text-align: right;
+}
+
+#footer li
+{
+	padding: 3px 0px 3px 20px;
+	display: inline;	
+}
+
+#footer #social
+{
+}
+
+#footer #social p img
+{	
+}
+
+#footer #getintouch
+{
+	clear: both;
+	padding: 0px 0px 15px 0px;
+}
+
+#footermenu
+{
+	width: 100%;
+	text-align: right;
+}
+
+#footertrademark
+{
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-weight: normal;
+}
+
+#footertrademark #trade
+{
+	margin: 5px 0px 0px 0px;
+}
+
+#footerleft
+{
+	float: left;	
+	width: 310px;
+	min-height: 150px;		
+}
+
+#footerright
+{
+	float: left;
+	width: 660px;		
+	min-height: 150px;
+	text-align: right;	
+}
+
+/**************************************************************************************/
+/**************************************************************************************/
+/*   General Element IDs and classes
+/**************************************************************************************/
+/**************************************************************************************/
+
+#wrapper0
+{
+	width: 100%;
+	background-image: none;
+}
+
+#wrapper1
+{
+	width: 100%;
+	background-image: url(../images/companyname_slider.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+}
+
+#general
+{
+	width: 1000px;
+	text-align: center;
+	margin: 0px auto 0px auto;
+	background-color: #FFF;
+	border: 1px;
+	border-color: #FFF;
+	border-style: solid;	
+}
+
+#companyname
+{
+	float: right;
+	width: 690px;
+	height: 125px;
+	margin: 15px 0px 0px 0px;
+	text-align: right;
+}
+
+#companyname a
+{
+	border: none;
+}
+
+.companyname
+{
+	padding: 20px 25px 0px 0px;
+    font-size: 36px;
+    font-weight: bold;
+	border: none;
+	color: #6F9E2E;	
+}
+
+.slogan
+{
+    color: #6F9E2E;
+	border: none;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.box1,
+.box2
+{
+	float: left;	
+	min-height: 150px;
+}
+
+.box3
+{
+	float: left;	
+	min-height: 150px;
+}
+
+.txtbox1
+{
+	margin: 0px 0px 0px 0px; 	
+}
+
+.txtbox2
+{
+	margin: 0px 0px 0px 0px; 	
+}
+
+.txtbox3
+{
+	margin: 0px 0px 0px 0px; 	
+}
+
+.txtbox_custombottom
+{
+	height: 100%;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 20px 30px 20px;
+	background-color: #EDF3ED;	
+	border: 1px;
+	border-color: #FFFFFF;
+	border-style: solid;	
+}
+
+.txtbox_border
+{
+	border: 1px;
+	border-color: #CCCCCC;
+	border-style: solid;	
+}
+
+#adsense
+{
+	clear: both;
+	float: right;
+	margin: 0px 0px 0px 0px;
+}
+
+
+.alignleft
+{
+	text-align: left;
+}
+
+.alignright
+{
+	text-align: right;
+}
+
+.center
+{
+    padding: 10px;
+    text-align: center;    
+}
+
+.left
+{
+	float: left;
+}
+
+.right
+{
+	float: right;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.spacer
+{
+	width: 1px;
+	height: 40px;
+}
+
+.separator
+{
+	width: 1px;
+	height: 20px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_5
+{
+	clear: both;
+	width: 5px;
+	height: 5px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_7
+{
+	clear: both;	
+	width: 7px;
+	height: 7px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_10
+{
+	clear: both;	
+	width: 10px;
+	height: 10px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_15
+{
+	clear: both;	
+	width: 15px;
+	height: 15px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_20
+{
+	clear: both;	
+	width: 20px;
+	height: 20px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_20_left
+{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_30
+{
+	clear: both;	
+	width: 30px;
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_30_left
+{
+	float: left;	
+	width: 30px;
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_50
+{
+	clear: both;	
+	width: 50px;
+	height: 50px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+}
+
+.separator_ver
+{
+	margin: 0px 15px 0px 15px;
+	width: 2px;
+	background-image: url(../images/sep_ver.png);
+	background-repeat: repeat-y;
+	background-position: bottom;
+}
+
+.separator_hor
+{
+	padding: 25px 0px 25px 0px;
+	height: 2px;
+	background-image: url(../images/sep_hor.png);
+	background-repeat: repeat-x;
+	background-position: center;
+}
+
+.separatordotted_hor
+{
+	clear: both;	
+	margin: 20px 0px 20px 0px;
+	height: 1px;
+	background-image: url(../images/sep_hor.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.separatordotted_ver
+{
+	margin: 0px 0px 0px 0px;
+	width: 1px;
+	background-image: url(../images/sep_ver.png);
+	background-repeat: repeat-y;
+	background-position: bottom;
+}
+
+
+#slogan
+{
+
+}
+
+
+#search
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+.border 
+{
+}
+
+.button, 
+button
+{
+	padding: 0px 20px 0px 20px;
+	margin: 10px 0px 0px 10px;
+	height: 25px;
+    width: 90px;
+	font-size: 11px;
+	font-weight: bold;
+	outline-style: none;
+	background-color: transparent;
+}
+
+.button:hover, 
+button:hover
+{
+    cursor: pointer;
+}
+
+.label
+{
+    font-weight: bold;
+}
+
+.asterisk
+{
+	float: left;
+	width: 10px;
+	padding: 0px 0px 0px 3px;
+	color: #638D29;
+}

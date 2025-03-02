@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD template 1.0//EN" "http://dev.joomla.org/xml/1.5/template-install.dtd">
+<install version="1.5" type="template">
+	<name>AS 002026</name>
+	<version>1.0.0</version>
+	<creationDate>26-04-2011</creationDate>
+	<author>AS Designing</author>
+    <authorEmail>info@asdesigning.com</authorEmail>
+    <authorUrl>http://asdesigning.com</authorUrl>
+    <copyright>AS Designing</copyright>
+    <license>Creative Commons</license>
+	<description>
+	
+	<![CDATA[
+
+			<img src="http://www.astemplates.com/content/templates/002026/template_thumbnail.png" align="left" style="margin: 0px 10px 10px 0px;" />
+			
+			<h1>AS Template 002026 - Joomla! 1.6 Template</h1>
+			
+			<span style="color:red; font-weight: bold; ">
+				This template/design is released under the Creative Commons Attribution 3.0 license. <br>
+				This means that it can be used for private and commercial purposes, <br>
+				edited freely or redistributed as long as you keep the link back to 
+				<a href="http://www.asdesigning.com" target="_blank">AS Designing</a>.<br /><br />
+				<b>If you are not going to keep the link, this template should be purchased, the price is $7.00</b><br />
+				In addition, you will receive possibility to change some of the main template parameters.
+			</span> 
+
+			<img src="http://www.astemplates.com/content/templates/002026/params.png" align="left" style="margin: 0px 10px 10px 0px;" />
+			<br />&nbsp;<br />&nbsp;<br />
+
+			<div class="clr"></div>
+
+			<hr /><br />
+
+			<br />Visit our site for more templates: <a href="http://www.astemplates.com" target="_blank">http://www.astemplates.com</a>.<br /><br />
+			<h3><b>Most popular AS Templates:</b></h3>
+			    <a href="http://www.astemplates.com/itemdetails.php?id=36" target="_blank"><b>AS Template 002019</b></a><br />
+			    <a href="http://www.astemplates.com/itemdetails.php?id=45" target="_blank"><b>AS Template 002021</b></a><br />
+			    <a href="http://www.astemplates.com/itemdetails.php?id=24" target="_blank"><b>AS Template 002003</b></a><br />
+			    <a href="http://www.astemplates.com/itemdetails.php?id=52" target="_blank"><b>AS Template 002022</b></a><br />
+			    <a href="http://www.astemplates.com/itemdetails.php?id=42" target="_blank"><b>AS Template 002007</b></a>
+			<br /><br />
+			</div>
+			
+			]]>
+	</description>
+	
+    <files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>scripts</folder>
+		<folder>lib</folder>		
+		
+		<filename>component.php</filename>
+        <filename>favicon.ico</filename>
+        <filename>ie6warning.php</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+        <filename>params.ini</filename>
+		<filename>params.php</filename>		
+		<filename>template_thumbnail.png</filename>	
+		<filename>templateDetails.xml</filename>
+    </files>
+	
+	<positions>
+		<position>position-18</position>			<!-- header - slideshow -->
+		<position>position-1</position>				<!-- header - mainmenu -->
+		
+		<position>position-0</position>				<!-- left column - search -->
+		<position>position-4</position>				<!-- left column - custom html -->
+		<position>position-7</position>				<!-- left column - menu - latest news - login -->
+		<position>whosonlineload</position>
+		<position>position-9</position>				<!-- left column - custom -->
+		
+		<position>position-2</position>				<!-- main column - breadcrumbs -->
+		<position>position-3</position>				<!-- main column - custom top left html-->
+		<position>position-6</position>				<!-- main column - custom top center html -->
+		<position>position-8</position>				<!-- main column - custom top right html -->
+		<position>position-5</position>				<!-- main column - banners -->
+		<position>position-10</position>			<!-- main column - custom html -->
+		<position>position-15</position>			<!-- main column - custom bottom left html -->
+		<position>position-16</position>			<!-- main column - custom bottom right html -->
+		<position>position-11</position>			<!-- main column - custom html -->
+		
+		<position>position-12</position>			<!-- footer - custom - get in touch -->
+		<position>position-13</position>			<!-- footer - custom - menu -->
+
+	</positions>
+
+</install>

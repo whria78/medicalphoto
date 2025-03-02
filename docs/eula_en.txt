@@ -1,0 +1,3 @@
+﻿ This program will diagnose whether you have a nail athlete's foot. The results obtained with this program are for reference only. Please check with your dermatologist for accurate diagnosis.
+
+ The photographs used for analysis are transferred, and stored and can be used as research data for new service research and development.

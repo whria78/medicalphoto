@@ -1,0 +1,726 @@
+/*******************************************************************************************/
+/*
+/*		Designed by 'AS Designing'
+/*		Web: http://www.asdesigning.com
+/*		Email: info@asdesigning.com
+/*
+/*	    This CSS file contains Joomla edited classes.
+/*
+/**************************************************************************************/
+
+/**************************************************************************************/
+/*   General
+/**************************************************************************************/
+
+#system-message
+{
+	margin: 0px 10px 0px 0px;
+	padding: 0px 0px 10px 0px;
+	border-color: #878787;
+	background-color: #EED2D2;
+}
+
+#system-message dd.error ul, 
+#system-message dd.warning ul, 
+#system-message dd.notice ul
+{
+	margin: 0px 0px 30px 0px;
+	padding: 10px 0px 12px 10px;
+	background-color: #EED2D2;
+    border-bottom-color: #878787;
+    border-top-color: #878787;
+	color: #CD4704;	
+}
+
+#system-message ul li
+{
+	margin: 0px 0px 0px 10px;
+	color: #595959;
+	list-style-image: none;
+}
+
+
+#breadcrumb
+{
+	height: 24px;
+	margin: 0px 0px 5px 0px;
+	padding: 8px 0px 0px 0px;
+	border-bottom: 3px;
+	border-style: solid;
+	border-color: #878787;
+}
+
+#breadcrumb a
+{
+	color: #638D29;
+	border: none;
+}
+
+#breadcrumb a:hover
+{
+	color: #333333;	
+	border: none;
+}
+
+.breadcrumbs
+{
+	float: right;
+	padding: 0px 20px 0px 20px;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: none;
+	text-align: right;		
+}
+
+.moduletable_menu li a,
+#colmain .item-page li a,
+#colmain .actions li a,
+#colmain #editor-xtd-buttons a
+{
+	border-style: none;	
+}
+
+.moduletable_menu li a:hover
+{
+	color: #638D29;
+}
+
+#colmain #editor-xtd-buttons .button2-left .readmore
+{
+	height: inherit;
+	width: inherit;
+	width: 150px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	border: none;
+	text-transform: none !important;
+}
+
+#colmain #editor-xtd-buttons .button2-left .readmore a
+{
+	color: #595959;
+}
+
+/**************************************************************************************/
+/*   Header
+/**************************************************************************************/
+
+#header input
+{
+	width: 270px;	
+}
+
+#header .inputbox
+{
+	float: left;
+	padding: 2px 2px 2px 5px;
+	border: 1px;
+	border-top: 1px;
+	border-right: 0px;
+	border-bottom: 1px;
+	border-left: 0px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	background-color: #CCC;
+	font-size: 11px;
+	color: #3F3C38;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: left;
+}
+
+/**************************************************************************************/
+/*   Column Left
+/**************************************************************************************/
+
+#colleft #form-login-remember
+{
+    margin: 5px 0px 5px 0px;
+	border: none;
+}
+
+#colleft #login-form ul 
+{
+    margin: 10px 10px 10px 0px;
+}
+
+#colleft .moduletable,
+#colleft .moduletable_text, 
+#colleft .moduletable_menu,
+#colleft .contentpaneopen
+{
+	margin: 0px 0px 0px 0px;
+	padding: 15px 20px 0px 0px;
+}
+
+#colleft .menu
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 20px 0px 0px;
+}
+
+#colleft .inputbox
+{
+	margin: 0px 0px 4px 0px;
+	border: 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	color: #595959;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;	
+}
+
+#colleft .banneritem_text
+{
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#colleft .custom
+{
+	padding: 10px 0px 10px 0px;
+	text-align: justify;
+}
+
+#colleft .logout-button
+{
+	min-height: 45px;	
+}
+
+/**************************************************************************************/
+/*   Column Main 
+/**************************************************************************************/
+
+
+#colmain .moduletable,
+#colmain .moduletable_text, 
+#colmain .moduletable_menu
+{
+	padding: 0px 0px 15px 0px;
+}
+
+#colmain .contentpane
+{
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px 10px 10px;	
+}
+
+#colmain .contentpane img
+{		
+    margin: 0px 0px 0px 0px;
+    padding: 15px 15px 15px 15px;	
+}
+
+#colmain .contentpane ul
+{		
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;	
+}
+
+#colmain .contentpane ul li p img,
+#colmain .contentpane ul li div img,
+#colmain .contentpane ul li h2 img
+{			
+	margin: 15px;
+}
+
+#colmain .contentpane p
+{		
+    margin: 15px 15px 0px 0px;
+    padding: 0px 0px 0px 0px;	
+}
+
+#colmain .contentpaneopen
+{		
+    margin: 0px 0px 0px 0px;
+    padding: 5px 20px 10px 5px;	
+}
+
+#colmain .readmore
+{
+	min-height: 25px;
+	float: right;
+	margin: 25px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;	
+	text-align: center;
+	font-size: 11px;
+	text-transform: none;
+}
+
+#colmain .readmore a
+{
+	color: #595959;
+	border: none;
+}
+
+
+#colmain .readmore a:hover
+{
+	color:  #FFFFFF;
+	border: none;
+}
+
+#colmain .button2-left .readmore a
+{
+	background-image: none;
+	width: 150px;
+	padding: 0px 0px 0px 0px;	
+}
+
+#colmain .inputbox
+{
+	float: left;	
+	margin: 1px 0px 1px 0px;
+	border: 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;	
+	font-size: 11px;
+	text-align: left;
+}
+
+#colmain .counter
+{
+	margin: 10px 0px 10px 0px;
+}
+
+#colmain .item-separator
+{
+	clear: both;
+	height: 5px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#colmain .actions
+{
+	text-align: right;
+	width: 100%;
+}
+
+#colmain .item-page ul
+{
+	float: right;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 20px 0px;
+}
+
+#colmain .actions li,
+#colmain .pagenav li,
+#colmain .pagination li
+{
+	display: inline;
+}
+
+#colmain .pagination a:hover,
+#colmain .pagenav a:hover
+{
+	color: #595959;
+	border: none;
+}
+
+#colmain .menu,
+#colmain .bannergroup,
+#colmain .form-note
+{
+	clear: both;	
+}
+
+#colmain .formelm,
+#colmain .formelm select
+{
+	margin: 3px 0px 0px 0px;	
+}
+
+#colmain #jform_spacer-lbl
+{
+	float: right;
+	width: 100%;
+}
+
+#colmain .article-info
+{
+	clear: both;
+	margin: 0px 0px 40px 0px;
+}
+
+/**************************************************************************************/
+/*   Column Main - Registration Form & Profile
+/**************************************************************************************/
+
+.registration,
+.profile,
+.formelm,
+.formelm-buttons,
+#jform_description
+{
+	clear: both;
+}
+
+.formelm-buttons
+{
+	margin: 5px 0px 25px 0px;	
+}
+
+#colmain .formelm-buttons button
+{
+	margin: 20px 10px 0px 0px;	
+}
+
+#member-registration
+{
+	padding: 5px 0px 0px 0px;
+}
+
+#member-registration fieldset,
+#member-profile fieldset,
+#adminForm fieldset,
+.registration fieldset,
+.profile fieldset
+{
+	border: solid 1px #ddd;
+	margin: 3px 0 15px 0;
+	padding: 15px 15px 20px 15px;	
+}
+
+form fieldset dt
+{
+	clear: both;
+	float: left;
+	width: 180px;
+	padding: 3px 0;
+}
+
+form fieldset dd
+{
+	float: left;
+	padding: 3px 0;
+}
+
+.profile-edit form#member-profile fieldset dd,
+.registration form#member-registration fieldset dd
+{ 
+	float: none; 
+	padding: 5px 0;
+	height: 18px;	
+}
+
+.profile-edit form#member-profile fieldset dd input,
+.profile-edit form#member-profile fieldset dd select,
+.registration form#member-registration fieldset dd input
+{
+	width: 200px;
+}
+
+#users-profile-core dd, 
+#users-profile-custom dd 
+{
+    padding: 3px 0;
+}
+
+.profile-edit form#member-profile fieldset dt,
+.registration form#member-registration fieldset dt
+{
+	padding: 5px 5px 5px 0; 
+	width: 200px;
+	height: 18px;
+}
+
+#users-profile-core dt, 
+#users-profile-custom dt 
+{
+    float: left;
+    padding: 3px 0;
+    width: 180px;
+}
+
+#users-profile-core legend,
+#users-profile-custom legend,
+#adminForm legend,
+.profile-edit legend,
+.registration legend
+{
+	font-weight: bold;
+	padding: 0px 5px 0px 5px;
+	background-color: #FFF;
+}
+
+span.spacer > span.text label 
+{
+	white-space: nowrap;
+	font-weight: bold;
+	color: #595959;
+}
+
+.red,
+.star
+{
+	font-weight: bold;
+	color: #CD4704;
+}
+
+
+/**************************************************************************************/
+/*   Column Main - Login
+/**************************************************************************************/
+
+.login-box
+{
+	padding: 15px;
+}
+
+.login fieldset
+{
+	border: solid 1px #dddddd;
+	margin: 10px 0px 10px 0px;
+}
+
+.login-fields
+{
+	float: left;
+	margin: 0px 0px 5px 0px;
+}
+
+.login
+{
+	clear: both;
+}
+
+/**************************************************************************************/
+/*   Column Main - Search
+/**************************************************************************************/
+
+#search
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+	text-align: left;
+}
+
+#searchForm
+{
+	margin: 0px 0px 20px;
+	padding: 0px 5px
+}
+
+#searchForm .button
+{
+	clear: both;
+	float: right;	
+}
+
+#searchForm .phrases,
+#searchForm .only
+{
+	border: solid 1px #dddddd;
+}
+
+#searchForm #limit
+{
+	margin: 0px 20px 0px 20px;
+}
+
+.searchintro
+{
+	font-weight: normal;
+	margin: 20px 0 20px;
+}
+
+.form-limit
+{
+	margin: 20px 0 0;
+	text-align: right;
+	padding: 0 10px 0 20px;
+}
+
+.inputbox:focus
+{
+}
+
+.highlight
+{
+	font-weight:bold;
+}
+
+.ordering-box
+{
+	width: 100%;
+	float: left;
+	margin: 20px 0px 0px;
+}
+
+#ordering
+{
+	width: 150px;
+	padding: 1px;	
+}
+
+#ordering option
+{
+	padding: 1px;	
+}
+
+.phrases-box,
+.searchonly-box
+{
+	width: 100%;
+	float: left;
+	margin: 10px 0px 0px;
+}
+
+.only,
+.phrases
+{
+	margin: 20px 0 0 0px;
+	padding: 15px;
+	line-height: 20px;
+}
+
+.only input
+{
+	margin: 0px 10px 5px 0px;	
+}
+
+.word
+{
+	padding: 10px 0px 10px 0px;
+}
+
+.word input
+{
+	font-weight:bold;
+	margin: 0px 10px 0px 10px;
+	padding: 4px;
+	font-size: 1em
+}
+
+.word input:focus
+{
+	margin: 0 0 0 9px;
+}
+
+.word label
+{
+    font-weight: bold
+}
+
+fieldset.only label,
+fieldset.phrases label
+{
+    margin: 0 10px 0 0px;
+}
+
+.search legend
+{
+	padding: 0px 5px 0px 5px;
+	font-weight: bold;
+}
+
+.result-category
+{
+    margin: 10px 0px 0px 0px;
+}
+
+.result-title
+{
+	font-weight: bold;	
+    margin: 20px 0px 0px 0px;	
+}
+
+
+/**************************************************************************************/
+/*   Column Main - Contact
+/**************************************************************************************/
+#colmain .contact-contactinfo,
+#colmain .contact-form,
+#colmain .contact-links
+{
+	margin: 20px 0px 0px 0px;
+	padding: 0px;	
+}
+
+#colmain .contact-contactinfo p
+{
+	margin: 5px 0px 0px 0px;
+	padding: 0px;	
+}
+
+#colmain #emailForm input
+{
+	margin: 0px 10px 5px 0px;	
+}
+
+#colmain .contact-links ul
+{
+	margin: 0px 0px 10px 0px;
+	padding: 0px;		
+}
+
+
+#colmain #contact-form legend
+{
+	margin: 0px;
+	padding: 0px 0px 20px 0px;			
+	float: right;
+	font-style: italic;
+	color: #CD4704;	
+}
+
+#colmain #contact-form fieldset dt
+{
+	width: 20%;
+	clear: both;
+	padding: 5px 0px 0px 0px;	
+}
+
+#colmain #contact-form fieldset dd
+{
+	width: 80%;
+	padding: 5px 0px 0px 0px;
+	float: left;	
+}
+
+#colmain #contact-form fieldset dt label,
+#colmain #contact-form fieldset dd input
+{
+	float: none;	
+}
+
+#colmain .contact-miscinfo .jicons-icons
+{
+	float: left;
+	margin: 17px 15px 20px 0px;	
+}
+
+#colmain .contact-miscinfo .contact-misc
+{
+	float: left;	
+}
+
+/**************************************************************************************/
+/*   Footer
+/**************************************************************************************/
+
+#footer .moduletable,
+#footer .moduletable_text, 
+#footer .moduletable_menu,
+#footer .contentpaneopen
+{
+	clear: both;
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+	color: #595959;
+}
+
+#footer .inputbox
+{
+	float: left;
+	height: 16px;
+	padding: 2px 5px 2px 5px;
+	background-color: transparent;
+	font-size: 11px;
+	color: #595959;
+	text-align: left;
+	border-color: #DDDDDD;
+}
+

@@ -17,6 +17,8 @@ MedicalPhoto is a non-commercial medical image management program developed prim
 ## Minimum System Requirements
 MedicalPhoto is compatible with Microsoft Windows XP, Vista, 7, 8, and 10.
 
+---
+
 ## Installation
 ### 1. Server Side Installation
 #### 1.1 Install Server
@@ -24,34 +26,32 @@ Run the installer (`Setup.exe`). In the "Select Type" section, choose:
 - **"Server and Client"** if this is the first-time installation.
 - **"Client"** if the server is already installed.
 
-[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_12.png
-](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_12.png)
+![Installation Type Selection](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_12.png)
 
-[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_1.png
-](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_1.png)
+![Setup Window](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_1.png)
 
 After installation, the configuration wizard will launch automatically.
 
 #### 1.2 Configuration
 
-[image_5.jpg](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_5.png)
+![Configuration](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_5.png)
 
 - Select the main directory where photos will be saved. Specify a location with sufficient storage capacity.
 - If the folder contains previously taken photos, MedicalPhoto will gather their information. This process may take time depending on the number of photos.
 
 #### 1.3 Check IP Address
 
-[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_15.png
-](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_15.png)
+![Check IP Address](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_15.png)
 
 - "MedicalPhotoServer" appears as an icon in the system tray.
 
-[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_22.png
-](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_22.png)
+![Server Monitoring](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_22.png)
 
 - It is a server-monitoring tool displaying the **[IP Address]** upon startup.
 - The **[Host Address]** is the internal IP address of the server.
 - Clients must use this IP address to connect.
+
+---
 
 ## 2. Client Side Installation
 Before installing a client, the MedicalPhoto server must be installed.
@@ -61,11 +61,12 @@ Before installing a client, the MedicalPhoto server must be installed.
 - Enter the **[IP Address]** of the server.
 - You can later change the IP in **"Preference" → "Server Information"**.
 
+---
+
 ## Client Usage
 ### 2.1 Client Window Components
 
-[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png
-](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png)
+![Client Window](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png)
 
 - **Search Box** (Shortcut: `F12`)
 - **Folder Tree**
@@ -102,6 +103,8 @@ Before installing a client, the MedicalPhoto server must be installed.
 - Displays selected filenames.
 - Files selected via **Ctrl + Click** appear in **red**.
 
+---
+
 ## 3. Menu
 ### 3.1 View Mode (`Ctrl + T`)
 - **Normal Mode**
@@ -120,8 +123,12 @@ Before installing a client, the MedicalPhoto server must be installed.
 - **Search Options**: Modify search behavior.
 - **Diagnosis Files**: Includes built-in **`derma.dat`** (dermatology diagnosis and ICD-10 database).
 
+---
+
 ## 4. Uploading & Downloading Photos
 - Use the **Upload-Ex** menu button for easy photo uploads.
+
+---
 
 ## 5. Keyboard Shortcuts
 | Shortcut       | Action |
@@ -145,6 +152,8 @@ Before installing a client, the MedicalPhoto server must be installed.
 | `← →`      | Navigate images |
 | `ESC`      | Close window |
 
+---
+
 ## 6. Server Management
 The server consists of:
 - **`MedicalPhotoServer`** (server monitor)
@@ -157,27 +166,27 @@ The server consists of:
 - **Check Database**: Ensures consistency between the database and photo files.
 - **Log Window**: Displays the **Host IP Address** and application version.
 
+---
+
 ## 7. Security
 - A security password can be set in **`s_config.txt`** (`ADMIN_PASS=1234`).
 
+---
+
 ## 8. Troubleshooting
 - Report bugs to **whria78@gmail.com**.
+
+---
 
 ## 9. Copyright
 **All Rights Reserved** by Seung Seog Han (whria78@gmail.com)  
 **Department of Dermatology, Seoul, Korea**  
 [http://whria.net](http://whria.net)
 
-
-
-
 ## Old repo
 http://medicalphoto.sf.net
 
 ## Requirements
-
-VC2015
-
-Boost 1.61
-
-CreateInstall 4.11.2
+- **VC2015**
+- **Boost 1.61**
+- **CreateInstall 4.11.2**

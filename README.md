@@ -24,15 +24,31 @@ Run the installer (`Setup.exe`). In the "Select Type" section, choose:
 - **"Server and Client"** if this is the first-time installation.
 - **"Client"** if the server is already installed.
 
+[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_12.png
+](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_12.png)
+
+[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_1.png
+](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_1.png)
+
 After installation, the configuration wizard will launch automatically.
 
 #### 1.2 Configuration
-- Select the main directory where photos will be saved.
-- Specify a location with sufficient storage capacity.
+
+[image_5.jpg](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_5.png)
+
+- Select the main directory where photos will be saved. Specify a location with sufficient storage capacity.
 - If the folder contains previously taken photos, MedicalPhoto will gather their information. This process may take time depending on the number of photos.
 
 #### 1.3 Check IP Address
+
+[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_15.png
+](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_15.png)
+
 - "MedicalPhotoServer" appears as an icon in the system tray.
+
+[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_22.png
+](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_22.png)
+
 - It is a server-monitoring tool displaying the **[IP Address]** upon startup.
 - The **[Host Address]** is the internal IP address of the server.
 - Clients must use this IP address to connect.
@@ -47,6 +63,10 @@ Before installing a client, the MedicalPhoto server must be installed.
 
 ## Client Usage
 ### 2.1 Client Window Components
+
+[https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png
+](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png)
+
 - **Search Box** (Shortcut: `F12`)
 - **Folder Tree**
 - **Patient Information Box**

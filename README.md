@@ -10,9 +10,6 @@ MedicalPhoto is a non-commercial medical image management program developed prim
 - Built-in ICD-10 and dermatologic diagnosis database
 - Customizable diagnoses and procedure tagging
 
-## Minimum System Requirements
-MedicalPhoto is compatible with Microsoft Windows XP, Vista, 7, 8, and 10.
-
 ---
 
 ## Installation

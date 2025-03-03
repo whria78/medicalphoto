@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Warning</h1>
+        
+        <h2>Memory Requirements</h2>
+        <p>To ensure optimal performance, at least <strong>64GB of RAM</strong> is recommended. If your system has less memory, you may experience slow processing times or application crashes.</p>
+        
+        <h2>Microsoft Visual C++ Redistributable</h2>
+        <p>This application requires an updated version of the <strong>Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022</strong>.</p>
+        <p>If you encounter an issue related to missing or outdated redistributable packages, please download the latest version from the official Microsoft website:</p>
+        <p><a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022" target="_blank">Download Microsoft Visual C++ Redistributable</a></p>
+        
+        <h2>Model Download</h2>
+        <p>The application requires GGUF model files to function correctly. If the <code>./gguf</code> directory does not contain any <code>.gguf</code> files, please download the required models from Hugging Face.</p>
+        
+        <h3>Qwen2-VL 72B Model:</h3>
+        <ul>
+            <li>Repository: <a href="https://huggingface.co/second-state/Qwen2-VL-72B-Instruct-GGUF" target="_blank">Qwen2-VL-72B-Instruct-GGUF</a></li>
+            <li>Required files:
+                <ul>
+                    <li>Qwen2-VL-72B-Instruct-Q4_K_M.gguf</li>
+                    <li>Qwen2-VL-72B-Instruct-vision-encoder.gguf</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3>Qwen2-VL 7B Model:</h3>
+        <ul>
+            <li>Repository: <a href="https://huggingface.co/second-state/Qwen2-VL-7B-Instruct-GGUF" target="_blank">Qwen2-VL-7B-Instruct-GGUF</a></li>
+            <li>Required files:
+                <ul>
+                    <li>Qwen2-VL-7B-Instruct-Q4_K_M.gguf</li>
+                    <li>Qwen2-VL-7B-Instruct-vision-encoder.gguf</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <p>Download and place the appropriate files inside the <code>./gguf</code> directory.</p>
+        
+        <h2>Unicode Support Issue</h2>
+        <p>If you receive an error related to Unicode support, ensure that your system is using <strong>UTF-8</strong> encoding.</p>
+        
+        <h3>How to Enable UTF-8 Support:</h3>
+        <ol>
+            <li>Open <strong>Settings</strong> > <strong>Time & Language</strong> > <strong>Language & region</strong>.</li>
+            <li>Click <strong>Administrative language settings</strong>.</li>
+            <li>Under <strong>Language for non-Unicode programs</strong>, click <strong>Change system locale</strong>.</li>
+            <li>Check <strong>Beta: Use Unicode UTF-8 for worldwide language support</strong>.</li>
+            <li>Restart your computer.</li>
+        </ol>
+        
+        <p>If you continue to experience issues, please contact support or refer to the documentation.</p>
+    </div>
+</body>
+</html>

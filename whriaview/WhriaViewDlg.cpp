@@ -1954,17 +1954,21 @@ void CWhriaViewDlg::OnTimer(UINT nIDEvent)
 	text+=config_.Get(LAST_HOST_ADDRESS).c_str();
 	m_Progress.SetWindowText(text);
 
+	if (m_dlg_inputserver.DoModal() == IDCANCEL)
+	{
+		KillTimer(1);
+		Exit();
+		return;
+	}
+	
+
 	int iCount=0;
-	while (Login(config_.Get(LAST_HOST_ADDRESS),config_.Get(CLIENT_PORT),config_.Get(LAST_USER_ID),config_.Get(LAST_USER_PASSWD))==false)
+	while (Login(config_.Get(LAST_HOST_ADDRESS),config_.Get(CLIENT_PORT),config_.Get(LAST_USER_ID), MCodeChanger::_CCU((LPCTSTR)(m_dlg_inputserver.stPassword)))==false)
 	{
 		m_ViewDlg.ShowWindow(SW_HIDE);
 
 		iCount++;
 
-		if (iCount>1)
-		{
-			MessageBox(TransMsg(IDS_SERVERNONRESPONSE));
-		}
 		if (iCount>3)
 		{
 			KillTimer(1);
@@ -2214,6 +2218,7 @@ BOOL CWhriaViewDlg::Login(const std::string&stIP,const std::string&stPort,const 
 	{
 		WhriaClient.disconnect();
 
+
 		if (err_.iErrorCode==6)
 			return false;
 		ErrorExit(err_);
@@ -2223,6 +2228,12 @@ BOOL CWhriaViewDlg::Login(const std::string&stIP,const std::string&stPort,const 
 	catch (const basic_client::ConnectionEx& err_)
 	{
 		WhriaClient.disconnect();
+
+		if (err_.iErrorCode == PASSWORD_MISMATCH)
+		{
+			MessageBox(_T("Password Mismatch"));
+			return false;
+		}
 
 		if (err_.iErrorCode==TIMEOUT)
 		{

@@ -3,8 +3,8 @@
 #endif //APSTUDIO_INVOKED
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,0,416
- PRODUCTVERSION 1,1,0,416
+ FILEVERSION 1,1,0,453
+ PRODUCTVERSION 1,1,0,453
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -19,8 +19,8 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "FileVersion", "1.1.0.416"
-            VALUE "ProductVersion", "1.1.0.416"
+            VALUE "FileVersion", "1.1.0.453"
+            VALUE "ProductVersion", "1.1.0.453"
             VALUE "CompanyName", "https://modelderm.com"
             VALUE "FileDescription", "MedicalPhoto Application"
             VALUE "LegalCopyright", "Han Seung Seog.  All rights reserved."

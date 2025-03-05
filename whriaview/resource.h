@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by WhriaView.rc
+// Microsoft Visual C++에서 생성한 포함 파일입니다.
+// WhriaView.rc에서 사용되고 있습니다.
 //
 #define IDOK2                           2
 #define IDM_ABOUTBOX                    0x0010
@@ -216,6 +216,7 @@
 #define IDC_EDIT_SQLID                  1025
 #define IDC_EDIT6                       1026
 #define IDC_EDIT_SQLIP                  1026
+#define IDC_EDIT_PASSWORD               1026
 #define IDC_BUTTON_EXIT                 1027
 #define IDC_BUTTON_SAVE                 1027
 #define IDC_BUTTON2                     1028
@@ -350,7 +351,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        219
+#define _APS_NEXT_RESOURCE_VALUE        221
 #define _APS_NEXT_COMMAND_VALUE         32804
 #define _APS_NEXT_CONTROL_VALUE         1092
 #define _APS_NEXT_SYMED_VALUE           101

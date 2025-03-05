@@ -36,6 +36,7 @@ void server_connection::ExecuteOrder(boost::archive::text_iarchive& archive_in
 			  if (!config_.GetInt(MULTIUSER_SUPPORT))
 				  CurrentUser.stUserID=config_.Get(SUPERADMIN_ID);
 
+
 			  if (config_.GetInt(MULTIUSER_SUPPORT))
 				  log.WriteCommand(stIPAddress,LOGIN,CurrentUser.stUserID);
 			  else
@@ -75,11 +76,24 @@ void server_connection::ExecuteOrder(boost::archive::text_iarchive& archive_in
 
 			  }
 
-			  bLogin=true;
-			  netpath_.Open(CurrentUser.stUserID);
 
-			  serial_out(archive_out,result_message);
-			  serial_out(archive_out,config_);
+			  if (CurrentUser.stPasswd != config_.Get(SUPERADMIN_PASS))
+			  {
+				  bLogin = false;
+				  result_message.Add(PASSWORD_MISMATCH);
+
+				  serial_out(archive_out, result_message);
+				  serial_out(archive_out, blank_);
+			  }
+			  else
+			  {
+				  bLogin = true;
+				  netpath_.Open(CurrentUser.stUserID);
+
+				  serial_out(archive_out, result_message);
+				  serial_out(archive_out, config_);
+			  }
+
 
 		  }
 		  break;

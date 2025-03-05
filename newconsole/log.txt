@@ -1,40 +1,4 @@
-connection::handle_filetransfer
-async_upload_file
-handle_upload_buffer
-async_connection::handle_waiting_order
-async_read_header      4f(0
-async_read22 serialization::archive 14 0 0 16 40 2016-01-01/kkk/DSC_0832_1 2016-01-01.JPG
-async_connection::handle_execute_order
-Command (16) by superadmin : 2016-Sep-04 07:48:18
-async_write 22 serialization::archive 14 0 0 0 3434 4294967295 0  0 0 0 0 8 20160904 0 0 0 7 48 17 0 13211
-async_connection::handle_filetransfer
-async_upload_file
-handle_upload_buffer
-async_connection::handle_waiting_order
-async_read_header      4f(0
-async_read22 serialization::archive 14 0 0 16 40 2016-01-01/kkk/DSC_0831_1 2016-01-01.JPG
-async_connection::handle_execute_order
-Command (16) by superadmin : 2016-Sep-04 07:48:18
-async_write 22 serialization::archive 14 0 0 0 7441 4294967295 0  0 0 0 0 8 20160904 0 0 0 7 48 17 0 13422
-async_connection::handle_filetransfer
-async_upload_file
-handle_upload_buffer
-async_connection::handle_waiting_order
-async_read_header      38(0
-async_read22 serialization::archive 14 0 0 19 15 2016-01-01/2009 0
-async_connection::handle_execute_order
-Command (19) by superadmin : 2016-Sep-04 07:48:19
-[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009 )   : 2016-Sep-04 07:48:19
-[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009';
-async_write 22 serialization::archive 14 0 0 0 30145 4294967295 0  0 0 0 0 8 20160904 0 0 0 7 48 17 0 0 0 1 0 0 0 23 2016-01-01/2009/2009-01 15 2016-01-01/2009 0 0 10 superadmin 10 superadmin 0 0 3 3 0 15 not-a-date-time 0 0 0  0  0  0  1 1 0
-async_connection::handle_waiting_order
-async_read_header      40(0
-async_read22 serialization::archive 14 0 0 19 23 2016-01-01/2009/2009-01 0
-async_connection::handle_execute_order
-Command (19) by superadmin : 2016-Sep-04 07:48:20
-[127.0.0.1]	[GETFOLDERLIST]	( 2016-01-01/2009/2009-01 )   : 2016-Sep-04 07:48:20
-[sql] SELECT * FROM fileinfo WHERE netdir='2016-01-01/2009/2009-01';
-async_write 22 serialization::archive 14 0 0 0 21718 4294967295 0  0 0 0 0 8 20160904 0 0 0 7 48 17 0 0 0 1 0 0 0 32 2016-01-01/2009/2009-01/09-01-02 23 2016-01-01/2009/2009-01 0 0 10 superadmin 10 superadmin 0 0 3 3 0 15 not-a-date-time 0 0 0  0  0  0  1 1 0
+016-01-01/2009/2009-01/09-01-02 23 2016-01-01/2009/2009-01 0 0 10 superadmin 10 superadmin 0 0 3 3 0 15 not-a-date-time 0 0 0  0  0  0  1 1 0
 async_connection::handle_waiting_order
 async_read_header      38(0
 async_read22 serialization::archive 14 0 0 19 15 2016-01-01/2009 0
@@ -15166,3 +15130,38 @@ Command (19) by superadmin : 2016-Sep-28 21:54:14
 async_write 22 serialization::archive 14 0 0 0 14798 4294967295 0  0 0 0 0 8 20160928 0 0 0 21 54 7 0 0 0 0 0
 async_connection::handle_waiting_order
 [Disconnect] 127.0.0.1 : 2016-Sep-28 21:54:17
+d:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-04 21:58:52
+The photography folder not exist : d:/2016-01-01
+d:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-04 21:59:03
+The photography folder not exist : d:/2016-01-01
+d:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-04 22:02:56
+The photography folder not exist : d:/2016-01-01
+d:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-04 22:03:02
+The photography folder not exist : d:/2016-01-01
+d:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-04 22:04:49
+The photography folder not exist : d:/2016-01-01

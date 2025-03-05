@@ -40,6 +40,7 @@ public:
 	enum { IDD = IDD_DIALOG_CLIENTCONFIG };
 
 	CString stIPAddress;
+	CString stPassword;
 	CString	m_FTP_Pass;
 	CString m_ID;
 
@@ -85,6 +86,7 @@ public:
 	afx_msg void OnBnClickedButtonExit();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	CEdit m_IP;
+	CEdit m_Password;
 };
 
 //{{AFX_INSERT_LOCATION}}

@@ -239,7 +239,8 @@ enum config_element
 	TMP_PATH,
 
 	NTSERVICE_NAME,
-	IDLE_CONNECTION_INTERVAL
+	IDLE_CONNECTION_INTERVAL,
+	SUPERADMIN_PASS
 //	APP_TYPE
 };
 
@@ -274,7 +275,7 @@ public:
 		Insert(IDLE_CONNECTION_INTERVAL,_T("IDLE_CONNECTION_INTERVAL"),"10");
 
 //		Insert(LOG_PORT,_T("LOG_PORT"),"9998");
-		Insert(ADMIN_PASS,_T("ADMIN_PASS"),"");
+		//Insert(ADMIN_PASS,_T("ADMIN_PASS"),"");
 		Insert(DATA_PATH,_T("DATA_PATH"),std::string(""));
 
 		_tpath path_dataroot= Utility::refinepath(MFile::GetInitialPath() / _T("data"));
@@ -298,7 +299,8 @@ public:
 //		Insert(CONNECT_MEDIEYENET,_T("CONNECT_MEDIEYENET"),"0");
 //		Insert(BACKUP_MAX_NUM_FILE,_T("BACKUP_MAX_NUM_FILE"),"30");
 		Insert(SUPERADMIN_ID,_T("SUPERADMIN_ID"),"superadmin");
-//		Insert(THREADS_NUMBER,_T("THREADS_NUMBER"),"1");
+		Insert(SUPERADMIN_PASS, _T("SUPERADMIN_PASS"), "0000");
+		//		Insert(THREADS_NUMBER,_T("THREADS_NUMBER"),"1");
 		Insert(HOSPITAL_ID_LENGTH,_T("HOSPITAL_ID_LENGTH"),"4");
 		Insert(AUTO_START,_T("AUTO_START"),"1");
 		Insert(MINIMIZE,_T("MINIMIZE"),"1");

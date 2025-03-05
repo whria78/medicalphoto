@@ -36,10 +36,11 @@ void CInputServerAddress::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CInputServerAddress)
-//	DDX_Text(pDX, IDC_EDIT_PASS, m_FTP_Pass);
+	//	DDX_Text(pDX, IDC_EDIT_PASS, m_FTP_Pass);
 	//}}AFX_DATA_MAP
-//	DDX_Text(pDX, IDC_EDIT_ID, m_ID);
+	//	DDX_Text(pDX, IDC_EDIT_ID, m_ID);
 	DDX_Control(pDX, IDC_EDIT_IP, m_IP);
+	DDX_Control(pDX, IDC_EDIT_PASSWORD, m_Password);
 }
 
 
@@ -72,6 +73,8 @@ void CInputServerAddress::OnOK()
 		config_.LoadDefault(LAST_USER_ID);
 	}
 	m_IP.GetWindowText(stIPAddress);
+	m_Password.GetWindowText(stPassword);
+
 	config_.Set(LAST_HOST_ADDRESS,MCodeChanger::_CCU(stIPAddress.GetBuffer(0)));
 //	config_.Set(LAST_USER_PASSWD,MCodeChanger::_CCU(m_FTP_Pass.GetBuffer(0)));
 	config_.save();

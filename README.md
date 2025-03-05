@@ -57,6 +57,12 @@ Before installing a client, the MedicalPhoto server must be installed.
 ---
 
 ## Client Usage
+
+### 2.1 Connect
+
+Default password is '0000'.
+The password can be changed at 'C:/medicalphoto/s_config.txt'
+
 ### 2.1 Client Window Components
 
 ![Client Window](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/image_23.png)

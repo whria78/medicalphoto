@@ -185,5 +185,5 @@ GPL license and Free for all purpose
 - http://medieye.sf.net
 
 ## Requirements
-- **VC2015**
 - **Boost 1.61**
+- **VC2015 Community Edition**

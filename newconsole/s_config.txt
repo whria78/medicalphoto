@@ -6,7 +6,7 @@
 ADMIN_PASS=
 
 // Main Photographic Path
-DATA_PATH=d:\2016-01-01
+DATA_PATH=E:\lg_brain_hunt
 
 // Thumbnail Storage Path
 THUMB_PATH=D:\thumb

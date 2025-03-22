@@ -31,6 +31,8 @@
 #include <boost/filesystem/operations.hpp>
 #include <boost/format.hpp>
 
+#include <boost/asio/ssl.hpp>
+
 #include "../share/datatype.h"
 #include "../share/file.h"
 #include "../share/config.h"
@@ -69,9 +71,9 @@
 class client_connection
 {
 public:
-  client_connection(boost::asio::io_service& io_service,boost::asio::ip::tcp::socket& soc_)
+  client_connection(boost::asio::io_service& io_service, boost::asio::ssl::stream<boost::asio::ip::tcp::socket>& soc_)
     : io_service_(io_service)
-	,log(_tcout)
+    ,log(_tcout)
 	,socket_(soc_)
   {
 	 inbound_data_=NULL;
@@ -109,12 +111,46 @@ public:
 	  }
   };
 
-  boost::asio::ip::tcp::socket& socket() {return socket_;}
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket>& socket() {return socket_;}
 
   void connect(const std::string& host,const std::string& service);
   void scan(const std::string& host,const std::string& service);
 
 private:
+
+	// 기존 handle_connect를 handshake를 고려하여 수정
+	void handle_connect(boost::optional<boost::system::error_code>* socket_result,
+		const boost::system::error_code& error)
+	{
+		if (!error)
+		{
+			std::cout << "Connected, starting handshake...\n";
+			socket_.async_handshake(boost::asio::ssl::stream_base::client,
+				boost::bind(&client_connection::handle_handshake, this, socket_result,
+					boost::asio::placeholders::error));
+		}
+		else
+		{
+			std::cout << "Connect failed: " << error.message() << "\n";
+			set_result(socket_result, error);
+		}
+	}
+
+	// handshake 완료 후 set_result 호출
+	void handle_handshake(boost::optional<boost::system::error_code>* socket_result,
+		const boost::system::error_code& error)
+	{
+		if (!error)
+		{
+			std::cout << "Handshake successful!\n";
+		}
+		else
+		{
+			std::cout << "Handshake failed: " << error.message() << "\n";
+		}
+		set_result(socket_result, error); // handshake 완료 후 socket_result 설정
+	}
+
   void connect(boost::asio::ip::tcp::endpoint endpoint,
 						 boost::optional<boost::system::error_code>& timer_result,
 						 boost::optional<boost::system::error_code>& socket_result);
@@ -122,7 +158,25 @@ private:
 						 boost::optional<boost::system::error_code>& timer_result,
 						 boost::optional<boost::system::error_code>& socket_result);
 
- //serialize
+  // SSL
+  void socket_close()
+  {
+	  boost::system::error_code ec;
+	  // SSL 세션 종료
+	  socket_.shutdown(ec);
+	  if (ec)
+	  {
+		  std::cerr << "SSL shutdown error: " << ec.message() << std::endl;
+	  }
+
+	  // TCP 소켓 닫기
+	  socket_.next_layer().close(ec);
+	  if (ec)
+	  {
+		  std::cerr << "Socket close error: " << ec.message() << std::endl;
+	  }
+  }
+  //serialize
 
 protected:
   std::string InboundBuffer() {return std::string(inbound_data_);}
@@ -132,7 +186,7 @@ protected:
   void async_write();
   void async_read_header();
   void async_read_data();
-  void handle_async_read();
+  //void handle_async_read();
 
   void free_InboundBuffer()
   {
@@ -145,8 +199,8 @@ protected:
 
 
 protected:
-  boost::asio::ip::tcp::socket& socket_;
-  CMyCout log; 
+	boost::asio::ssl::stream<boost::asio::ip::tcp::socket>& socket_;
+    CMyCout log; 
 
 public:  boost::asio::io_service& io_service_;
 

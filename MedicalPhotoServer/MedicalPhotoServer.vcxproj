@@ -47,15 +47,15 @@
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Release\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Release;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Debug\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Debug\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Debug;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
@@ -90,7 +90,7 @@
       <Culture>0x0412</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>mpr.lib;Version.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32-static.lib;libeay32-static.lib;mpr.lib;Version.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\release\MedicalPhotoServer.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ProgramDatabaseFile>.\Release/MedicalPhotoServer.pdb</ProgramDatabaseFile>
@@ -133,7 +133,7 @@
       <Culture>0x0412</Culture>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>mpr.lib;Version.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ssleay32-static.lib;libeay32-static.lib;mpr.lib;Version.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug/MedicalPhotoServer.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>

@@ -12,13 +12,31 @@ class basic_client :
 	public client_connection
 {
 public:
-  basic_client(boost::asio::io_service& io_,boost::asio::ip::tcp::socket& soc_)
+  basic_client(boost::asio::io_service& io_, boost::asio::ssl::stream<boost::asio::ip::tcp::socket>& soc_)
     : io_service_(io_)
 	,client_connection(io_,soc_)
   {
   }
   void connect(const std::string& host,const std::string& port);
-  void disconnect() {socket().close();}
+  void disconnect() {
+  // SSL
+	/*
+	  boost::system::error_code ec;
+	  socket().shutdown(ec);
+	  if (ec)
+	  {
+		  std::cerr << "SSL shutdown error: " << ec.message() << std::endl;
+	  }
+
+	  // TCP ¼ÒÄÏ ´Ý±â
+	  socket().next_layer().close(ec);
+	  if (ec)
+	  {
+		  std::cerr << "Socket close error: " << ec.message() << std::endl;
+	  }
+	  */
+	  socket().next_layer().close();
+  }
 
   class ConnectionEx
   {

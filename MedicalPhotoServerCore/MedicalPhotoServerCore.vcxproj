@@ -43,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Debug\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Debug;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Release\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Release;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

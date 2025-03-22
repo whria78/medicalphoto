@@ -3,9 +3,11 @@
 // Powered by Han Seung Seog
 // Copyright 2008
 
-
 // Password
-ADMIN_PASS=
+SUPERADMIN_PASS=0000
+
+// Port Number
+PORT=9999
 
 // Main Photographic Path
 DATA_PATH=
@@ -38,8 +40,8 @@ SQLBACKUP_DURATION=14
 // Screen Lock time (min)
 IDLE_HIDE_SCREEN=5
 
-// Port Number
-PORT=9999
+
+
 // Idle connection interval to wakeup the server continuously
 IDLE_CONNECTION_INTERVAL=10
 
@@ -70,3 +72,4 @@ SCHEDULE_BUILD_TIME=0
 // Data Ingegrity Check    cf) -2:not use , -1:Everyday , 0:Sunday 1:Monday ....
 SCHEDULE_CHECK_DATE=-2
 SCHEDULE_CHECK_TIME=0
+

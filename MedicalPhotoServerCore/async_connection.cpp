@@ -43,7 +43,7 @@ void async_connection::handle_execute_order(const boost::system::error_code& e)
 
 	clear();
 
-	std::istringstream archive_stream_in(connection_basic::InboundBuffer());
+	std::istringstream archive_stream_in(connection_ssl::InboundBuffer());
 	boost::archive::text_iarchive archive_in(archive_stream_in);
 
 	std::ostringstream archive_stream_out;
@@ -55,7 +55,7 @@ void async_connection::handle_execute_order(const boost::system::error_code& e)
 	}
 	catch (CppSQLite3Exception& e)
 	{
-		connection_basic::free_InboundBuffer();
+		connection_ssl::free_InboundBuffer();
 		if (fp!=NULL) {fclose(fp);fp=NULL;}
 
 		result_message.Add(SQL_ERROR,e.errorCode(),e.errorMessage());
@@ -63,7 +63,7 @@ void async_connection::handle_execute_order(const boost::system::error_code& e)
 	}
     catch (std::exception& e)
     {
-		connection_basic::free_InboundBuffer();
+		connection_ssl::free_InboundBuffer();
 		if (fp!=NULL) {fclose(fp);fp=NULL;}
 
 		std::string stErrMsg=e.what();
@@ -75,18 +75,18 @@ void async_connection::handle_execute_order(const boost::system::error_code& e)
 	if (result_message.CheckError())
 		serial_out(archive_out,result_message);
 
-	connection_basic::OutboundBuffer()= archive_stream_out.str();
+	connection_ssl::OutboundBuffer()= archive_stream_out.str();
 
 	if (command_.order_code==LOGIN && result_message.CheckError())
 	{
-		connection_basic::async_write(boost::bind(&async_connection::handle_logoff, this),
+		connection_ssl::async_write(boost::bind(&async_connection::handle_logoff, this),
 		boost::posix_time::seconds(STREAMING_TIMEOUT));
 		return;
 	}
 
 	if (bFileTransfer)
 	{
-		connection_basic::async_write(boost::bind(&async_connection::handle_filetransfer, this,
+		connection_ssl::async_write(boost::bind(&async_connection::handle_filetransfer, this,
 		  boost::asio::placeholders::error,
 		  fp,
 		  stLocalPath,lFileSize),
@@ -94,7 +94,7 @@ void async_connection::handle_execute_order(const boost::system::error_code& e)
 	}
 	else
 	{
-		connection_basic::async_write(boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error),
+		connection_ssl::async_write(boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error),
 		boost::posix_time::seconds(STREAMING_TIMEOUT));
 	}
 }
@@ -121,7 +121,10 @@ void async_connection::handle_logoff()
 #endif
 
 	  clear();
-	  connection_basic::async_read(boost::bind(&async_connection::handle_execute_order,this,boost::asio::placeholders::error),
+
+	  socket().is_open();
+
+	  connection_ssl::async_read(boost::bind(&async_connection::handle_execute_order,this,boost::asio::placeholders::error),
 		  boost::posix_time::hours(ORDER_WAITING_TIMEOUT));
  }
 
@@ -174,7 +177,7 @@ void async_connection::resume()
 
 		case UPLOADFILE:
 			{
-				connection_basic::async_download_file(fp,
+				connection_ssl::async_download_file(fp,
 					stLocalPath,
 					lFileSize,
 					boost::bind(&async_connection::handle_uploadprocess, this,boost::asio::placeholders::error));
@@ -182,7 +185,7 @@ void async_connection::resume()
 			break;
 		case THUMB_UPLOADFILE:
 			{
-				connection_basic::async_download_file(fp,
+				connection_ssl::async_download_file(fp,
 					stLocalPath,
 					lFileSize,
 					boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error));
@@ -193,7 +196,7 @@ void async_connection::resume()
 		case DOWNLOADFILE:
 		case THUMB_DOWNLOADFILE:
 			{
-				connection_basic::async_upload_file(fp,
+				connection_ssl::async_upload_file(fp,
 					stLocalPath,
 					lFileSize,
 					boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error));
@@ -249,7 +252,7 @@ void async_connection::handle_postexecute_order(const boost::system::error_code&
 	}
 	catch (CppSQLite3Exception& e)
 	{
-		connection_basic::free_InboundBuffer();
+		connection_ssl::free_InboundBuffer();
 		if (fp!=NULL) {fclose(fp);fp=NULL;}
 
 		result_message.Add(SQL_ERROR,e.errorCode(),e.errorMessage());
@@ -257,7 +260,7 @@ void async_connection::handle_postexecute_order(const boost::system::error_code&
 	}
     catch (std::exception& e)
     {
-		connection_basic::free_InboundBuffer();
+		connection_ssl::free_InboundBuffer();
 		if (fp!=NULL) {fclose(fp);fp=NULL;}
 
 		std::string stErrMsg=e.what();

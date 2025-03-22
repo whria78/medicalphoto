@@ -43,7 +43,7 @@ BEGIN
 	IDS_STRING_BUILDTMBERR  "Build Thumbnail Error"
 	IDS_STRING_ASKEXIT      "Are you sure you want to stop and exit?"
 	IDS_STRING_DATAFOLDERERR "The data folder path must not contain the photography folder path."
-	IDS_STRING_YOURIP       "The IP address of this server: local IP"
+	IDS_STRING_YOURIP       "The IP address of this server: localip"
 END
 
 

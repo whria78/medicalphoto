@@ -15,8 +15,8 @@ async_server::async_server(config& c_,async_connection_manager& m_)
 	log << _T("Accept : Port( ") << MCodeChanger::_CCL(config_.Get(SERVER_PORT)) << _T(" )") << log.endl();
 }
 	*/
-async_server::async_server(CMyCout& l_,config& c_,async_connection_manager& m_)
-  : basic_server<server_connection>(c_.GetInt(SERVER_PORT),l_,c_,m_)
+async_server::async_server(CMyCout& l_,config& c_,async_connection_manager& m_, boost::asio::ssl::context& s_)
+  : basic_server<server_connection>(c_.GetInt(SERVER_PORT),l_,c_,m_,s_)
   ,log_(l_)
 	,config_(c_)
 {

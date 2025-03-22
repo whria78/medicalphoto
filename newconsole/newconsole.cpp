@@ -14,6 +14,15 @@
 #include <boost/function.hpp>
 #include <boost/lexical_cast.hpp>
 
+#include <boost/asio/ssl.hpp>
+#include <openssl/rsa.h>
+#include <openssl/pem.h>
+#include <openssl/x509.h>
+#include <openssl/x509v3.h>
+#include <openssl/evp.h>  // EVP_PKEY 관련 헤더
+#include <iostream>
+#include <string>
+
 #include "../share/unicode.h"
 #include "../share/etc.h"
 #include "../share/cmycout.h"
@@ -63,6 +72,101 @@ void Server_Exit(void)
 	CMyCout log(_tcout);
 	log << _T("Server Exit") << log.endl();
 }
+void setup_ssl_context(boost::asio::ssl::context& ssl_context_)
+{
+	ssl_context_.set_options(
+	boost::asio::ssl::context::default_workarounds |
+	boost::asio::ssl::context::no_sslv2 |
+	boost::asio::ssl::context::no_sslv3 |
+	boost::asio::ssl::context::no_tlsv1 |
+	boost::asio::ssl::context::no_tlsv1_1
+	);
+
+	std::cout << "Generating new SSL certificate and key..." << std::endl;
+
+	// RSA 키 생성
+	RSA* rsa = RSA_generate_key(2048, RSA_F4, nullptr, nullptr);
+	if (!rsa)
+	{
+		throw std::runtime_error("Failed to generate RSA private key.");
+	}
+
+	EVP_PKEY* pkey = EVP_PKEY_new();
+	if (!pkey || !EVP_PKEY_set1_RSA(pkey, rsa))
+	{
+		RSA_free(rsa);
+		throw std::runtime_error("Failed to assign RSA to EVP_PKEY.");
+	}
+	RSA_free(rsa);
+
+	// X509 인증서 생성
+	X509* cert = X509_new();
+	if (!cert)
+	{
+		EVP_PKEY_free(pkey);
+		throw std::runtime_error("Failed to create X509 certificate.");
+	}
+
+	X509_set_version(cert, 2);
+	ASN1_INTEGER_set(X509_get_serialNumber(cert), 1);
+
+	X509_NAME* name = X509_get_subject_name(cert);
+	X509_NAME_add_entry_by_txt(name, "CN", MBSTRING_ASC, (const unsigned char*)"localhost", -1, -1, 0);
+	X509_set_issuer_name(cert, name);
+
+	X509_gmtime_adj(X509_get_notBefore(cert), 0);
+	X509_gmtime_adj(X509_get_notAfter(cert), 365 * 24 * 3600);
+
+	X509_set_pubkey(cert, pkey);
+	if (!X509_sign(cert, pkey, EVP_sha256()))
+	{
+		X509_free(cert);
+		EVP_PKEY_free(pkey);
+		throw std::runtime_error("Failed to sign X509 certificate.");
+	}
+
+	// 인증서를 메모리로 PEM 형식으로 변환
+	BIO* cert_bio = BIO_new(BIO_s_mem());
+	if (!PEM_write_bio_X509(cert_bio, cert))
+	{
+		BIO_free(cert_bio);
+		X509_free(cert);
+		EVP_PKEY_free(pkey);
+		throw std::runtime_error("Failed to write certificate to memory.");
+	}
+
+	char* cert_data;
+	long cert_length = BIO_get_mem_data(cert_bio, &cert_data);
+	std::string certificate(cert_data, cert_length);
+
+	// 개인 키를 메모리로 PEM 형식으로 변환
+	BIO* key_bio = BIO_new(BIO_s_mem());
+	if (!PEM_write_bio_PrivateKey(key_bio, pkey, nullptr, nullptr, 0, nullptr, nullptr))
+	{
+		BIO_free(cert_bio);
+		BIO_free(key_bio);
+		X509_free(cert);
+		EVP_PKEY_free(pkey);
+		throw std::runtime_error("Failed to write private key to memory.");
+	}
+
+	char* key_data;
+	long key_length = BIO_get_mem_data(key_bio, &key_data);
+	std::string private_key(key_data, key_length);
+
+	// 메모리에서 인증서와 개인 키를 ssl_context에 로드
+	ssl_context_.use_certificate_chain(boost::asio::buffer(certificate));
+	ssl_context_.use_private_key(boost::asio::buffer(private_key), boost::asio::ssl::context::pem);
+
+	std::cout << "New SSL certificate and key generated successfully." << std::endl;
+
+	// 메모리 해제
+	BIO_free(cert_bio);
+	BIO_free(key_bio);
+	X509_free(cert);
+	EVP_PKEY_free(pkey);
+}
+
 
 
 #define MAX_LOADSTRING 100
@@ -112,6 +216,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 #ifdef _DEBUG
 	config_.version_.increase_version(CONSOLESERVER_VERSION);
+	TCHAR path_[128];
+	GetCurrentDirectory(128,path_);
 #endif
 
 #ifdef _WIN32
@@ -139,10 +245,18 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	//
 
 	connection_manager_.SetHWND(m_hwnd);
-    async_server s(log,config_,connection_manager_);
+
+	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+	setup_ssl_context(ssl_context_);
+	//ssl_context_.set_verify_mode(boost::asio::ssl::verify_none);
+
+
+
+    async_server s(log,config_,connection_manager_, ssl_context_);
 
 
 	boost::asio::io_service io_service_;
+
 
 	//
 	netwatcher netwatcher_(config_,log);
@@ -268,7 +382,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 HWND InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   HWND hWnd;
+   HWND hWnd=NULL;
 
    hInst = hInstance; // Store instance handle in our global variable
 
@@ -337,7 +451,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			
 			HANDLE    hMapRead;
 			HWND* lpMapping;
-			HWND hwnd;
+			HWND hwnd=NULL;
 			hMapRead = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, _T("Global\\MedicalPhotoServerHWND"));
 			lpMapping = (HWND*)MapViewOfFile(hMapRead, FILE_MAP_ALL_ACCESS, 0, 0, 0);
 			if (lpMapping == NULL)

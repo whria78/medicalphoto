@@ -29,13 +29,14 @@ class basic_server
 {
 public:
 
-	explicit basic_server(int iPort,CMyCout& l_,config& c_,async_connection_manager& m_)
+	explicit basic_server(int iPort,CMyCout& l_,config& c_,async_connection_manager& m_, boost::asio::ssl::context& s_)
 	  : connection_manager_(m_)
 		,endpoint_(boost::asio::ip::tcp::v4(),iPort)
 		,acceptor_(io_service_,boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), iPort))
 		,connection_id(0)
 		,log_(l_)
 		,config_(c_)
+		,ssl_context_(s_)
 	{
 	}
 	~basic_server()
@@ -47,44 +48,14 @@ public:
 	{
 		accept();
 		run();
-		/*
-		try
-		{
-			io_service_.reset();
-			new_connection_.reset(new ConnectionType(connection_id,io_service_, config_,connection_manager_));
-
-		  if (!acceptor_.is_open())
-		  {
-			  acceptor_.open(endpoint_.protocol());
-			  acceptor_.set_option(boost::asio::ip::tcp::acceptor::reuse_address(true));
-			  acceptor_.bind(endpoint_);
-			  acceptor_.listen();
-		  }
-
-		  acceptor_.async_accept(new_connection_->socket(),
-			  boost::bind(&basic_server::handle_accept, this,
-				boost::asio::placeholders::error));
-
-		  io_service_.run();
-		}
-		catch (CppSQLite3Exception& e)
-		{
-			log_ << e.errorMessage() << log_.endl();
-	//		err_.Add(SQL_ERROR,e.errorCode,e.errorMessage());
-		}
-		catch (std::exception& e)
-		{
-			log_ << e.what() << log_.endl();
-	//		err_.Add(OTHER_ERROR,0,e.what());
-		}
-		*/
 	}
+
 
 	void accept()
 	{
 		try
 		{
-			new_connection_.reset(new ConnectionType(connection_id,io_service_, config_,connection_manager_));
+			new_connection_.reset(new ConnectionType(connection_id,io_service_, ssl_context_, config_,connection_manager_));
 
 		  if (!acceptor_.is_open())
 		  {
@@ -95,7 +66,7 @@ public:
 		  }
 
 		  acceptor_.async_accept(new_connection_->socket(),
-			  boost::bind(&basic_server::handle_accept, this,
+			  boost::bind(&basic_server::handle_ssl_accept, this,
 				boost::asio::placeholders::error));
 		}
 		catch (CppSQLite3Exception& e)
@@ -149,6 +120,23 @@ protected:
 
 	CMyCout& log_;
 	config& config_;
+	boost::asio::ssl::context& ssl_context_;
+
+	void handle_ssl_accept(const boost::system::error_code& e)
+	{
+		if (!e)
+		{
+			std::cout << "Client connected, starting SSL handshake..." << std::endl;
+			new_connection_->ssl_socket()->async_handshake(
+				boost::asio::ssl::stream_base::server,
+				boost::bind(&basic_server::handle_accept, this, boost::asio::placeholders::error)
+			);
+		}
+		else
+		{
+			std::cerr << "Accept error: " << e.message() << std::endl;
+		}
+	}
 
 	void handle_accept(const boost::system::error_code& e)
 	{
@@ -156,11 +144,18 @@ protected:
 		{
 			connection_manager_.start(new_connection_);
 			connection_id++;
-			new_connection_.reset(new ConnectionType(connection_id,io_service_, config_,connection_manager_));
+			new_connection_.reset(new ConnectionType(connection_id,io_service_, ssl_context_, config_,connection_manager_));
 
 			acceptor_.async_accept(new_connection_->socket(),
-			boost::bind(&basic_server::handle_accept, this,
+			boost::bind(&basic_server::handle_ssl_accept, this,
 			  boost::asio::placeholders::error));
+		}
+		else
+		{
+			std::cerr << "Handshake error occurred!" << std::endl;
+			std::cerr << "Error code: " << e.value() << std::endl;
+			std::cerr << "Error message: " << e.message() << std::endl;
+			std::cerr << "Error category: " << e.category().name() << std::endl;
 		}
 	}
 	void handle_stop()

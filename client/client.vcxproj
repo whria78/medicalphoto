@@ -48,8 +48,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Debug\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Debug;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
@@ -57,8 +57,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
-    <LibraryPath>C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
+    <LibraryPath>..\openssl1_0-win-build\build-VS2015-MT\Release;C:\local\boost_1_61_0\lib32-msvc-14.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openssl1_0-win-build\build-VS2015-MT\Release\include;C:\local\boost_1_61_0;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,9 +89,6 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="basic_async_connection.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="basic_client.cpp" />
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -101,14 +98,8 @@
     <ClCompile Include="whriaclient.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="basic_async_connection.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </CustomBuild>
     <CustomBuild Include="basic_client.h" />
     <ClInclude Include="connection.h" />
-    <CustomBuild Include="connection_basic.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </CustomBuild>
     <CustomBuild Include="log_client.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </CustomBuild>

@@ -17,12 +17,13 @@ class CWhriaClient :
 //	,basic_async_connection
 {
 public:
-  CWhriaClient(boost::asio::io_service& io_,CMyCout& l_)
+  CWhriaClient(boost::asio::io_service& io_, boost::asio::ssl::context& s_, CMyCout& l_)
     : basic_client(io_,socket_)
 //	,basic_async_connection(io_,socket_,l_)
-	,socket_(io_)
+	,socket_(io_, s_)
 	,io_service_(io_)
   {
+
   }
 
   void cmd_upload(const std::string& stNetPath,const tstring& stLocalPath);
@@ -161,7 +162,8 @@ public:
   void download_buffer(unsigned char* buffer_,size_t& size_);
   void upload_buffer(unsigned char* buffer_,size_t size_);
 protected:
-	boost::asio::ip::tcp::socket socket_;
+	boost::asio::ssl::stream<boost::asio::ip::tcp::socket> socket_;
+
 	boost::asio::io_service& io_service_;
 };
 
@@ -233,8 +235,8 @@ class CWhriaCacheClient
 	: public CWhriaClient
 {
 public:
-	CWhriaCacheClient(boost::asio::io_service& io_,CMyCout& l_)
-	: CWhriaClient(io_,l_)
+	CWhriaCacheClient(boost::asio::io_service& io_, boost::asio::ssl::context& s_, CMyCout& l_)
+	: CWhriaClient(io_, s_,l_)
 	{
 		MEMORYSTATUS stat;
 		::GlobalMemoryStatus (&stat);

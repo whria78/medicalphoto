@@ -1436,7 +1436,7 @@ BOOL CWhriaViewDlg::PreTranslateMessage(MSG* pMsg)
 			{
 				UpdateData(TRUE);
 
-				if (m_Dx.GetLength()<4)
+				if (m_Dx.GetLength()<2)
 					return TRUE;
 
 				diagnosis diagnosis_;
@@ -2234,6 +2234,12 @@ BOOL CWhriaViewDlg::Login(const std::string&stIP,const std::string&stPort,const 
 			MessageBox(_T("Password Mismatch"));
 			return false;
 		}
+		if (err_.iErrorCode == TOOMANY_REQUEST)
+		{
+			MessageBox(_T("Too many requests. Try one minute layer"));
+			ErrorExit(err_);
+			exit(1);
+		}
 
 		if (err_.iErrorCode==TIMEOUT)
 		{
@@ -2591,10 +2597,10 @@ BOOL CAboutDlg::OnInitDialog()
 
 	// TODO:  Add extra initialization here
 	
-	m_About.SetHyperlink(_T("https://medicalphoto.modelderm.com"));
-	m_About.SetCaption(_T("https://medicalphoto.modelderm.com"));
+	m_About.SetHyperlink(_T("https://modelderm.com"));
+	m_About.SetCaption(_T("https://modelderm.com"));
 
-	m_WhriaNet.SetHyperlink(_T("Http://whria.net"));
+	m_WhriaNet.SetHyperlink(_T("http://whria.net"));
 	m_WhriaNet.SetCaption(_T("M.D., Ph.D. Han Seung Seog"));
 
 	m_StaticVersion.SetWindowText(stVersionString);

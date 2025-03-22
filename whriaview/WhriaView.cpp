@@ -86,8 +86,19 @@ BOOL CWhriaViewApp::InitInstance()
 
 
 	boost::asio::io_service io_service_;
+	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+	//ssl_context_.set_verify_mode(boost::asio::ssl::verify_none);
+
+	ssl_context_.set_options(
+		boost::asio::ssl::context::default_workarounds |
+		boost::asio::ssl::context::no_sslv2 |
+		boost::asio::ssl::context::no_sslv3 |
+		boost::asio::ssl::context::no_tlsv1 |
+		boost::asio::ssl::context::no_tlsv1_1
+	);
+
 	CMyCout log(_tcout);
-	CWhriaCacheClient WhriaClient(io_service_,log);
+	CWhriaCacheClient WhriaClient(io_service_, ssl_context_,log);
 
 	try
 	{

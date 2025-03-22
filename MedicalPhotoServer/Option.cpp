@@ -69,7 +69,7 @@ void COption::OnBnClickedOk()
 	if (MessageBox(_T("Are you sure to save?"),_T("Save"),MB_YESNO)==IDYES)
 	{
 		UpdateData(TRUE);
-		config_.Set(ADMIN_PASS,MCodeChanger::_CCU((LPCTSTR)m_SuperAdminPasswd));
+		//config_.Set(SUPERADMIN_PASS,MCodeChanger::_CCU((LPCTSTR)m_SuperAdminPasswd));
 		config_.Set(HOSPITAL_NAME,MCodeChanger::_CCU((LPCTSTR)m_HospitalName));
 		config_.Set(AUTO_START,m_bAutostart);
 		config_.Set(MINIMIZE,m_bMinimize);

@@ -2,6 +2,16 @@
 
 #include "async_connection.h"
 #include "../share/watcher.h"
+#include <map>
+#include <string>
+#include <ctime>
+struct LoginAttempt {
+	int fail_count;
+	std::time_t last_attempt;
+
+	LoginAttempt() : fail_count(0), last_attempt(0) {} // C++03에서는 명시적 생성자 필요
+};
+extern std::map<std::string, LoginAttempt> login_attempts;
 
 class server_connection
 	:
@@ -10,9 +20,10 @@ class server_connection
 public:
 	server_connection(int async_connection_id_
 		,boost::asio::io_service& io_service
+		,boost::asio::ssl::context& s_
 		,config& c_
 		,async_connection_manager& manager)
-		: async_connection(async_connection_id_,io_service,c_,manager)
+		: async_connection(async_connection_id_,io_service,s_,c_,manager)
 	,config_(c_)
 	,bLogin(false)
 //	,bUpdateDone(false)
@@ -80,6 +91,11 @@ protected:
 	net_watcher net_watcher_;
 
 	bool bLogin;
+	void ResetHandleLogin(const std::string& ip_);
+		bool HandleLogin(const std::string& ip_);
+
+
+
 	user CurrentUser;
 	std::string Transfer_Format(const std::string& str) {return Utility::Transfer_Format(str);}
 	void Transfer_Format(std::vector<std::string>& str) 

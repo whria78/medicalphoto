@@ -87,7 +87,10 @@ bool CInputServerAddress::SearchHost(int iIndex,const std::string& ip,const std:
 	boost::mutex::scoped_lock lock(search_host_mutex[iIndex]);
 
 	boost::asio::io_service io_service_;
-	boost::asio::ip::tcp::socket socket_(io_service_);
+	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+	ssl_context_.set_verify_mode(boost::asio::ssl::verify_none);
+
+	boost::asio::ssl::stream<boost::asio::ip::tcp::socket> socket_(io_service_, ssl_context_);
 
 	client_connection c(io_service_,socket_);
 	try

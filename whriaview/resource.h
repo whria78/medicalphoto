@@ -309,6 +309,8 @@
 #define IDC_STATIC_TIP                  1090
 #define IDC_BUTTON_VIEWLOGO_EXIT        1091
 #define IDC_EDIT_PICTUREFOLDER          1092
+#define IDC_CHECK1                      1092
+#define IDC_CHECK_RECONFIRM             1092
 #define IDC_BUTTON_PIC                  1094
 #define IDC_EDIT_DATE                   1103
 #define IDC_STATIC_PTINFO               1104
@@ -317,6 +319,10 @@
 #define IDC_STATIC_SEX                  1110
 #define IDC_STATIC_BIRTH                1111
 #define IDC_CHECK_AUTOPATH              1113
+#define IDD_MY_MESSAGEBOX               2001
+#define IDC_CHECK_NAME                  2002
+#define IDC_CHECK_ID                    2003
+#define IDC_STATIC_MESSAGE              2004
 #define ID_POPUP_TREE_COPY              32771
 #define ID_POPUP_TREE_TOEXCELFILE       32772
 #define ID_VIEW_BASIC                   32773
@@ -351,9 +357,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        221
+#define _APS_NEXT_RESOURCE_VALUE        222
 #define _APS_NEXT_COMMAND_VALUE         32804
-#define _APS_NEXT_CONTROL_VALUE         1092
+#define _APS_NEXT_CONTROL_VALUE         1093
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

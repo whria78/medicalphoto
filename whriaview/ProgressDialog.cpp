@@ -13,6 +13,48 @@ struct JsonInfo {
 	std::string ID;
 };
 
+class CMyMessageBox : public CDialog
+{
+public:
+	CMyMessageBox(CWnd* pParent = nullptr) : CDialog(IDD_MY_MESSAGEBOX, pParent), m_bNameChecked(FALSE), m_bIDChecked(TRUE), m_bConfirm(TRUE){}
+
+	enum { IDD = IDD_MY_MESSAGEBOX };
+	BOOL m_bNameChecked;
+	BOOL m_bIDChecked;
+	BOOL m_bConfirm;
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX)
+	{
+		CDialog::DoDataExchange(pDX);
+		DDX_Check(pDX, IDC_CHECK_NAME, m_bNameChecked);
+		DDX_Check(pDX, IDC_CHECK_ID, m_bIDChecked);
+		DDX_Check(pDX, IDC_CHECK_RECONFIRM, m_bConfirm);
+	}
+
+	virtual BOOL OnInitDialog()
+	{
+		CDialog::OnInitDialog();
+		ModifyStyle(WS_SYSMENU, 0); // 닫기 버튼 제거
+		SetDlgItemText(IDC_STATIC_MESSAGE, _T("Please select the item to import.")); // 메시지 설정
+		UpdateData(FALSE);
+		return TRUE;
+	}
+
+	afx_msg void OnBnClickedOk()
+	{
+		UpdateData(TRUE);
+		EndDialog(IDOK);
+	}
+
+	DECLARE_MESSAGE_MAP()
+};
+
+BEGIN_MESSAGE_MAP(CMyMessageBox, CDialog)
+	ON_BN_CLICKED(IDOK, &CMyMessageBox::OnBnClickedOk)
+END_MESSAGE_MAP()
+
+
 // CProgressDialog dialog
 
 IMPLEMENT_DYNAMIC(CProgressDialog, CDialog)
@@ -978,11 +1020,25 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 					fread(buffer.data(), 1, fileSize, fp);
 					fclose(fp);
 
+
+
+					CMyMessageBox dlg;
+					/*
+					if (dlg.DoModal() == IDOK)
+					{
+						CString result;
+						if (dlg.m_bNameChecked) result += _T("Name ");
+						if (dlg.m_bIDChecked) result += _T("ID");
+						AfxMessageBox(_T("Selected item: ") + result);
+					}
+					*/
+
+
 					// JSON 파싱
 					nlohmann::json jsonObject = nlohmann::json::parse(buffer.data());
 
 					// JSON 데이터 추출
-					if (jsonObject.is_array())
+					if (jsonObject.is_array() && dlg.DoModal() == IDOK)
 					{
 						for (const auto& item : jsonObject)
 						{
@@ -1003,8 +1059,34 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 								{
 									fileinfo old = result_temp[i];
 									fileinfo updated = old;
-									updated.stPatientName = item["Name"].get<std::string>();
-									updated.stPatientID = item["ID"].get<std::string>();
+									/*
+									if (dlg.m_bConfirm == FALSE || item["confirm"].get<std::string>() == "yes")
+									{
+										if (dlg.m_bNameChecked) updated.stPatientName = item["Name"].get<std::string>();
+										if (dlg.m_bIDChecked) updated.stPatientID = item["ID"].get<std::string>();
+									}
+									*/
+
+									bool bCheck = false;
+									if (dlg.m_bConfirm == FALSE) 
+										bCheck = true;
+									else
+									{
+										if (item.find("confirm") != item.end())
+											if (item["confirm"].get<std::string>() == "yes") bCheck = true;
+									}
+
+									if (bCheck)
+									{
+										if (dlg.m_bNameChecked)
+											if (item.find("Name") != item.end())
+												updated.stPatientName = item["Name"].get<std::string>();
+										if (dlg.m_bIDChecked)
+											if (item.find("ID") != item.end())
+												updated.stPatientID = item["ID"].get<std::string>();
+									}
+
+
 
 									WhriaClient.setpathinfo(old, updated);
 

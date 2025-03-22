@@ -40,16 +40,17 @@ class async_connection_manager;
 
 class async_connection 
 	: 
-	public connection_basic,
+	public connection_ssl,
 	public boost::enable_shared_from_this<async_connection>,
 	private boost::noncopyable
 {
 public:
   explicit async_connection(int async_connection_id_
 	  ,boost::asio::io_service& io_service
+	  ,boost::asio::ssl::context& s_
 	  ,config& c_
 	  ,async_connection_manager& manager)
-    : connection_basic(io_service)
+    : connection_ssl(io_service,s_)
 	,async_connection_manager_(manager)
 	,log(c_.log)
 	,async_connection_id(async_connection_id_)
@@ -70,7 +71,7 @@ public:
 #endif
 		handle_waiting_order();
 	}
-	void stop() {connection_basic::stop();}
+	void stop() {connection_ssl::stop();}
 
 	void pause();
 	void resume();
@@ -83,7 +84,7 @@ public:
 		resume();
 	}
 */
-  boost::asio::ip::tcp::socket& socket() {return connection_basic::socket();}
+  boost::asio::ip::tcp::socket& socket() {return connection_ssl::socket();}
   int GetConnectionID() {return async_connection_id;}
 
 protected:
@@ -161,7 +162,7 @@ public:
 		clear();
 		command cmd_;cmd_.order_code=order_code_;
 
-		std::istringstream archive_stream_in(connection_basic::InboundBuffer());
+		std::istringstream archive_stream_in(connection_ssl::InboundBuffer());
 		boost::archive::text_iarchive archive_in(archive_stream_in);
 
 		std::ostringstream archive_stream_out;
@@ -171,8 +172,8 @@ public:
 		serial_out(archive_out,p1_);
 		serial_out(archive_out,p2_);
 
-		connection_basic::OutboundBuffer()= archive_stream_out.str();
-		connection_basic::async_write(boost::bind(&async_connection::handle_asyncexecute_order, this,boost::asio::placeholders::error)
+		connection_ssl::OutboundBuffer()= archive_stream_out.str();
+		connection_ssl::async_write(boost::bind(&async_connection::handle_asyncexecute_order, this,boost::asio::placeholders::error)
 			,boost::posix_time::seconds(STREAMING_TIMEOUT));
   }
 

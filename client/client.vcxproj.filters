@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="basic_async_connection.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="basic_client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -46,13 +43,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="basic_async_connection.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="basic_client.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="connection_basic.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="log_client.h">

@@ -21,6 +21,15 @@
 #include "../share/unicode.h"
 
 #include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+#include <openssl/rsa.h>
+#include <openssl/pem.h>
+#include <openssl/x509.h>
+#include <openssl/x509v3.h>
+#include <openssl/evp.h>  // EVP_PKEY 관련 헤더
+#include <iostream>
+#include <string>
+
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/thread/condition.hpp>
@@ -58,23 +67,25 @@
 #define FILETRANSFER_TIMEOUT 10
 #endif
 
-class connection_basic 
+class connection_ssl 
 //	:public basic_client
 {
 public:
-  explicit connection_basic(boost::asio::io_service& io_service)
-    : socket_(io_service)
+  explicit connection_ssl(boost::asio::io_service& io_service, boost::asio::ssl::context& s_)
+    : ssl_socket_(io_service, s_)
 	,io_service_(io_service)
 //	,basic_client(io_service,socket_)
 #ifdef _DEBUG
 	,log(_tcout)
 #endif
 	,timer_(io_service)
+	,ssl_context_(s_)
   {
 	  inbound_data_=NULL;
 	  clear();
+	  socket_ = &ssl_socket_;
   }
-  ~connection_basic()
+  ~connection_ssl()
   {
 //	  stop();
   }
@@ -106,10 +117,19 @@ public:
   };
 
 
-  boost::asio::ip::tcp::socket& socket() {return socket_;}
+  boost::asio::ip::tcp::socket& socket()
+  {
+	  return static_cast<boost::asio::ip::tcp::socket&>(ssl_socket_.lowest_layer());
+  }
 
-  void stop() {socket_.close();}
-  void cancel() {socket_.cancel();}
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket>* ssl_socket()
+  {
+	  return socket_;
+  }
+
+  void stop() {socket().close();}
+  void cancel() {socket().cancel();}
+  void socket_close() { stop(); }
 
   void clear()
   {
@@ -133,8 +153,14 @@ public:
 
 protected:
   boost::asio::deadline_timer timer_;
-  boost::asio::ip::tcp::socket socket_;
-  boost::asio::io_service& io_service_; 
+  //boost::asio::ip::tcp::socket *socket_;
+  //boost::asio::ip::tcp::socket socket_org;
+
+  boost::asio::ssl::context& ssl_context_;
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket> ssl_socket_;
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket>* socket_;
+
+  boost::asio::io_service& io_service_;
 
 private:
   
@@ -190,7 +216,7 @@ private:
 #ifdef _DEBUG
 		  log << _T("Timeout : ") << MCodeChanger::_CCL(message) << log.endl();
 #endif
-		  socket_.close();
+		  socket_close();
 	  }
   }
   void handle_download_timeout(const boost::system::error_code& err,const char* message) 
@@ -202,7 +228,7 @@ private:
 		  fmt % message % MCodeChanger::_CCN(stFilePath);
 
 		  process_file_error(fmt.str(),true);
-		  socket_.close();
+		  socket_close();
 	  }
   }
   void process_file_error(const std::string& err,bool bDownload) 	
@@ -242,10 +268,10 @@ public:
 	size_t download_size=BUFFER_SIZE;
 	if (lFileSize<BUFFER_SIZE) download_size=(size_t)lFileSize;
 
-	void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
-		=&connection_basic::handle_download_buffer<Handler>;
+	void (connection_ssl::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
+		=&connection_ssl::handle_download_buffer<Handler>;
 
-	socket_.async_read_some(boost::asio::buffer(data_,download_size),
+	socket_->async_read_some(boost::asio::buffer(data_,download_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		boost::asio::placeholders::bytes_transferred,
@@ -254,7 +280,7 @@ public:
 
     
 	timer_.expires_from_now(boost::posix_time::seconds(FILETRANSFER_TIMEOUT));
-	timer_.async_wait(boost::bind(&connection_basic::handle_download_timeout, this,boost::asio::placeholders::error,"download"));
+	timer_.async_wait(boost::bind(&connection_ssl::handle_download_timeout, this,boost::asio::placeholders::error,"download"));
 }
   
 
@@ -297,10 +323,10 @@ public:
 		size_t transfer_size=BUFFER_SIZE;
 		if ((lFileSize-bytes_transfered_)<BUFFER_SIZE) transfer_size=(size_t)(lFileSize-bytes_transfered_);
 
-		void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
-			=&connection_basic::handle_download_buffer<Handler>;
+		void (connection_ssl::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
+			=&connection_ssl::handle_download_buffer<Handler>;
 
-		socket_.async_read_some(boost::asio::buffer(data_,transfer_size),
+		socket_->async_read_some(boost::asio::buffer(data_,transfer_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		boost::asio::placeholders::bytes_transferred,
@@ -308,7 +334,7 @@ public:
 
     
 		timer_.expires_from_now(boost::posix_time::seconds(FILETRANSFER_TIMEOUT));
-		timer_.async_wait(boost::bind(&connection_basic::handle_download_timeout, this,boost::asio::placeholders::error,"downloadbuffer"));
+		timer_.async_wait(boost::bind(&connection_ssl::handle_download_timeout, this,boost::asio::placeholders::error,"downloadbuffer"));
 	}
 
 }
@@ -333,10 +359,10 @@ public:
 		bytes_read+=upload_size;
 	}
 
-	void (connection_basic::*f) (const boost::system::error_code &,const size_t& , boost::tuple<Handler>)
-		=&connection_basic::handle_upload_buffer<Handler>;
+	void (connection_ssl::*f) (const boost::system::error_code &,const size_t& , boost::tuple<Handler>)
+		=&connection_ssl::handle_upload_buffer<Handler>;
 	
-	boost::asio::async_write(socket_,boost::asio::buffer(data_,upload_size),
+	boost::asio::async_write(*socket_,boost::asio::buffer(data_,upload_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		upload_size,
@@ -344,7 +370,7 @@ public:
 
     
 	timer_.expires_from_now(boost::posix_time::seconds(FILETRANSFER_TIMEOUT));
-	timer_.async_wait(boost::bind(&connection_basic::handle_timeout, this,boost::asio::placeholders::error,"upload"));
+	timer_.async_wait(boost::bind(&connection_ssl::handle_timeout, this,boost::asio::placeholders::error,"upload"));
 
 }
 
@@ -396,17 +422,17 @@ public:
 		return;
 	}
 
-	void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
-		=&connection_basic::handle_upload_buffer<Handler>;
+	void (connection_ssl::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
+		=&connection_ssl::handle_upload_buffer<Handler>;
 
-	boost::asio::async_write(socket_,boost::asio::buffer(data_,upload_size),
+	boost::asio::async_write(*socket_,boost::asio::buffer(data_,upload_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		upload_size,
 		handler));
 
 	timer_.expires_from_now(boost::posix_time::seconds(FILETRANSFER_TIMEOUT));
-	timer_.async_wait(boost::bind(&connection_basic::handle_timeout, this,boost::asio::placeholders::error,"uploadbuffer"));
+	timer_.async_wait(boost::bind(&connection_ssl::handle_timeout, this,boost::asio::placeholders::error,"uploadbuffer"));
 
 }
 
@@ -458,12 +484,12 @@ public:
     buffers.push_back(boost::asio::buffer(outbound_header_));
     buffers.push_back(boost::asio::buffer(outbound_data_));
 
-    boost::asio::async_write(socket_, buffers, handler);
+    boost::asio::async_write(*socket_, buffers, handler);
 
 //	boost::asio::deadline_timer timer(io_service_); 
 //	timer.expires_at(boost::posix_time::second_clock::local_time()+boost::posix_time::seconds(30));
 	timer_.expires_from_now(time_out_);
-	timer_.async_wait(boost::bind(&connection_basic::handle_timeout, this,boost::asio::placeholders::error,"write"));
+	timer_.async_wait(boost::bind(&connection_ssl::handle_timeout, this,boost::asio::placeholders::error,"write"));
 
   }
 
@@ -471,16 +497,17 @@ public:
   template <typename Handler,typename Timeout>
   void async_read(Handler handler,const Timeout & time_out_)
   {
+	  socket().is_open();
 
 	  free_InboundBuffer();
 
     // Issue a read operation to read exactly the number of bytes in a header.
-    void (connection_basic::*f)(
+    void (connection_ssl::*f)(
         const boost::system::error_code&,
         boost::tuple<Handler>,const Timeout&)
-      = &connection_basic::handle_read_header<Handler,Timeout>;
+      = &connection_ssl::handle_read_header<Handler,Timeout>;
 
-    boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
+    boost::asio::async_read(*socket_, boost::asio::buffer(inbound_header_),
         boost::bind(f,
           this, boost::asio::placeholders::error, 
           boost::make_tuple(handler),
@@ -488,7 +515,7 @@ public:
 
 	  
 	  timer_.expires_from_now(time_out_);
-	  timer_.async_wait(boost::bind(&connection_basic::handle_timeout, this,boost::asio::placeholders::error,"read1"));
+	  timer_.async_wait(boost::bind(&connection_ssl::handle_timeout, this,boost::asio::placeholders::error,"read1"));
 
 
   }
@@ -524,18 +551,18 @@ public:
 	  inbound_data_=new char [inbound_data_size+1];
 	  inbound_data_[inbound_data_size]=NULL;
 
-	  void (connection_basic::*f)(
+	  void (connection_ssl::*f)(
           const boost::system::error_code&,
           boost::tuple<Handler>)
-        = &connection_basic::handle_read_data<Handler>;
+        = &connection_ssl::handle_read_data<Handler>;
 
-	  boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_,inbound_data_size),
+	  boost::asio::async_read(*socket_, boost::asio::buffer(inbound_data_,inbound_data_size),
         boost::bind(f, this,
 		boost::asio::placeholders::error, 
 		handler));
 
 	  timer_.expires_from_now(time_out_);
-	  timer_.async_wait(boost::bind(&connection_basic::handle_timeout, this,boost::asio::placeholders::error,"read2"));
+	  timer_.async_wait(boost::bind(&connection_ssl::handle_timeout, this,boost::asio::placeholders::error,"read2"));
 
     }
 
@@ -569,5 +596,8 @@ public:
 
 };
 
-typedef boost::shared_ptr<connection_basic> connection_basic_ptr;
+typedef boost::shared_ptr<connection_ssl> connection_ssl_ptr;
+
+
+
 #endif // SERIALIZATION_connection_basic_HPP

@@ -193,7 +193,7 @@ public:
 
 enum config_element
 {
-	ADMIN_PASS,
+	SCREENLOCK_PASS,
 	DATA_PATH,
 	THUMB_PATH,
 	FAVORATE_PATH,
@@ -275,7 +275,7 @@ public:
 		Insert(IDLE_CONNECTION_INTERVAL,_T("IDLE_CONNECTION_INTERVAL"),"10");
 
 //		Insert(LOG_PORT,_T("LOG_PORT"),"9998");
-		//Insert(ADMIN_PASS,_T("ADMIN_PASS"),"");
+		Insert(SCREENLOCK_PASS,_T("SCREENLOCK_PASS"),"");
 		Insert(DATA_PATH,_T("DATA_PATH"),std::string(""));
 
 		_tpath path_dataroot= Utility::refinepath(MFile::GetInitialPath() / _T("data"));

@@ -4,7 +4,10 @@
 // Copyright 2008
 
 // Password
-ADMIN_PASS=
+SUPERADMIN_PASS=0000
+
+// Port Number
+PORT=9999
 
 // Main Photographic Path
 DATA_PATH=
@@ -35,8 +38,6 @@ IDLE_HIDE_SCREEN=5
 // BackUp , 14 days
 SQLBACKUP_DURATION=14
 
-// Port Number
-PORT=9999
 // Idle connection interval to wakeup the server continuously
 IDLE_CONNECTION_INTERVAL=10
 

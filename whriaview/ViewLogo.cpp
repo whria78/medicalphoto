@@ -55,12 +55,12 @@ BOOL CViewLogo::PreTranslateMessage(MSG* pMsg)
 {
 	// TODO: Add your specialized code here and/or call the base class
 
-	if (config_.server_config.Get(ADMIN_PASS).compare("")!=0)
+	if (config_.server_config.Get(SCREENLOCK_PASS).compare("")!=0)
 	{
 		if (pMsg->message == WM_KEYDOWN)   // 키보드가 눌렸을때 처리
 		{
 			stPass += wchar_t(pMsg->wParam);
-			if (stPass.Find(MCodeChanger::_CCL(config_.server_config.Get(ADMIN_PASS)).c_str()) != -1)
+			if (stPass.Find(MCodeChanger::_CCL(config_.server_config.Get(SCREENLOCK_PASS)).c_str()) != -1)
 			{
 				stPass = _T("");
 				PostMessage(WM_KEYDOWN, VK_ESCAPE, 99);
@@ -80,7 +80,7 @@ void CViewLogo::OnMouseMove(UINT nFlags, CPoint point)
 	{
 		if (Utility::GetLastInputTime()<3)
 		{
-			if (config_.server_config.Get(ADMIN_PASS).compare("") == 0)
+			if (config_.server_config.Get(SCREENLOCK_PASS).compare("") == 0)
 				PostMessage(WM_KEYDOWN,VK_ESCAPE,99);
 			return;
 		}

@@ -6,7 +6,7 @@
 ADMIN_PASS=
 
 // Main Photographic Path
-DATA_PATH=E:\lg_brain_hunt
+DATA_PATH=e:\svn\branches\test
 
 // Thumbnail Storage Path
 THUMB_PATH=D:\thumb

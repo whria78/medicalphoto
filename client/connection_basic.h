@@ -49,18 +49,18 @@
 #endif
 
 class connection_basic 
-//	:public basic_client
 {
 public:
   explicit connection_basic(boost::asio::io_service& io_service
 	  ,boost::asio::ip::tcp::socket& soc_)
-    : socket_(soc_)
+    : socket_org(soc_)
 	,io_service_(io_service)
 #ifdef _DEBUG
 	,log(_tcout)
 #endif
 	,timer_(io_service)
   {
+	  socket_ = &socket_org;
 	  inbound_data_=NULL;
 	  clear();
   }
@@ -96,10 +96,10 @@ public:
   };
 
 
-  boost::asio::ip::tcp::socket& socket() {return socket_;}
+  boost::asio::ip::tcp::socket& socket() {return *socket_;}
 
-  void stop() {socket_.close();}
-  void cancel() {socket_.cancel();}
+  void stop() {socket_->close();}
+  void cancel() {socket_->cancel();}
 
   void clear()
   {
@@ -123,8 +123,9 @@ public:
 
 protected:
   boost::asio::deadline_timer timer_;
-  boost::asio::ip::tcp::socket& socket_;
-  boost::asio::io_service& io_service_; 
+  boost::asio::ip::tcp::socket& socket_org;
+  boost::asio::ip::tcp::socket *socket_;
+  boost::asio::io_service& io_service_;
 
 private:
   
@@ -180,7 +181,7 @@ private:
 #ifdef _DEBUG
 		  log << _T("Timeout : ") << MCodeChanger::_CCW(message) << log.endl();
 #endif
-		  socket_.close();
+		  socket_->close();
 	  }
   }
   void handle_download_timeout(const boost::system::error_code& err,const char* message) 
@@ -192,7 +193,7 @@ private:
 		  fmt % message % MCodeChanger::_CCN(stFilePath);
 
 		  process_file_error(fmt.str(),true);
-		  socket_.close();
+		  socket_->close();
 	  }
   }
   void process_file_error(const std::string& err,bool bDownload) 	
@@ -235,7 +236,7 @@ public:
 	void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
 		=&connection_basic::handle_download_buffer<Handler>;
 
-	socket_.async_read_some(boost::asio::buffer(data_,download_size),
+	socket_->async_read_some(boost::asio::buffer(data_,download_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		boost::asio::placeholders::bytes_transferred,
@@ -290,7 +291,7 @@ public:
 		void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
 			=&connection_basic::handle_download_buffer<Handler>;
 
-		socket_.async_read_some(boost::asio::buffer(data_,transfer_size),
+		socket_->async_read_some(boost::asio::buffer(data_,transfer_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		boost::asio::placeholders::bytes_transferred,
@@ -326,7 +327,7 @@ public:
 	void (connection_basic::*f) (const boost::system::error_code &,const size_t& , boost::tuple<Handler>)
 		=&connection_basic::handle_upload_buffer<Handler>;
 	
-	boost::asio::async_write(socket_,boost::asio::buffer(data_,upload_size),
+	boost::asio::async_write(*socket_,boost::asio::buffer(data_,upload_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		upload_size,
@@ -389,7 +390,7 @@ public:
 	void (connection_basic::*f) (const boost::system::error_code &, const size_t& , boost::tuple<Handler>)
 		=&connection_basic::handle_upload_buffer<Handler>;
 
-	boost::asio::async_write(socket_,boost::asio::buffer(data_,upload_size),
+	boost::asio::async_write(*socket_,boost::asio::buffer(data_,upload_size),
 		boost::bind(f,this,
 		boost::asio::placeholders::error,
 		upload_size,
@@ -448,7 +449,7 @@ public:
     buffers.push_back(boost::asio::buffer(outbound_header_));
     buffers.push_back(boost::asio::buffer(outbound_data_));
 
-    boost::asio::async_write(socket_, buffers, handler);
+    boost::asio::async_write(*socket_, buffers, handler);
 
 //	boost::asio::deadline_timer timer(io_service_); 
 //	timer.expires_at(boost::posix_time::second_clock::local_time()+boost::posix_time::seconds(30));
@@ -470,7 +471,7 @@ public:
         boost::tuple<Handler>,const Timeout&)
       = &connection_basic::handle_read_header<Handler,Timeout>;
 
-    boost::asio::async_read(socket_, boost::asio::buffer(inbound_header_),
+    boost::asio::async_read(*socket_, boost::asio::buffer(inbound_header_),
         boost::bind(f,
           this, boost::asio::placeholders::error, 
           boost::make_tuple(handler),
@@ -519,7 +520,7 @@ public:
           boost::tuple<Handler>)
         = &connection_basic::handle_read_data<Handler>;
 
-	  boost::asio::async_read(socket_, boost::asio::buffer(inbound_data_,inbound_data_size),
+	  boost::asio::async_read(*socket_, boost::asio::buffer(inbound_data_,inbound_data_size),
         boost::bind(f, this,
 		boost::asio::placeholders::error, 
 		handler));

@@ -130,7 +130,7 @@ protected:
 		m_ViewDlg.ShowWindow(SW_HIDE);
 
 		// STARTUP LOCK
-		if (config_.server_config.Get(ADMIN_PASS).compare("") != 0)
+		if (config_.server_config.Get(SCREENLOCK_PASS).compare("") != 0)
 		{
 			bCheck_idleprocess = false;
 			if (GetSafeHwnd())

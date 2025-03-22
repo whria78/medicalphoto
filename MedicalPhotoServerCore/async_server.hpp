@@ -25,7 +25,7 @@ class async_server
 {
 public:
 
-	explicit async_server(CMyCout& l_,config& config_,async_connection_manager& m_);
+	explicit async_server(CMyCout& l_,config& config_,async_connection_manager& m_, boost::asio::ssl::context& s_);
 /*
 	void initiate();
 	void start();

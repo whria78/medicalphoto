@@ -26,17 +26,17 @@ void client_connection::connect(const std::string& host,const std::string& servi
 		{
 			if (timer_result)
 			{
-				socket_.close();
+				socket_close();
 			  throw ConnectionEx(TIMEOUT);
 			}
 			else
 			{
-				socket_.close();
+				socket_close();
 				throw ConnectionEx(SOC_ERROR,socket_result->value(),socket_result->message());
 			}
 		}
 
-		socket_.close();
+		socket_close();
 	}
   }
 
@@ -50,10 +50,9 @@ void client_connection::connect(boost::asio::ip::tcp::endpoint endpoint,
 		&timer_result, boost::asio::placeholders::error)); 
 
 	  // Start an asynchronous connect operation.
-	  socket_.async_connect(endpoint,
-		boost::bind(&client_connection::set_result, this,
+	  socket_.lowest_layer().async_connect(endpoint,
+		boost::bind(&client_connection::handle_connect, this,
 		&socket_result,boost::asio::placeholders::error));
-
 	  io_service_.reset();
     while (io_service_.run_one())
     { 
@@ -61,7 +60,7 @@ void client_connection::connect(boost::asio::ip::tcp::endpoint endpoint,
         timer.cancel(); 
       else if (timer_result)
 	  {
-		  socket_.close();
+		  socket_close();
 		  throw ConnectionEx(TIMEOUT);
 	  }
     } 
@@ -91,17 +90,17 @@ void client_connection::scan(const std::string& host,const std::string& service)
 		{
 			if (timer_result)
 			{
-				socket_.close();
+				socket_close();
 			  throw ConnectionEx(TIMEOUT);
 			}
 			else
 			{
-				socket_.close();
+				socket_close();
 				throw ConnectionEx(SOC_ERROR,socket_result->value(),socket_result->message());
 			}
 		}
 
-		socket_.close();
+		socket_close();
 	}
   }
 
@@ -115,10 +114,10 @@ void client_connection::scan(boost::asio::ip::tcp::endpoint endpoint,
 		&timer_result, boost::asio::placeholders::error)); 
 
 	  // Start an asynchronous connect operation.
-	  socket_.async_connect(endpoint,
+	// SSL
+	socket_.lowest_layer().async_connect(endpoint,
 		boost::bind(&client_connection::set_result, this,
-		&socket_result,boost::asio::placeholders::error));
-
+			&socket_result, boost::asio::placeholders::error));
     io_service_.reset(); 
     while (io_service_.run_one()) 
     { 
@@ -126,7 +125,7 @@ void client_connection::scan(boost::asio::ip::tcp::endpoint endpoint,
         timer.cancel(); 
       else if (timer_result)
 	  {
-		  socket_.close();
+		  socket_close();
 		  throw ConnectionEx(TIMEOUT);
 	  }
     } 

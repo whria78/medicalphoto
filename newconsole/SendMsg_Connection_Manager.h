@@ -41,7 +41,7 @@ public:
 
 		HANDLE    hMapRead;
 		HWND* lpMapping;
-		HWND hwnd;
+		HWND hwnd=NULL;
 		hMapRead = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, _T("Global\\MedicalPhotoServerHWND"));
 		lpMapping = (HWND*)MapViewOfFile(hMapRead, FILE_MAP_ALL_ACCESS, 0, 0, 0);
 		if (lpMapping == NULL)
@@ -85,7 +85,7 @@ public:
 		
 		HANDLE    hMapRead;
 		HWND* lpMapping;
-		HWND hwnd;
+		HWND hwnd=NULL;
 		hMapRead = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, _T("Global\\MedicalPhotoServerHWND"));
 		lpMapping = (HWND*)MapViewOfFile(hMapRead, FILE_MAP_ALL_ACCESS, 0, 0, 0);
 		if (lpMapping == NULL)

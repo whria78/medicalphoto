@@ -3,6 +3,41 @@
 
 #include "async_connection_manager.hpp"
 
+
+std::map<std::string, LoginAttempt> login_attempts;
+
+// 로그인 실패 기록 초기화 함수
+void server_connection::ResetHandleLogin(const std::string& ip_) {
+	login_attempts[ip_].fail_count = 0;
+}
+
+// 로그인 제한 함수 (로그인 가능하면 true, 차단되었으면 false)
+bool server_connection::HandleLogin(const std::string& ip_) {
+	std::time_t now = std::time(0);
+	LoginAttempt& attempt = login_attempts[ip_]; // map을 사용하여 값 참조
+
+												 // 24시간(86400초)이 지난 경우 실패 횟수 초기화
+	if (attempt.fail_count >= 5 && (now - attempt.last_attempt) >= 86400) {
+		attempt.fail_count = 0;
+	}
+
+	// 로그인 제한 확인 (5번 이상 실패한 경우, 1분(60초)에 1번만 시도 가능)
+	if (attempt.fail_count >= 5) {
+		if ((now - attempt.last_attempt) < 60) {
+			return false;  // 1분 대기 필요
+		}
+	}
+
+	// 로그인 시도 시간 갱신
+	attempt.last_attempt = now;
+	attempt.fail_count++;
+
+	// 로그인 가능
+	return true;
+}
+
+
+
 void server_connection::ExecuteOrder(boost::archive::text_iarchive& archive_in
 									 ,boost::archive::text_oarchive& archive_out)
 {
@@ -76,22 +111,30 @@ void server_connection::ExecuteOrder(boost::archive::text_iarchive& archive_in
 
 			  }
 
-
-			  if (CurrentUser.stPasswd != config_.Get(SUPERADMIN_PASS))
+			  if (HandleLogin(stIPAddress) == false)
 			  {
 				  bLogin = false;
-				  result_message.Add(PASSWORD_MISMATCH);
-
+				  result_message.Add(TOOMANY_REQUEST);
 				  serial_out(archive_out, result_message);
 				  serial_out(archive_out, blank_);
 			  }
 			  else
 			  {
-				  bLogin = true;
-				  netpath_.Open(CurrentUser.stUserID);
-
-				  serial_out(archive_out, result_message);
-				  serial_out(archive_out, config_);
+				  if (CurrentUser.stPasswd != config_.Get(SUPERADMIN_PASS))
+				  {
+					  bLogin = false;
+					  result_message.Add(PASSWORD_MISMATCH);
+					  serial_out(archive_out, result_message);
+					  serial_out(archive_out, blank_);
+				  }
+				  else
+				  {
+					  ResetHandleLogin(stIPAddress);
+					  bLogin = true;
+					  netpath_.Open(CurrentUser.stUserID);
+					  serial_out(archive_out, result_message);
+					  serial_out(archive_out, config_);
+				  }
 			  }
 
 
@@ -488,7 +531,7 @@ void server_connection::ExecuteOrder(boost::archive::text_iarchive& archive_in
 		  break;
 		  case SETPATHINFO:
 		  {
-			  connection_basic::InboundBuffer();
+			  connection_ssl::InboundBuffer();
 			  fileinfo fileinfo_from_,fileinfo_to_;
 			  archive_in >> fileinfo_from_ >> fileinfo_to_;
 
@@ -1092,8 +1135,8 @@ void server_connection::PostExecuteOrder()
 			cmd_.order_code=CLIENTSTOP;
 			serial_out(archive_out,cmd_);
 
-			connection_basic::OutboundBuffer()= archive_stream_out.str();
-			connection_basic::async_write(boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error),
+			connection_ssl::OutboundBuffer()= archive_stream_out.str();
+			connection_ssl::async_write(boost::bind(&async_connection::handle_postexecute_order, this,boost::asio::placeholders::error),
 
 
 		}

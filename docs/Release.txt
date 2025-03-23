@@ -1,4 +1,21 @@
 =-=- MedicalPhoto Release Note -=-=
+Release 1.1.0.617 / 2025.3.20
+- SSL encryption
+
+Release 1.1.0.495 / 2025.3.13
+- add a dialog for json automation
+
+Release 1.1.0.474 / 2025.3.6
+- prepare for supporting ssl
+
+Release 1.1.0.453 / 2025.3.6
+- add password in s_config.txt
+// Password
+SUPERADMIN_PASS=0000
+
+Release 1.1.0.416 / 2025.3.3
+- Support json for automation
+
 Release 1.1.0.400 / 2025.3.2
 - Fix English descriptions
  

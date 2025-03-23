@@ -187,3 +187,4 @@ GPL license and Free for all purpose
 ## Requirements
 - **Boost 1.61**
 - **VC2015 Community Edition**
+- Build zlib-win-build -> openssl_win_build -> newconsole, whriaview, configure, medicalphotoserver

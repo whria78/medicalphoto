@@ -9,9 +9,9 @@
 
 IMPLEMENT_DYNAMIC(CDataManagerDlg, CDialog)
 
-CDataManagerDlg::CDataManagerDlg(boost::asio::io_service &io_service_,config& c_,CMyCout& l_,CWnd* pParent /*=NULL*/)
+CDataManagerDlg::CDataManagerDlg(boost::asio::io_service &io_service_, boost::asio::ssl::context &s_,config& c_,CMyCout& l_,CWnd* pParent /*=NULL*/)
 	: CDialog(CDataManagerDlg::IDD, pParent)
-	,data_manager(io_service_,c_,l_)
+	,data_manager(io_service_,s_,c_,l_)
 	,log_(l_)
 	,config_(c_)
 	,bBuildit(false)

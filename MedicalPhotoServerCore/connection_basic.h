@@ -129,7 +129,21 @@ public:
 
   void stop() {socket().close();}
   void cancel() {socket().cancel();}
-  void socket_close() { stop(); }
+  //void socket_close() { stop(); }
+  // SSL
+  void socket_close()
+  {
+	  // Cancel any ongoing operations
+	  socket_->lowest_layer().cancel();
+
+	  // Start async shutdown
+	  socket_->async_shutdown(
+		  boost::bind(&connection_ssl::shutdown_handler, this, boost::asio::placeholders::error));
+
+	  // Set a timeout for shutdown
+	  timer_.expires_from_now(boost::posix_time::seconds(5));
+	  timer_.async_wait(boost::bind(&connection_ssl::shutdown_timeout, this, boost::asio::placeholders::error));
+  }
 
   void clear()
   {
@@ -150,6 +164,37 @@ public:
 #ifdef _DEBUG
   CMyCout log;
 #endif
+
+private:
+	void shutdown_handler(const boost::system::error_code& ec)
+	{
+		timer_.cancel(); // Cancel timeout timer
+
+		if (ec)
+		{
+			std::cerr << "SSL shutdown error: " << ec.message() << std::endl;
+			//std::wstring dumy = MCodeChanger::_CCW("SSL shutdown error: " + ec.message()); log << dumy << _T("\n");
+		}
+
+		// Close the underlying socket
+		boost::system::error_code close_ec;
+		socket_->lowest_layer().close(close_ec);
+		if (close_ec)
+		{
+			std::cerr << "Socket close error: " << close_ec.message() << std::endl;
+			//std::wstring dumy = MCodeChanger::_CCW("Socket close error: " + close_ec.message()); log << dumy << _T("\n");
+		}
+	}
+
+	void shutdown_timeout(const boost::system::error_code& ec)
+	{
+		if (!ec) // If timeout occurred
+		{
+			std::cerr << "SSL shutdown timed out. Forcing socket close." << std::endl;
+			//std::wstring dumy = MCodeChanger::_CCW("SSL shutdown timed out. Forcing socket close."); log << dumy << _T("\n");
+			socket_->lowest_layer().close();
+		}
+	}
 
 protected:
   boost::asio::deadline_timer timer_;

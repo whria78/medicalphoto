@@ -1650,6 +1650,15 @@ void CWhriaViewDlg::Exit()
 {
 	bExitFlag=true;
 
+	try
+	{
+		WhriaClient.disconnect();
+	}
+	catch (...)
+	{
+	}
+
+
 	StopAll();
 
 	// Comment

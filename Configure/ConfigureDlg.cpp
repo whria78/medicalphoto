@@ -376,7 +376,9 @@ void CConfigureDlg::OnBnClickedOk()
 		::PostMessage(hwnd,WM_QUIT,0,0);
 
 	boost::asio::io_service io_service_;
-	CDataManagerDlg DataManagerDlg(io_service_, config_, config_.log); 
+	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+
+	CDataManagerDlg DataManagerDlg(io_service_, ssl_context_,config_, config_.log);
 	DataManagerDlg.SetBuildThumb(bBuildThumb);
 	DataManagerDlg.DoModal();
 

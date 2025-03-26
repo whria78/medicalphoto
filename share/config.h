@@ -234,6 +234,8 @@ enum config_element
 //
 	UPLOAD_WATCH_PATH,
 
+	TLSV12,
+
 //	NTSERVICE,
 	DATA_ROOT_PATH,
 	TMP_PATH,
@@ -330,6 +332,8 @@ public:
 //		Insert(NTSERVICE,_T("NTSERVICE"),"1");
 		Insert(NTSERVICE_NAME,_T("NTSERVICE_NAME"),"MedicalPhoto");
 //		Insert(APP_TYPE,_T("APP_TYPE"),"1"); // 0 : stand-alone 1 : networked
+		Insert(TLSV12, _T("TLSV12"), "1");
+		
 	}
 	void Set(int iIndex,const std::string& value)
 	{

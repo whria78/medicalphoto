@@ -47,7 +47,7 @@ protected:
 	boost::mutex mutex_;
 
 public:
-	CDataManagerDlg(boost::asio::io_service &io_service_,config& c_,CMyCout& l_,CWnd* pParent = NULL);   // standard constructor
+	CDataManagerDlg(boost::asio::io_service &io_service_, boost::asio::ssl::context &s_,config& c_,CMyCout& l_,CWnd* pParent = NULL);   // standard constructor
 	virtual ~CDataManagerDlg();
 
 // Dialog Data

@@ -17,6 +17,7 @@ public:
 	,client_connection(io_,soc_)
   {
   }
+
   void connect(const std::string& host,const std::string& port);
   void disconnect() {
   // SSL
@@ -35,7 +36,8 @@ public:
 		  std::cerr << "Socket close error: " << ec.message() << std::endl;
 	  }
 	  */
-	  socket().next_layer().close();
+	  //socket().next_layer().close();
+	  socket_close();
   }
 
   class ConnectionEx

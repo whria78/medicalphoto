@@ -1079,7 +1079,9 @@ void CMedicalPhotoServerDlg::OnBnClickedButtonCheckdata()
 
 	OnButtonStop();
 	boost::asio::io_service io_service_;
-	CDataManagerDlg DataManagerDlg(io_service_,config_,log_);
+	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+
+	CDataManagerDlg DataManagerDlg(io_service_, ssl_context_,config_,log_);
 	DataManagerDlg.Build();
 	DataManagerDlg.DoModal();
 	OnButtonStart();

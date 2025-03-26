@@ -8,6 +8,7 @@
 #include "../share/etc.h"
 #include "../share/netpath.h"
 #include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
 #include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>
 #include <vector>
@@ -27,8 +28,8 @@
 class data_manager
 {
 public:
-	data_manager(boost::asio::io_service& io_service_,config& c_,CMyCout& l_);
-	data_manager(boost::asio::io_service& io_service_,config& c_);
+	data_manager(boost::asio::io_service& i_, boost::asio::ssl::context& context_,config& c_,CMyCout& l_);
+	data_manager(boost::asio::io_service& i_, boost::asio::ssl::context& context_,config& c_);
 
 	static bool CheckValidPicturePath(const tstring& stOrgPath,tstring& stErrorMsg)
 	{
@@ -113,8 +114,66 @@ public:
 		StopBuild();
 		bStopBuildSQL=false;
 	}
+
+
+	// SSL
+	void socket_close()
+	{
+		// Cancel any ongoing operations
+		socket_->lowest_layer().cancel();
+
+		// Start async shutdown
+		socket_->async_shutdown(
+			boost::bind(&data_manager::shutdown_handler, this, boost::asio::placeholders::error));
+
+		// Set a timeout for shutdown
+		timer_.expires_from_now(boost::posix_time::seconds(5));
+		timer_.async_wait(boost::bind(&data_manager::shutdown_timeout, this, boost::asio::placeholders::error));
+	}
+private:
+	void shutdown_handler(const boost::system::error_code& ec)
+	{
+		timer_.cancel(); // Cancel timeout timer
+
+		if (ec)
+		{
+			//std::cerr << "SSL shutdown error: " << ec.message() << std::endl;
+			//std::wstring dumy = MCodeChanger::_CCW("SSL shutdown error: " + ec.message()); log << dumy << _T("\n");
+		}
+
+		// Close the underlying socket
+		boost::system::error_code close_ec;
+		socket_->lowest_layer().close(close_ec);
+		if (close_ec)
+		{
+			//std::cerr << "Socket close error: " << close_ec.message() << std::endl;
+			std::wstring dumy = MCodeChanger::_CCW("Socket close error: " + close_ec.message()); log << dumy << _T("\n");
+		}
+		else
+		{
+			//std::wstring dumy = MCodeChanger::_CCW("Socket Closed"); log << dumy << _T("\n");
+		}
+	}
+
+	void shutdown_timeout(const boost::system::error_code& ec)
+	{
+		if (!ec) // If timeout occurred
+		{
+			//std::cerr << "SSL shutdown timed out. Forcing socket close." << std::endl;
+			std::wstring dumy = MCodeChanger::_CCW("SSL shutdown timed out. Forcing socket close."); log << dumy << _T("\n");
+			socket_->lowest_layer().close();
+		}
+	}
+
+
 protected:
-  boost::asio::ip::tcp::socket socket_;
+  //boost::asio::ip::tcp::socket socket_;
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket> ssl_socket_;
+  boost::asio::ssl::stream<boost::asio::ip::tcp::socket>* socket_;
+  boost::asio::io_service& io_service_;
+  boost::asio::deadline_timer timer_;
+
+
   void set_stream_result(boost::optional<boost::system::error_code>* a, const boost::system::error_code& b) 
   { 
 	  a->reset(b);
@@ -128,6 +187,46 @@ protected:
   void connect(boost::asio::ip::tcp::endpoint endpoint,
 						 boost::optional<boost::system::error_code>& timer_result,
 						 boost::optional<boost::system::error_code>& socket_result);
+
+  // 기존 handle_connect를 handshake를 고려하여 수정
+  void handle_connect(boost::optional<boost::system::error_code>* socket_result,
+	  const boost::system::error_code& error)
+  {
+	  if (!error)
+	  {
+		  //std::cout << "Connected, starting handshake...\n";
+		  //std::wstring dumy = MCodeChanger::_CCW("Connected, starting handshake..."); log << dumy << _T("\n");
+		  socket_->async_handshake(boost::asio::ssl::stream_base::client,
+			  boost::bind(&data_manager::handle_handshake, this, socket_result,
+				  boost::asio::placeholders::error));
+	  }
+	  else
+	  {
+		  //std::cout << "Connect failed: " << error.message() << "\n";
+		  std::wstring dumy = MCodeChanger::_CCW("Connect failed: " + error.message()); log << dumy << _T("\n");
+		  set_result(socket_result, error);
+	  }
+  }
+
+  // handshake 완료 후 set_result 호출
+  void handle_handshake(boost::optional<boost::system::error_code>* socket_result,
+	  const boost::system::error_code& error)
+  {
+	  if (!error)
+	  {
+		  //std::cout << "Handshake successful!\n";
+		  //std::wstring dumy = MCodeChanger::_CCW("Handshake successful!"); log << dumy << _T("\n");
+	  }
+	  else
+	  {
+		  //std::cout << "Handshake failed: " << error.message() << "\n";
+		  std::wstring dumy = MCodeChanger::_CCW("Handshake failed: "+ error.message()); log << dumy << _T("\n");
+	  }
+	  set_result(socket_result, error); // handshake 완료 후 socket_result 설정
+
+	  socket_close();
+  }
+
 
 
 	virtual bool BuildSQLFileInfo(const _tpath& p,netvolume& netvolume_,bool bCheckExist=true);

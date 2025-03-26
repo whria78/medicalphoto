@@ -84,44 +84,49 @@ BOOL CWhriaViewApp::InitInstance()
 	AfxEnableControlContainer();
 
 
+	try {
 
-	boost::asio::io_service io_service_;
-	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
-	//ssl_context_.set_verify_mode(boost::asio::ssl::verify_none);
-
-	ssl_context_.set_options(
+		boost::asio::io_service io_service_;
+		boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+		/*
+		ssl_context_.set_options(
 		boost::asio::ssl::context::default_workarounds |
 		boost::asio::ssl::context::no_sslv2 |
 		boost::asio::ssl::context::no_sslv3 |
 		boost::asio::ssl::context::no_tlsv1 |
 		boost::asio::ssl::context::no_tlsv1_1
-	);
+		);
+		*/
 
-	CMyCout log(_tcout);
-	CWhriaCacheClient WhriaClient(io_service_, ssl_context_,log);
-
-	try
-	{
-		CWhriaViewDlg dlg(log,WhriaClient);
-	m_pMainWnd = &dlg;
-	int nResponse = dlg.DoModal();
-	if (nResponse == IDOK)
-	{
-		// TODO: Place code here to handle when the dialog is
-		//  dismissed with OK
-	}
-	else if (nResponse == IDCANCEL)
-	{
-		// TODO: Place code here to handle when the dialog is
-		//  dismissed with Cancel
-	}
-	}
-	catch (std::exception& e)
-	{
 		CMyCout log(_tcout);
-		log << MCodeChanger::_CCW(e.what());
-	}
+		CWhriaCacheClient WhriaClient(io_service_, ssl_context_, log);
 
+		try
+		{
+			CWhriaViewDlg dlg(log, WhriaClient);
+			m_pMainWnd = &dlg;
+			int nResponse = dlg.DoModal();
+			if (nResponse == IDOK)
+			{
+				// TODO: Place code here to handle when the dialog is
+				//  dismissed with OK
+			}
+			else if (nResponse == IDCANCEL)
+			{
+				// TODO: Place code here to handle when the dialog is
+				//  dismissed with Cancel
+			}
+		}
+		catch (std::exception& e)
+		{
+			CMyCout log(_tcout);
+			log << MCodeChanger::_CCW(e.what());
+			MessageBox(NULL, MCodeChanger::_CCL(e.what()).c_str(), _T("Error"), MB_OK | MB_ICONERROR);
+		}
+	}
+	catch (const std::exception& e) {
+		MessageBox(NULL, MCodeChanger::_CCL(e.what()).c_str(), _T("Error"), MB_OK | MB_ICONERROR);
+	}
 
 
 	// Since the dialog has been closed, return FALSE so that we exit the

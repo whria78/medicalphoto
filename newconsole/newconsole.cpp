@@ -74,14 +74,6 @@ void Server_Exit(void)
 }
 void setup_ssl_context(boost::asio::ssl::context& ssl_context_)
 {
-	ssl_context_.set_options(
-	boost::asio::ssl::context::default_workarounds |
-	boost::asio::ssl::context::no_sslv2 |
-	boost::asio::ssl::context::no_sslv3 |
-	boost::asio::ssl::context::no_tlsv1 |
-	boost::asio::ssl::context::no_tlsv1_1
-	);
-
 	std::cout << "Generating new SSL certificate and key..." << std::endl;
 
 	// RSA Å° »ý¼º
@@ -247,6 +239,14 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	connection_manager_.SetHWND(m_hwnd);
 
 	boost::asio::ssl::context ssl_context_(boost::asio::ssl::context::sslv23);
+	if (config_.GetInt(TLSV12)==1)
+	ssl_context_.set_options(
+		boost::asio::ssl::context::default_workarounds |
+		boost::asio::ssl::context::no_sslv2 |
+		boost::asio::ssl::context::no_sslv3 |
+		boost::asio::ssl::context::no_tlsv1 |
+		boost::asio::ssl::context::no_tlsv1_1
+	);
 	setup_ssl_context(ssl_context_);
 	//ssl_context_.set_verify_mode(boost::asio::ssl::verify_none);
 
@@ -267,7 +267,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 
 	//
-	data_manager data_manager_(io_service_,config_);
+	data_manager data_manager_(io_service_, ssl_context_,config_);
 	if (!data_manager_.Check())
 	{
 		log << _T("Fail to identify database") << log.endl();

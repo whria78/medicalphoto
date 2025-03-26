@@ -1,21 +1,27 @@
 #include "stdafx.h"
 #include "data_manager.h"
 
-data_manager::data_manager(boost::asio::io_service& io_service_,config& c_,CMyCout& l_)
+data_manager::data_manager(boost::asio::io_service& i_, boost::asio::ssl::context& context_,config& c_,CMyCout& l_)
 : bStopBuildSQL(false)
 ,config_(c_)
 ,log(l_)
 ,netstorage_(c_)
-,socket_(io_service_)
+, io_service_(i_)
+, timer_(i_)
+, ssl_socket_(i_, context_)
 {
+	socket_ = &ssl_socket_;
 }
-data_manager::data_manager(boost::asio::io_service& io_service_,config& c_)
+data_manager::data_manager(boost::asio::io_service& i_, boost::asio::ssl::context& context_,config& c_)
 : bStopBuildSQL(false)
 ,config_(c_)
 ,log(c_.log)
 ,netstorage_(c_)
-,socket_(io_service_)
+, io_service_(i_)
+, timer_(i_)
+, ssl_socket_(i_, context_)
 {
+	socket_ = &ssl_socket_;
 }
 bool data_manager::initiate()
 {
@@ -69,7 +75,8 @@ void data_manager::Refresh_Schedule()
 				Utility::sleep_sec(config_.GetInt(IDLE_CONNECTION_INTERVAL)*60);
 			}
 			connect();
-			socket_.close();
+			//Utility::sleep_sec(1);
+			//socket_close();
 		}
 	}
 	catch( const std::exception & e )
@@ -92,7 +99,7 @@ void data_manager::connect()
   {
     // Resolve the host name into an IP address.
 	
-    boost::asio::ip::tcp::resolver resolver(socket_.get_io_service());
+    boost::asio::ip::tcp::resolver resolver(io_service_);
     boost::asio::ip::tcp::resolver::query query("127.0.0.1", config_.Get(SERVER_PORT));
     boost::asio::ip::tcp::resolver::iterator endpoint_iterator =
       resolver.resolve(query);
@@ -113,19 +120,19 @@ void data_manager::connect()
 		{
 			if (timer_result)
 			{
-				socket_.close();
+				socket_close();
 				throw std::logic_error("Timeout");
 //				return;
 			}
 			else
 			{
-				socket_.close();
+				socket_close();
 				throw std::logic_error(socket_result->message());
 //				throw ConnectionEx(SOC_ERROR,socket_result->value(),);
 //				return;
 			}
 		}
-		socket_.close();
+		socket_close();
 	}
   }
 
@@ -133,24 +140,24 @@ void data_manager::connect(boost::asio::ip::tcp::endpoint endpoint,
 						 boost::optional<boost::system::error_code>& timer_result,
 						 boost::optional<boost::system::error_code>& socket_result)
 {
-    boost::asio::deadline_timer timer(socket_.get_io_service()); 
+    boost::asio::deadline_timer timer(io_service_); 
     timer.expires_from_now(boost::posix_time::seconds(30)); 
 	timer.async_wait(boost::bind(&data_manager::set_stream_result,this,
 		&timer_result, boost::asio::placeholders::error)); 
 
 	  // Start an asynchronous connect operation.
-	  socket_.async_connect(endpoint,
-		boost::bind(&data_manager::set_result, this,
-		&socket_result,boost::asio::placeholders::error));
+	  socket_->lowest_layer().async_connect(endpoint,
+		  boost::bind(&data_manager::handle_connect, this,
+			  &socket_result, boost::asio::placeholders::error));
 
-    socket_.get_io_service().reset(); 
-    while (socket_.get_io_service().run_one()) 
+	io_service_.reset();
+    while (io_service_.run_one())
     { 
       if (socket_result) 
         timer.cancel(); 
       else if (timer_result)
 	  {
-		  socket_.close();
+		  socket_close();
 		  throw std::logic_error("Timeout");
 	  }
     } 

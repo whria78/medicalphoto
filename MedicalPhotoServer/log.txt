@@ -950,3 +950,35 @@ Saving... ../version.dat : 2016-Sep-27 19:45:27
 Saving... ../version.dat : 2016-Sep-27 19:50:34
 Saving... ../version.dat : 2016-Sep-27 19:54:50
 Saving... ../version.dat : 2016-Sep-27 19:57:37
+D:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-25 22:18:06
+D:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-25 22:18:33
+SSL shutdown error: short read
+D:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-25 22:19:13
+D:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-25 22:19:28
+SSL shutdown error: short read
+D:/2016-01-01boost::filesystem::directory_iterator::construct: 
+D:/down/favorateboost::filesystem::directory_iterator::construct: 
+D:/thumbboost::filesystem::directory_iterator::construct: 
+D:/downboost::filesystem::directory_iterator::construct: 
+D:/down/tmpboost::filesystem::directory_iterator::construct: 
+Saving... ../version.dat : 2025-Mar-25 22:20:11

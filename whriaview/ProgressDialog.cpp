@@ -16,20 +16,22 @@ struct JsonInfo {
 class CMyMessageBox : public CDialog
 {
 public:
-	CMyMessageBox(CWnd* pParent = nullptr) : CDialog(IDD_MY_MESSAGEBOX, pParent), m_bNameChecked(FALSE), m_bIDChecked(TRUE), m_bConfirm(TRUE){}
+	CMyMessageBox(client_config& c,CWnd* pParent = nullptr) : CDialog(IDD_MY_MESSAGEBOX, pParent)
+		, config_(c)
+		, m_bIDChecked(c.GetInt(VL_EXTRACT_ID))
+		, m_bNameChecked(c.GetInt(VL_EXTRACT_NAME))
+		, m_bDxCheck(c.GetInt(VL_EXTRACT_DX))
+	{}
 
 	enum { IDD = IDD_MY_MESSAGEBOX };
-	BOOL m_bNameChecked;
-	BOOL m_bIDChecked;
-	BOOL m_bConfirm;
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX)
 	{
 		CDialog::DoDataExchange(pDX);
-		DDX_Check(pDX, IDC_CHECK_NAME, m_bNameChecked);
 		DDX_Check(pDX, IDC_CHECK_ID, m_bIDChecked);
-		DDX_Check(pDX, IDC_CHECK_RECONFIRM, m_bConfirm);
+		DDX_Check(pDX, IDC_CHECK_DX, m_bDxCheck);
+		DDX_Check(pDX, IDC_CHECK_NAME, m_bNameChecked);
 	}
 
 	virtual BOOL OnInitDialog()
@@ -44,10 +46,22 @@ protected:
 	afx_msg void OnBnClickedOk()
 	{
 		UpdateData(TRUE);
+
+		config_.Set(VL_EXTRACT_ID, m_bIDChecked);
+		config_.Set(VL_EXTRACT_NAME, m_bNameChecked);
+		config_.Set(VL_EXTRACT_DX, m_bDxCheck);
+
+		config_.save();
+
 		EndDialog(IDOK);
 	}
 
 	DECLARE_MESSAGE_MAP()
+public:
+	BOOL m_bDxCheck;
+	BOOL m_bNameChecked;
+	BOOL m_bIDChecked;
+	client_config& config_;
 };
 
 BEGIN_MESSAGE_MAP(CMyMessageBox, CDialog)
@@ -1022,7 +1036,8 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 
 
 
-					CMyMessageBox dlg;
+					CMyMessageBox dlg(config_);
+
 					/*
 					if (dlg.DoModal() == IDOK)
 					{
@@ -1059,14 +1074,8 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 								{
 									fileinfo old = result_temp[i];
 									fileinfo updated = old;
-									/*
-									if (dlg.m_bConfirm == FALSE || item["confirm"].get<std::string>() == "yes")
-									{
-										if (dlg.m_bNameChecked) updated.stPatientName = item["Name"].get<std::string>();
-										if (dlg.m_bIDChecked) updated.stPatientID = item["ID"].get<std::string>();
-									}
-									*/
 
+									/*
 									bool bCheck = false;
 									if (dlg.m_bConfirm == FALSE) 
 										bCheck = true;
@@ -1075,15 +1084,91 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 										if (item.find("confirm") != item.end())
 											if (item["confirm"].get<std::string>() == "yes") bCheck = true;
 									}
+									*/
+
+									bool bCheck = false;
+									if (item.find("confirm") != item.end())
+										if (item["confirm"].get<std::string>() == "yes") bCheck = true;
 
 									if (bCheck)
 									{
+										std::string stTarget = "";
 										if (dlg.m_bNameChecked)
 											if (item.find("Name") != item.end())
-												updated.stPatientName = item["Name"].get<std::string>();
+											{
+												if (item["Name"].is_string())
+												{
+													std::string temp_ = item["Name"].get<std::string>();
+													boost::algorithm::trim(temp_);
+													if (temp_ != "") updated.stPatientName = temp_;
+												}
+											}
+										
 										if (dlg.m_bIDChecked)
 											if (item.find("ID") != item.end())
-												updated.stPatientID = item["ID"].get<std::string>();
+											{
+												if (item["ID"].is_string())
+												{
+													std::string temp_ = item["ID"].get<std::string>();
+													boost::algorithm::trim(temp_);
+													if (temp_ != "") updated.stPatientID = temp_;
+												}
+											}
+										if (dlg.m_bDxCheck)
+											if (item.find("Dx") != item.end())
+											{
+												if (item["Dx"].is_array())
+												{
+													if (item["Dx"][0].is_string())
+													{
+														std::string temp_ = item["Dx"][0].get<std::string>();
+														boost::algorithm::trim(temp_);
+														if (temp_ != "") updated.Diagnosis.stDiagnosis = temp_;
+
+
+
+														try {
+
+															comment_list comment_list_from_, comment_list_to_;
+															comment comment_;
+															comment_.stDetail = "";
+															comment_.stNetPath = old.stNetPath;
+															comment_.Time = old.Time;
+
+															for (const auto& dx_ : item["Dx"])
+															{
+																if (dx_.is_string())
+																{
+																	std::string cmt_ = dx_.get<std::string>();
+																	boost::algorithm::trim(cmt_);
+
+																	comment_.stDetail = "";
+																	comment_list_from_.push_back(comment_);
+																	comment_.stDetail = cmt_;
+																	comment_list_to_.push_back(comment_);
+																}
+															}
+
+															WhriaClient.setcomment(comment_list_from_, comment_list_to_);
+
+														}
+														catch (const client_connection::ConnectionEx& err_)
+														{
+															AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
+														}
+														catch (const basic_client::ConnectionEx& err_)
+														{
+															AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
+														}
+														catch (...)
+														{
+														}
+
+
+
+													}
+												}
+											}
 									}
 
 
@@ -1107,6 +1192,10 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 									if (strcmp(updated.stPatientName.c_str(), "") != 0)
 									{
 										newname += MCodeChanger::_CCL(updated.stPatientName).c_str(); newname += _T("_");
+									}
+									if (strcmp(updated.Diagnosis.stDiagnosis.c_str(), "") != 0)
+									{
+										newname += MCodeChanger::_CCL(updated.Diagnosis.stDiagnosis).c_str(); newname += _T("_");
 									}
 
 									tstring stDate = Utility::GetDateString(updated.Time.date()

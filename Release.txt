@@ -1,4 +1,9 @@
 =-=- MedicalPhoto Release Note -=-=
+Release 1.1.0.691 / 2025.3.30
+- Add Dx import feature using Qwen2-VL
+cf)
+https://github.com/whria78/llama-qwen-vl
+
 Release 1.1.0.647 / 2025.3.20
 - SSL encryption
 

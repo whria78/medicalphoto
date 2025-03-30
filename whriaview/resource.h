@@ -309,8 +309,7 @@
 #define IDC_STATIC_TIP                  1090
 #define IDC_BUTTON_VIEWLOGO_EXIT        1091
 #define IDC_EDIT_PICTUREFOLDER          1092
-#define IDC_CHECK1                      1092
-#define IDC_CHECK_RECONFIRM             1092
+#define IDC_CHECK_DX                    1092
 #define IDC_BUTTON_PIC                  1094
 #define IDC_EDIT_DATE                   1103
 #define IDC_STATIC_PTINFO               1104
@@ -323,6 +322,7 @@
 #define IDC_CHECK_NAME                  2002
 #define IDC_CHECK_ID                    2003
 #define IDC_STATIC_MESSAGE              2004
+#define IDC_CHECK_ID2                   2006
 #define ID_POPUP_TREE_COPY              32771
 #define ID_POPUP_TREE_TOEXCELFILE       32772
 #define ID_VIEW_BASIC                   32773

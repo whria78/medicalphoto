@@ -991,7 +991,15 @@ public:
 	comment(Type& t,int* index)
 	{
 		stNetPath=t.fieldValue(*index);(*index)++;
-		Time=boost::posix_time::time_from_string(t.fieldValue(*index));(*index)++;
+		//Time=boost::posix_time::time_from_string(t.fieldValue(*index));(*index)++;
+
+		try
+		{
+			Time = boost::posix_time::time_from_string(t.fieldValue(*index)); (*index)++;
+		}
+		catch (std::exception& e) { e.what(); (*index)++; }
+
+
 		stDetail=t.fieldValue(*index);(*index)++;
 		Owner=owner(t,index);
 	}

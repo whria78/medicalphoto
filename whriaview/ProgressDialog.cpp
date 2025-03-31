@@ -1,10 +1,12 @@
-// ProgressDialog.cpp : implementation file
+Ôªø// ProgressDialog.cpp : implementation file
 //
 
 #include "stdafx.h"
 #include "WhriaView.h"
 #include "ProgressDialog.h"
 #include <boost/thread/mutex.hpp>
+#include <unordered_set>
+#include <algorithm>
 
 #include "../share/json.hpp"
 struct JsonInfo {
@@ -21,6 +23,7 @@ public:
 		, m_bIDChecked(c.GetInt(VL_EXTRACT_ID))
 		, m_bNameChecked(c.GetInt(VL_EXTRACT_NAME))
 		, m_bDxCheck(c.GetInt(VL_EXTRACT_DX))
+		, m_bCommentCheck(c.GetInt(VL_EXTRACT_COMMENT))
 	{}
 
 	enum { IDD = IDD_MY_MESSAGEBOX };
@@ -32,13 +35,14 @@ protected:
 		DDX_Check(pDX, IDC_CHECK_ID, m_bIDChecked);
 		DDX_Check(pDX, IDC_CHECK_DX, m_bDxCheck);
 		DDX_Check(pDX, IDC_CHECK_NAME, m_bNameChecked);
+		DDX_Check(pDX, IDC_CHECK_COMMENT, m_bCommentCheck);
 	}
 
 	virtual BOOL OnInitDialog()
 	{
 		CDialog::OnInitDialog();
-		ModifyStyle(WS_SYSMENU, 0); // ¥›±‚ πˆ∆∞ ¡¶∞≈
-		SetDlgItemText(IDC_STATIC_MESSAGE, _T("Please select the item to import.")); // ∏ﬁΩ√¡ˆ º≥¡§
+		ModifyStyle(WS_SYSMENU, 0); // Îã´Í∏∞ Î≤ÑÌäº Ï†úÍ±∞
+		SetDlgItemText(IDC_STATIC_MESSAGE, _T("Please select the item to import.")); // Î©îÏãúÏßÄ ÏÑ§Ï†ï
 		UpdateData(FALSE);
 		return TRUE;
 	}
@@ -50,6 +54,7 @@ protected:
 		config_.Set(VL_EXTRACT_ID, m_bIDChecked);
 		config_.Set(VL_EXTRACT_NAME, m_bNameChecked);
 		config_.Set(VL_EXTRACT_DX, m_bDxCheck);
+		config_.Set(VL_EXTRACT_COMMENT, m_bCommentCheck);
 
 		config_.save();
 
@@ -62,6 +67,7 @@ public:
 	BOOL m_bNameChecked;
 	BOOL m_bIDChecked;
 	client_config& config_;
+	BOOL m_bCommentCheck;
 };
 
 BEGIN_MESSAGE_MAP(CMyMessageBox, CDialog)
@@ -504,7 +510,7 @@ void CProgressDialog::DownloadFileThread(const fileinfo_list& f_list,const tstri
 		}
 		boost::mutex::scoped_lock lock(thread_mutex);
 
-		// ∆ƒ¿œ ¿¸º€
+		// ÌååÏùº Ï†ÑÏÜ°
 		m_Progress.SetRange(0,f_list.size());
 		m_Progress.SetPos(0);
 		m_Progress.SetWindowText(_T("Start Downloading Files..."));
@@ -1010,7 +1016,7 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 		}
 		else
 		{
-			lastFolderName = normalizedPath; // ΩΩ∑°Ω√∞° æ¯¿∏∏È ¿¸√º∞° ∆˙¥ı ¿Ã∏ß
+			lastFolderName = normalizedPath; // Ïä¨ÎûòÏãúÍ∞Ä ÏóÜÏúºÎ©¥ Ï†ÑÏ≤¥Í∞Ä Ìè¥Îçî Ïù¥Î¶Ñ
 		}
 
 		tstring jsonFilePath = stLocalPath + _T("/") + lastFolderName + _T(".json");
@@ -1024,35 +1030,31 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 			{
 				try
 				{
-					// ∆ƒ¿œ ≈©±‚ √¯¡§
-					fseek(fp, 0, SEEK_END);
-					long fileSize = ftell(fp);
-					rewind(fp);
+					// Î≤ÑÌçº ÌÅ¨Í∏∞ ÏÑ§Ï†ï (1MB)
+					const size_t chunkSize = 1024 * 1024;  // 1MB
+					std::vector<char> buffer(chunkSize);
 
-					// πˆ∆€ø° JSON µ•¿Ã≈Õ ∑ŒµÂ
-					std::vector<char> buffer(fileSize + 1, 0);
-					fread(buffer.data(), 1, fileSize, fp);
+					// JSON Îç∞Ïù¥ÌÑ∞Î•º Ï†ÄÏû•Ìï† Î≥ÄÏàò
+					std::string buff_;
+
+					while (true) {
+						// ÌååÏùºÏóêÏÑú 1MBÏî© ÏùΩÍ∏∞
+						size_t bytesRead = fread(buffer.data(), 1, chunkSize, fp);
+
+						if (bytesRead == 0) {
+							break;  // ÌååÏùº ÎÅùÏóê ÎèÑÎã¨ÌïòÎ©¥ Ï¢ÖÎ£å
+						}
+
+						// ÏùΩÏùÄ Îç∞Ïù¥ÌÑ∞Î•º buff_Ïóê Ï∂îÍ∞Ä
+						buff_.append(buffer.begin(), buffer.begin() + bytesRead);
+					}
+
 					fclose(fp);
 
-
-
 					CMyMessageBox dlg(config_);
+					nlohmann::json jsonObject = nlohmann::json::parse(buff_.c_str());
 
-					/*
-					if (dlg.DoModal() == IDOK)
-					{
-						CString result;
-						if (dlg.m_bNameChecked) result += _T("Name ");
-						if (dlg.m_bIDChecked) result += _T("ID");
-						AfxMessageBox(_T("Selected item: ") + result);
-					}
-					*/
-
-
-					// JSON ∆ƒΩÃ
-					nlohmann::json jsonObject = nlohmann::json::parse(buffer.data());
-
-					// JSON µ•¿Ã≈Õ √ﬂ√‚
+					// JSON Îç∞Ïù¥ÌÑ∞ Ï∂îÏ∂ú
 					if (jsonObject.is_array() && dlg.DoModal() == IDOK)
 					{
 						for (const auto& item : jsonObject)
@@ -1124,51 +1126,65 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 														std::string temp_ = item["Dx"][0].get<std::string>();
 														boost::algorithm::trim(temp_);
 														if (temp_ != "") updated.Diagnosis.stDiagnosis = temp_;
-
-
-
-														try {
-
-															comment_list comment_list_from_, comment_list_to_;
-															comment comment_;
-															comment_.stDetail = "";
-															comment_.stNetPath = old.stNetPath;
-															comment_.Time = old.Time;
-
-															for (const auto& dx_ : item["Dx"])
-															{
-																if (dx_.is_string())
-																{
-																	std::string cmt_ = dx_.get<std::string>();
-																	boost::algorithm::trim(cmt_);
-
-																	comment_.stDetail = "";
-																	comment_list_from_.push_back(comment_);
-																	comment_.stDetail = cmt_;
-																	comment_list_to_.push_back(comment_);
-																}
-															}
-
-															WhriaClient.setcomment(comment_list_from_, comment_list_to_);
-
-														}
-														catch (const client_connection::ConnectionEx& err_)
-														{
-															AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
-														}
-														catch (const basic_client::ConnectionEx& err_)
-														{
-															AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
-														}
-														catch (...)
-														{
-														}
-
-
-
 													}
 												}
 											}
+
+										if (dlg.m_bCommentCheck)
+										{
+
+											try {
+
+												comment_list comment_list_from_, comment_list_to_;
+												comment comment_;
+												comment_.stDetail = "";
+												comment_.stNetPath = old.stNetPath;
+												comment_.Time = old.Time;
+
+
+												std::unordered_set<std::string> skip_keys = { "Name", "ID", "confirm","err","Date","Filename","is_index","response"};
+												for (auto it = item.begin(); it != item.end(); ++it) {
+													if (skip_keys.find(it.key()) != skip_keys.end()) {
+														continue; // ÌäπÏ†ï ÌÇ§Îäî Í±¥ÎÑàÎõ¥Îã§.
+													}
+													std::string cmt_ = it.key() + ": ";
+													if (item[it.key()].is_array())
+													{
+														for (const auto& dx_ : item[it.key()])
+														{
+															if (dx_.is_string())
+															{
+																cmt_ += dx_.get<std::string>() + ";";
+															}
+														}
+														boost::algorithm::trim(cmt_);
+														comment_.stDetail = "";
+														comment_list_from_.push_back(comment_);
+														comment_.stDetail = cmt_;
+														comment_list_to_.push_back(comment_);
+														WhriaClient.setcomment(comment_list_from_, comment_list_to_);
+													}
+												}
+
+
+											}
+											catch (const client_connection::ConnectionEx& err_)
+											{
+												AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
+											}
+											catch (const basic_client::ConnectionEx& err_)
+											{
+												AfxMessageBox(MCodeChanger::_CCW(err_.stMessage).c_str());
+											}
+											catch (...)
+											{
+											}
+										}
+
+
+
+
+
 									}
 
 

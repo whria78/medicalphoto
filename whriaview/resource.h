@@ -310,6 +310,8 @@
 #define IDC_BUTTON_VIEWLOGO_EXIT        1091
 #define IDC_EDIT_PICTUREFOLDER          1092
 #define IDC_CHECK_DX                    1092
+#define IDC_CHECK_DX2                   1093
+#define IDC_CHECK_COMMENT               1093
 #define IDC_BUTTON_PIC                  1094
 #define IDC_EDIT_DATE                   1103
 #define IDC_STATIC_PTINFO               1104

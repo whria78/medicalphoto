@@ -98,6 +98,16 @@ The password can be changed at 'C:/medicalphoto/s_config.txt'
   - Spacebar: Zoom in.
   - PageUp/PageDown: Send photos to a secondary monitor.
 
+### Intelligent Select (Ctrl + Click)
+
+This feature allows you to easily select multiple related photos with a single click.
+
+> Criteria for selection:
+> - Photos taken within a short time window (e.g., within a few seconds).
+> - Photos with similar metadata.
+
+Use this feature to manage grouped images quickly.
+
 ### 2.6 Selected Photos Listbox
 - Displays selected filenames.
 - Files selected via **Ctrl + Click** appear in **red**.

@@ -74,7 +74,7 @@ The password can be changed at 'C:/medicalphoto/s_config.txt'
 - **Photographic Listbox**
 
 ### 2.2 Search Photos
-- Use fields: `[DX], [ICD], [NAME], [<], [>], [ID]`
+- Use fields: `[DX], [ICD], [NAME], [ID]`
 - Use **"AND"** or **"OR"** for advanced search.
 - Example: `tinea pedis AND smith`
 

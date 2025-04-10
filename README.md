@@ -132,10 +132,6 @@ Use this feature to manage grouped images quickly.
 - **Search Options**: Modify search behavior.
 - **Diagnosis Files**: Includes built-in **`derma.dat`** (dermatology diagnosis and ICD-10 database).
 
----
-
-## 4. Uploading & Downloading Photos
-- Use the **Upload-Ex** menu button for easy photo uploads.
 
 ---
 
@@ -145,9 +141,9 @@ Use this feature to manage grouped images quickly.
 | `F12`         | Focus on search box |
 | `Ctrl + E`    | Focus on diagnosis box |
 | `Ctrl + A`    | Select all |
-| `Ctrl + Click`| Select time-related photos |
+| `Ctrl + Click`| ✨ Select time-related photos |
 | `Ctrl + D`    | Download |
-| `Ctrl + U`    | UploadEx |
+| `Ctrl + U`    | ✨ UploadEx |
 | `Double-click`| Full-screen view |
 | `ESC`         | Deselect all |
 

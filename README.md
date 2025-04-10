@@ -52,7 +52,6 @@ Before installing a client, the MedicalPhoto server must be installed.
 - Run `Setup.exe` on the client computer.
 - Select **"Client"** in the "Select Type" menu.
 - Enter the **[IP Address]** of the server.
-- You can later change the IP in **"Preference" → "Server Information"**.
 
 ---
 
@@ -60,7 +59,7 @@ Before installing a client, the MedicalPhoto server must be installed.
 
 ### 2.0 Connect to the Server
 
-Default password is '0000'.
+🚨 Default password is '0000'.
 The password can be changed at 'C:/medicalphoto/s_config.txt'
 
 ### 2.1 Client Window Components
@@ -126,11 +125,6 @@ Use this feature to manage grouped images quickly.
 ### 3.3 User Diagnosis
 - User diagnoses are shared across all clients.
 
-### 3.4 Preferences
-- **General**: Enable/disable filename automation.
-- **Server Information**: Displays server IP.
-- **Search Options**: Modify search behavior.
-- **Diagnosis Files**: Includes built-in **`derma.dat`** (dermatology diagnosis and ICD-10 database).
 
 
 ---
@@ -143,7 +137,7 @@ Use this feature to manage grouped images quickly.
 | `Ctrl + A`    | Select all |
 | `Ctrl + Click`| ✨ Select time-related photos |
 | `Ctrl + D`    | Download |
-| `Ctrl + U`    | ✨ UploadEx |
+| `Ctrl + U`    | ✨ Upload photos |
 | `Double-click`| Full-screen view |
 | `ESC`         | Deselect all |
 
@@ -167,7 +161,7 @@ The server consists of:
 ### 6.1 Server Functions
 - **Start Server**: Launches `console.exe` in the background.
 - **Stop Server**: Stops `console.exe`.
-- **Options**: Configure the server.
+- **Options**: Configure the server & 🚨 Change the path of main storage.
 - **Check Database**: Ensures consistency between the database and photo files.
 - **Log Window**: Displays the **Host IP Address** and application version.
 

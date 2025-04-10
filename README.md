@@ -91,14 +91,14 @@ The password can be changed at 'C:/medicalphoto/s_config.txt'
 
 ### 2.5 Photographic Listbox
 - **Left-click**: Select/deselect an image.
-- **Ctrl + Click**: Selects all photos taken around the same time or with similar filenames.
+- **<span style="color:red">Ctrl + Click</span>**: Selects all photos taken around the same time or with similar filenames.
 - **Right-click**: Provides options like Download, Upload, Rename, Delete.
 - **Double-click**: Opens the photo in full-screen mode.
   - Arrow keys: Rotate photos.
   - Spacebar: Zoom in.
   - PageUp/PageDown: Send photos to a secondary monitor.
 
-### Intelligent Select (Ctrl + Click)
+### <span style="color:red">Intelligent Select (Ctrl + Click)</span>
 
 This feature allows you to easily select multiple related photos with a single click.
 
@@ -119,7 +119,7 @@ Use this feature to manage grouped images quickly.
 - **Normal Mode**
 - **Simple Mode** (for resolutions below `1024×768`)
 
-### 3.2 Upload (`Ctrl + U`)
+### 3.2 <span style="color:red">Upload (`Ctrl + U`)</span>
 - Photos are stored in date-named folders (e.g., `2007/2007-01/07-01-24`).
 - If EXIF data is missing, photos are placed in the **"Unknown Date"** folder.
 

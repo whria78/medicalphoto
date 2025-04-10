@@ -174,7 +174,7 @@ The server consists of:
 ---
 
 ## 7. Security
-- A security password can be set in **`s_config.txt`** (`ADMIN_PASS=1234`).
+- 🚨 A security password can be set in **`s_config.txt`** (`SUPERADMIN_PASS=0000`).
 
 ---
 

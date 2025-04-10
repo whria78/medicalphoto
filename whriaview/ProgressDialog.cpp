@@ -687,10 +687,12 @@ filepath_list CProgressDialog::UploadCommon(const std::vector<_tpath>& local_lis
 	CxImage image;
 	for (unsigned int i=0;i<local_list.size();i++)
 	{
+		/*
 		if (i>508)
 		{
 			int kk=55;
 		}
+		*/
 		CString output;
 
 		tstring stFrom=local_list[i].c_str();
@@ -698,6 +700,50 @@ filepath_list CProgressDialog::UploadCommon(const std::vector<_tpath>& local_lis
 		boost::replace_all(stTo, _T("\\"), _T("/"));
 
 		image.Load(stFrom.c_str(),CXIMAGE_FORMAT_UNKNOWN);
+
+		int iOrientation = 1;
+		try {
+			Exiv2::Image::AutoPtr readImg = Exiv2::ImageFactory::open(MCodeChanger::_CCN(stFrom.c_str()));
+			readImg->readMetadata();
+			Exiv2::ExifData exifData = readImg->exifData();
+			iOrientation = exifData["Exif.Image.Orientation"].toLong();
+		}
+		catch (...)
+		{
+		}
+
+		switch (iOrientation) {
+		case 2: 
+			image.Mirror();
+			break;
+		case 4:
+			image.Mirror();
+			image.Rotate(180);
+			break;
+		case 5:
+			image.Mirror();
+			image.Rotate(270);
+			break;
+		case 7:
+			image.Mirror();
+			image.Rotate(90);
+			break;
+		case 3:  // 180도 회전
+			image.Rotate(180);
+			//rotate(img, rotated, ROTATE_180);
+			break;
+		case 6:  // 90도 시계 방향 (Clockwise)
+			image.Rotate(90);
+			//rotate(img, rotated, ROTATE_90_CLOCKWISE);
+			break;
+		case 8:  // 270도 시계 방향 (Counterclockwise)
+			image.Rotate(270);
+			//rotate(img, rotated, ROTATE_90_COUNTERCLOCKWISE);
+			break;
+		}
+
+
+
 //		tstring stFileExt=MFile::GetFileExtL(stFrom);
 //		if (!config_.server_config.Compare(FILE_EXTENSIONS,MCodeChanger::_CCU(stFileExt)))
 		if (!image.IsValid())
@@ -919,6 +965,7 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 			{
 
 				boost::posix_time::ptime Time;
+				//int iOrientation;
 				_tpath dest_path;
 				if (Utility::LoadMetatag(_tpath_list[i].c_str(),Time))
 				{
@@ -1003,6 +1050,92 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 		if (result_temp.size() == 0) return;
 
 
+		std::vector<std::vector<int>> command_list;
+		std::vector<int> command_set;
+
+		command_set = { VL_COMMAND_UPLOAD, VL_RUNPATH_UPLOAD };
+		command_list.push_back(command_set);
+		command_set = { VL_COMMAND_UPLOAD1, VL_RUNPATH_UPLOAD1 };
+		command_list.push_back(command_set);
+		command_set = { VL_COMMAND_UPLOAD2, VL_RUNPATH_UPLOAD2 };
+		command_list.push_back(command_set);
+		command_set = { VL_COMMAND_UPLOAD3, VL_RUNPATH_UPLOAD3 };
+		command_list.push_back(command_set);
+
+		for (const auto& set_ : command_list)
+		{
+			int cmd_no = set_[0];
+			int env_no = set_[1];
+
+
+			if (config_.Get(cmd_no) != "")
+			{
+				tstring command = MCodeChanger::_CCL(config_.Get(cmd_no)) + _T(" \"") + stLocalPath + _T("\"");
+				tstring rundir = MCodeChanger::_CCL(config_.Get(env_no));
+				command = (boost::filesystem::path(rundir) / boost::filesystem::path(command)).c_str();
+
+
+				//std::wstring fullCommand = L"cmd.exe /C \"" + command + L" & echo. & echo Press SPACE to continue... & pause >nul\"";
+				//ShellExecuteW(NULL, L"open", L"cmd.exe", fullCommand.c_str(), NULL, SW_SHOW);
+
+
+				STARTUPINFO si = { sizeof(si) };
+				PROCESS_INFORMATION pi;
+
+				// CreateProcess의 명령어는 쓰기 가능한 버퍼여야 하므로 `c_str()`을 복사해서 사용
+				std::vector<TCHAR> cmdBuffer(command.begin(), command.end());
+				cmdBuffer.push_back(0); // NULL 문자 추가
+
+				bool bCreateProcess;
+				if (rundir == _T(""))
+				{
+					bCreateProcess = CreateProcess(
+						NULL,   // 실행할 프로그램 (NULL이면 `lpCommandLine` 실행)
+						cmdBuffer.data(),  // 실행할 명령어
+						NULL,   // 프로세스 보안 속성
+						NULL,   // 쓰레드 보안 속성
+						FALSE,  // 핸들 상속 여부
+						0,      // 생성 플래그
+						NULL,   // 환경 변수
+						NULL,   // 실행 디렉터리
+						&si,    // 시작 정보
+						&pi     // 프로세스 정보
+					);
+				}
+				else
+				{
+					bCreateProcess = CreateProcess(
+						NULL,   // 실행할 프로그램 (NULL이면 `lpCommandLine` 실행)
+						cmdBuffer.data(),  // 실행할 명령어
+						NULL,   // 프로세스 보안 속성
+						NULL,   // 쓰레드 보안 속성
+						FALSE,  // 핸들 상속 여부
+						NULL,      // 생성 플래그
+						NULL,   // 환경 변수
+						rundir.c_str(),   // 실행 디렉터리
+						&si,    // 시작 정보
+						&pi     // 프로세스 정보
+					);
+				}
+				if (bCreateProcess) {
+					WaitForSingleObject(pi.hProcess, INFINITE); // 프로세스 종료 대기
+
+					CloseHandle(pi.hProcess);
+					CloseHandle(pi.hThread);
+				}
+				else {
+					_tformat errorMsg(_T("Error running process, Errorcode : %d"));
+					errorMsg % (GetLastError());
+					AfxMessageBox(errorMsg.str().c_str());
+				}
+			}
+
+
+
+		}
+
+
+
 		// JSON LOAD
 		std::vector<JsonInfo> json_data;
 		tstring normalizedPath = stLocalPath;
@@ -1053,9 +1186,17 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 
 					CMyMessageBox dlg(config_);
 					nlohmann::json jsonObject = nlohmann::json::parse(buff_.c_str());
+					
+					int modal_result;
+
+				    if (config_.Get(VL_COMMAND_UPLOAD)=="")
+						modal_result = dlg.DoModal();
+					else
+						modal_result = IDOK;
+
 
 					// JSON 데이터 추출
-					if (jsonObject.is_array() && dlg.DoModal() == IDOK)
+					if (jsonObject.is_array() && modal_result == IDOK)
 					{
 						for (const auto& item : jsonObject)
 						{
@@ -1129,8 +1270,8 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 													}
 												}
 											}
-
-										if (dlg.m_bCommentCheck)
+										/*
+										if (dlg.m_bCommentCheck) // disabled
 										{
 
 											try {
@@ -1162,8 +1303,8 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 														comment_list_from_.push_back(comment_);
 														comment_.stDetail = cmt_;
 														comment_list_to_.push_back(comment_);
-														WhriaClient.setcomment(comment_list_from_, comment_list_to_);
 													}
+													WhriaClient.setcomment(comment_list_from_, comment_list_to_);
 												}
 
 
@@ -1180,6 +1321,7 @@ void CProgressDialog::UploadExThread(const tstring& stLocalPath)
 											{
 											}
 										}
+										*/
 
 
 

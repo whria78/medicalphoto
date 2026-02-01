@@ -170,7 +170,7 @@ The server consists of:
 ## 7. Security
 
 ### 7.1 🚨 A security password can be set in **`s_config.txt`** (`SUPERADMIN_PASS=0000`).
-### 7.2 How to Secure Clinical Photographs using Microsoft EFS**
+### 7.2 How to Secure Clinical Photographs using Microsoft EFS
 To comply with data privacy regulations such as HIPAA, we recommend storing clinical photographs in an encrypted space. Microsoft Windows provides a native feature called **Encrypting File System (EFS)**, which ensures that only authorized users can access the data.
 
 ### Step-by-Step Instructions:

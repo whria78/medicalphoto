@@ -179,9 +179,10 @@ To comply with data privacy regulations such as HIPAA, we recommend storing clin
 2. **Open Properties**: Right-click the folder and select **Properties**.
 3. **Access Advanced Attributes**: In the **General** tab, click the **Advanced...** button.
 4. **Enable Encryption**: Check the box labeled **"Encrypt contents to secure data"**.
-    * You can see the specific option in this screenshot: [efs.png](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/efs.png)
 5. **Apply Changes**: Click **OK** on the Advanced Attributes window, then click **Apply** on the Properties window.
 6. **Confirm Scope**: When prompted, select **"Apply changes to this folder, subfolders and files"** and click **OK**.
+
+![EFS](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/efs.png)
 
 ### ⚠️ Important Security Notes:
 

@@ -169,25 +169,25 @@ The server consists of:
 
 ## 7. Security
 
-* [cite_start]🚨 A security password can be set in **`s_config.txt`** (`SUPERADMIN_PASS=0000`)[cite: 61].
-* **How to Secure Clinical Photographs using Microsoft EFS**
-[cite_start]To comply with data privacy regulations such as HIPAA, we recommend storing clinical photographs in an encrypted space[cite: 38]. [cite_start]Microsoft Windows provides a native feature called **Encrypting File System (EFS)**, which ensures that only authorized users can access the data[cite: 128].
+### 7.1 🚨 A security password can be set in **`s_config.txt`** (`SUPERADMIN_PASS=0000`).
+### 7.2 How to Secure Clinical Photographs using Microsoft EFS**
+To comply with data privacy regulations such as HIPAA, we recommend storing clinical photographs in an encrypted space. Microsoft Windows provides a native feature called **Encrypting File System (EFS)**, which ensures that only authorized users can access the data.
 
 ### Step-by-Step Instructions:
 
-1. [cite_start]**Locate the Storage Folder**: Navigate to the folder where your medical photographs are stored (e.g., the server's data directory)[cite: 127, 129].
-2. [cite_start]**Open Properties**: Right-click the folder and select **Properties**[cite: 129].
-3. [cite_start]**Access Advanced Attributes**: In the **General** tab, click the **Advanced...** button[cite: 129].
-4. [cite_start]**Enable Encryption**: Check the box labeled **"Encrypt contents to secure data"**[cite: 129].
+1. **Locate the Storage Folder**: Navigate to the folder where your medical photographs are stored (e.g., the server's data directory).
+2. **Open Properties**: Right-click the folder and select **Properties**.
+3. **Access Advanced Attributes**: In the **General** tab, click the **Advanced...** button.
+4. **Enable Encryption**: Check the box labeled **"Encrypt contents to secure data"**.
     * You can see the specific option in this screenshot: [efs.png](https://github.com/whria78/medicalphoto/blob/master/docs/imgs/efs.png)
-5. [cite_start]**Apply Changes**: Click **OK** on the Advanced Attributes window, then click **Apply** on the Properties window[cite: 129].
-6. [cite_start]**Confirm Scope**: When prompted, select **"Apply changes to this folder, subfolders and files"** and click **OK**[cite: 129].
+5. **Apply Changes**: Click **OK** on the Advanced Attributes window, then click **Apply** on the Properties window.
+6. **Confirm Scope**: When prompted, select **"Apply changes to this folder, subfolders and files"** and click **OK**.
 
 ### ⚠️ Important Security Notes:
 
-* [cite_start]**Access Control**: Once encrypted, these files can only be accessed by the Windows user account that performed the encryption[cite: 128].
-* **Backup Recommendation**: It is critical to back up your encryption certificates. [cite_start]If the Windows user profile is lost or corrupted, the encrypted photographs will be permanently inaccessible[cite: 130, 131, 132].
-* [cite_start]**Physical Security**: If you cannot guarantee a reliable backup of encryption keys, we recommend placing the server in a **physically secured location** and using the default non-encrypted configuration instead[cite: 133, 134].
+* **Access Control**: Once encrypted, these files can only be accessed by the Windows user account that performed the encryption.
+* **Backup Recommendation**: It is critical to back up your encryption certificates. [cite_start]If the Windows user profile is lost or corrupted, the encrypted photographs will be permanently inaccessible.
+* **Physical Security**: If you cannot guarantee a reliable backup of encryption keys, we recommend placing the server in a **physically secured location** and using the default non-encrypted configuration instead.
 
 ---
 

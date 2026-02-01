@@ -187,7 +187,7 @@ To comply with data privacy regulations such as HIPAA, we recommend storing clin
 ### ⚠️ Important Security Notes:
 
 * **Access Control**: Once encrypted, these files can only be accessed by the Windows user account that performed the encryption.
-* **Backup Recommendation**: It is critical to back up your encryption certificates. [cite_start]If the Windows user profile is lost or corrupted, the encrypted photographs will be permanently inaccessible.
+* 🚨 **Backup Recommendation**: It is critical to back up your encryption certificates. If the Windows user profile is lost or corrupted, the encrypted photographs will be permanently inaccessible.
 * **Physical Security**: If you cannot guarantee a reliable backup of encryption keys, we recommend placing the server in a **physically secured location** and using the default non-encrypted configuration instead.
 
 ---
